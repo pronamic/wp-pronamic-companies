@@ -89,7 +89,7 @@ function pronamic_companies_init() {
 	/* Include the company index taxonomy */
 	register_taxonomy('pronamic_company_character', 'pronamic_company', 
 		array( 
-			'hierarchical' => true , 
+			'hierarchical' => false , 
 			'labels' => array(
 				'name' => _x('Company Character', 'category general name', 'pronamic_companies') ,
 				'singular_name' => _x('Company Character', 'category singular name', 'pronamic_companies') ,
