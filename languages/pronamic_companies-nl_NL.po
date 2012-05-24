@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic Companies\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-24 09:56+0100\n"
-"PO-Revision-Date: 2012-05-24 09:56+0100\n"
+"POT-Creation-Date: 2012-05-24 10:22+0100\n"
+"PO-Revision-Date: 2012-05-24 10:22+0100\n"
 "Last-Translator: Remco Tolsma <remco@pronamic.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "MIME-Version: 1.0\n"
@@ -110,8 +110,8 @@ msgid "New Company Category Name"
 msgstr "Nieuwe bedrijf categorie naam"
 
 #: pronamic-companies.php:82
-msgid "Company Categories"
-msgstr "Bedrijf categorieen"
+msgid "Categories"
+msgstr "Categorieën"
 
 #: pronamic-companies.php:94
 msgctxt "category general name"
@@ -156,8 +156,8 @@ msgid "New Company Character Name"
 msgstr "Nieuwe bedrijf karakter naam"
 
 #: pronamic-companies.php:104
-msgid "Company Characters"
-msgstr "Bedrijf karakters"
+msgid "Characters"
+msgstr "Karakters"
 
 #: pronamic-companies.php:116
 msgctxt "category general name"
@@ -202,8 +202,8 @@ msgid "New Company Region Name"
 msgstr "Nieuwe bedrijf regio naam"
 
 #: pronamic-companies.php:126
-msgid "Company Regions"
-msgstr "Bedrijf regio's"
+msgid "Regions"
+msgstr "Regio's"
 
 #: pronamic-companies.php:147
 msgid "Company information"

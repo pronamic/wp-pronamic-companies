@@ -79,7 +79,7 @@ function pronamic_companies_init() {
 				'update_item' => __('Update Company Category', 'pronamic_companies') ,
 				'add_new_item' => __('Add New Company Category', 'pronamic_companies') ,
 				'new_item_name' => __('New Company Category Name', 'pronamic_companies') ,
-				'menu_name' => __('Company Categories', 'pronamic_companies')
+				'menu_name' => __('Categories', 'pronamic_companies')
 			) , 
 			'show_ui' => true , 
 			'query_var' => true
@@ -101,7 +101,7 @@ function pronamic_companies_init() {
 				'update_item' => __('Update Company Character', 'pronamic_companies') ,
 				'add_new_item' => __('Add New Company Character', 'pronamic_companies') ,
 				'new_item_name' => __('New Company Character Name', 'pronamic_companies') ,
-				'menu_name' => __('Company Characters', 'pronamic_companies')
+				'menu_name' => __('Characters', 'pronamic_companies')
 			) , 
 			'show_ui' => true , 
 			'query_var' => true
@@ -123,7 +123,7 @@ function pronamic_companies_init() {
 				'update_item' => __('Update Company Region', 'pronamic_companies') ,
 				'add_new_item' => __('Add New Company Region', 'pronamic_companies') ,
 				'new_item_name' => __('New Company Region Name', 'pronamic_companies') ,
-				'menu_name' => __('Company Regions', 'pronamic_companies')
+				'menu_name' => __('Regions', 'pronamic_companies')
 			) , 
 			'show_ui' => true , 
 			'query_var' => true
