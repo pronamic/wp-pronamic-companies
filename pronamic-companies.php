@@ -57,10 +57,10 @@ function pronamic_companies_init() {
 		'show_ui' => true ,
 		'show_in_menu' => true ,
 		'query_var' => true ,
-		'capability_type' => 'page' ,
+		'capability_type' => 'post' ,
 		'has_archive' => true ,
 		'rewrite' => array('slug' => 'bedrijvengids') ,
-		'menu_icon' => get_bloginfo('template_url') . '/admin/icons/company.png' ,
+		'menu_icon' => plugins_url('admin/icons/company.png', __FILE__) , 
 		'supports' => array('title', 'editor', 'author', 'thumbnail', 'custom-fields') 
 	));
 
@@ -229,7 +229,7 @@ function pronamic_companies_save_postdata($post_id) {
 	}
 
 	if(isset($_POST['pronamic_company_postal_code'])) {
-		update_post_meta($post->ID, 'pronamic_company_postal_code', $_POST['pronamic_company_postal_code']);
+		update_post_meta($post->ID, '_pronamic_company_postal_code', $_POST['pronamic_company_postal_code']);
 	}
 
 	if(isset($_POST['pronamic_company_city'])) {
@@ -237,7 +237,7 @@ function pronamic_companies_save_postdata($post_id) {
 	}
 
 	if(isset($_POST['pronamic_company_country'])) {
-		update_post_meta($post->ID, 'pronamic_company_country', $_POST['pronamic_company_country']);
+		update_post_meta($post->ID, '_pronamic_company_country', $_POST['pronamic_company_country']);
 	}
 
 	if(isset($_POST['pronamic_company_phone_number'])) {
@@ -248,8 +248,8 @@ function pronamic_companies_save_postdata($post_id) {
 		update_post_meta($post->ID, '_pronamic_company_fax_number', $_POST['pronamic_company_fax_number']);
 	}
 
-	if(isset($_POST['_pronamic_company_email'])) {
-		update_post_meta($post->ID, '_pronamic_company_email', $_POST['_pronamic_company_email']);
+	if(isset($_POST['pronamic_company_email'])) {
+		update_post_meta($post->ID, '_pronamic_company_email', $_POST['pronamic_company_email']);
 	}
 
 	if(isset($_POST['pronamic_company_website'])) {
