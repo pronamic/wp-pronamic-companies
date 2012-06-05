@@ -167,9 +167,9 @@ function pronamic_companies_information_box($post) {
 		<input type="text" id="pronamic_company_address" name="pronamic_company_address" value="<?php echo get_post_meta($post->ID, '_pronamic_company_address', true) ?>" size="25" />
 	</div>
 
-	<label for="pronamic_company_postal"><?php _e('Postal', 'pronamic_companies'); ?></label>
+	<label for="pronamic_company_postal_code"><?php _e('Postal', 'pronamic_companies'); ?></label>
 	<div class="input-text-wrap">
-		<input type="text" id="pronamic_company_postal" name="_pronamic_company_postal_code" value="<?php echo get_post_meta($post->ID, '_pronamic_company_postal_code', true) ?>" size="25" />
+		<input type="text" id="pronamic_company_postal_code" name="pronamic_company_postal_code" value="<?php echo get_post_meta($post->ID, '_pronamic_company_postal_code', true) ?>" size="25" />
 	</div>
 
 	<label for="pronamic_company_city"><?php _e('City', 'pronamic_companies'); ?></label>
@@ -192,9 +192,9 @@ function pronamic_companies_information_box($post) {
 		<input type="text" id="pronamic_company_fax_number" name="pronamic_company_fax_number" value="<?php echo get_post_meta($post->ID, '_pronamic_company_fax_number', true) ?>" size="25" />
 	</div>
 
-	<label for="_pronamic_company_email"><?php _e('Email address', 'pronamic_companies'); ?></label>
+	<label for="pronamic_company_email"><?php _e('Email address', 'pronamic_companies'); ?></label>
 	<div class="input-text-wrap">
-		<input type="text" id="pronamic_company_email_address" name="_pronamic_company_email" value="<?php echo get_post_meta($post->ID, '_pronamic_company_email', true) ?>" size="25" />
+		<input type="text" id="pronamic_company_email" name="pronamic_company_email" value="<?php echo get_post_meta($post->ID, '_pronamic_company_email', true) ?>" size="25" />
 	</div>
 
 	<label for="pronamic_company_website"><?php _e('Website', 'pronamic_companies'); ?></label>
@@ -256,3 +256,48 @@ function pronamic_companies_save_postdata($post_id) {
 		update_post_meta($post->ID, '_pronamic_company_website', $_POST['pronamic_company_website']);
 	}
 }
+
+function pronamic_companies_set_columns($columns) {
+	$newColumns = array();
+
+	if(isset($columns['cb'])) {
+		$newColumns['cb'] = $columns['cb'];
+	}
+
+	// $newColumns['thumbnail'] = __('Thumbnail', 'pronamic_companies');
+
+	if(isset($columns['title'])) {
+		$newColumns['title'] = __('Company', 'pronamic_companies');
+	}
+
+	$newColumns['pronamic_company_categories'] = __('Categories', 'pronamic_companies');
+
+	if(isset($columns['comments'])) {
+		$newColumns['comments'] = $columns['comments'];
+	}
+
+	if(isset($columns['date'])) {
+		$newColumns['date'] = $columns['date'];
+	}
+	
+	return $newColumns;
+}
+
+add_filter('manage_edit-pronamic_company_columns' , 'pronamic_companies_set_columns');
+
+function pronamic_companies_custom_columns($column, $post_id) {
+	switch($column) {
+		case 'pronamic_company_categories':
+			$terms = get_the_term_list($post_id, 'pronamic_company_category' , '' , ',' , '');
+
+			if(is_string($terms)) {
+				echo $terms;
+			} else {
+				echo __('No Categorie', 'pronamic_companies');
+			}
+
+			break;
+	}
+}
+
+add_action('manage_posts_custom_column' , 'pronamic_companies_custom_columns', 10, 2 );

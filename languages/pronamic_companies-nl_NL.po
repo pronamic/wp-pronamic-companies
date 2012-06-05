@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic Companies\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-24 10:22+0100\n"
-"PO-Revision-Date: 2012-05-24 10:22+0100\n"
+"POT-Creation-Date: 2012-06-05 09:51+0100\n"
+"PO-Revision-Date: 2012-06-05 09:51+0100\n"
 "Last-Translator: Remco Tolsma <remco@pronamic.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "MIME-Version: 1.0\n"
@@ -110,6 +110,7 @@ msgid "New Company Category Name"
 msgstr "Nieuwe bedrijf categorie naam"
 
 #: pronamic-companies.php:82
+#: pronamic-companies.php:273
 msgid "Categories"
 msgstr "Categorieën"
 
@@ -240,6 +241,14 @@ msgstr "E-mailadres"
 #: pronamic-companies.php:200
 msgid "Website"
 msgstr "Website"
+
+#: pronamic-companies.php:270
+msgid "Company"
+msgstr "Bedrijf"
+
+#: pronamic-companies.php:296
+msgid "No Categorie"
+msgstr "Geen categorie"
 
 #~ msgctxt "post type general name"
 
