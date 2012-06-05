@@ -270,6 +270,8 @@ function pronamic_companies_set_columns($columns) {
 		$newColumns['title'] = __('Company', 'pronamic_companies');
 	}
 
+	$newColumns['pronamic_company_address'] = __('Address', 'pronamic_companies');
+
 	$newColumns['pronamic_company_categories'] = __('Categories', 'pronamic_companies');
 
 	if(isset($columns['comments'])) {
@@ -287,8 +289,13 @@ add_filter('manage_edit-pronamic_company_columns' , 'pronamic_companies_set_colu
 
 function pronamic_companies_custom_columns($column, $post_id) {
 	switch($column) {
+		case 'pronamic_company_address':
+			echo get_post_meta($post_id, '_pronamic_company_address', true), '<br />';
+			echo get_post_meta($post_id, '_pronamic_company_postal_code', true), ' ', get_post_meta($post_id, '_pronamic_company_city', true);
+
+			break;
 		case 'pronamic_company_categories':
-			$terms = get_the_term_list($post_id, 'pronamic_company_category' , '' , ',' , '');
+			$terms = get_the_term_list($post_id, 'pronamic_company_category' , '' , ', ' , '');
 
 			if(is_string($terms)) {
 				echo $terms;
