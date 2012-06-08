@@ -270,6 +270,10 @@ function pronamic_companies_set_columns($columns) {
 		$newColumns['title'] = __('Company', 'pronamic_companies');
 	}
 
+	if(isset($columns['author'])) {
+		$newColumns['author'] = $columns['author'];
+	}
+
 	$newColumns['pronamic_company_address'] = __('Address', 'pronamic_companies');
 
 	$newColumns['pronamic_company_categories'] = __('Categories', 'pronamic_companies');
