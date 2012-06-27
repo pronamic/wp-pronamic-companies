@@ -1,0 +1,11 @@
+#pronamic_companies_meta_box .form-table .title {
+	margin: 0;
+}
+
+#pronamic_companies_meta_box ::-webkit-input-placeholder {
+   color: #999;
+}
+
+#pronamic_companies_meta_box :-moz-placeholder {  
+	color: #999;  
+}
