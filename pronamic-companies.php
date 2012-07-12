@@ -180,12 +180,12 @@ function pronamic_companies_information_box($post) {
 					<label for="pronamic_company_address"><?php _e('Visiting Address', 'pronamic_companies'); ?></label>
 				</th>
 				<td>
-					<textarea id="pronamic_company_address" name="pronamic_company_address" placeholder="<?php esc_attr_e('Address', 'pronamic_companies'); ?>" rows="1" cols="60"><?php echo esc_textarea(get_post_meta($post->ID, '_pronamic_company_address', true)); ?></textarea>
+					<textarea id="pronamic_company_address" name="_pronamic_company_address" placeholder="<?php esc_attr_e('Address', 'pronamic_companies'); ?>" rows="1" cols="60"><?php echo esc_textarea(get_post_meta($post->ID, '_pronamic_company_address', true)); ?></textarea>
 					<br />
-					<input id="pronamic_company_postal_code" name="pronamic_company_postal_code" placeholder="<?php esc_attr_e('Postal Code', 'pronamic_companies'); ?>" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_postal_code', true)); ?>" type="text" size="10" />
-					<input id="pronamic_company_city" name="pronamic_company_city" placeholder="<?php esc_attr_e('City', 'pronamic_companies'); ?>" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_city', true)); ?>" type="text" size="25" />
+					<input id="pronamic_company_postal_code" name="_pronamic_company_postal_code" placeholder="<?php esc_attr_e('Postal Code', 'pronamic_companies'); ?>" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_postal_code', true)); ?>" type="text" size="10" />
+					<input id="pronamic_company_city" name="_pronamic_company_city" placeholder="<?php esc_attr_e('City', 'pronamic_companies'); ?>" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_city', true)); ?>" type="text" size="25" />
 					<br />
-					<input id="pronamic_company_country" name="pronamic_company_country" placeholder="<?php esc_attr_e('Country', 'pronamic_companies'); ?>" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_country', true)); ?>" type="text" size="42" />
+					<input id="pronamic_company_country" name="_pronamic_company_country" placeholder="<?php esc_attr_e('Country', 'pronamic_companies'); ?>" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_country', true)); ?>" type="text" size="42" />
 				</td>
 			</tr>
 			<tr>
@@ -198,25 +198,27 @@ function pronamic_companies_information_box($post) {
 						<?php _e('Mailing address equals visiting address.', 'pronamic_companies'); ?>
 					</label>
 					<br />
-					<textarea id="pronamic_company_address" name="pronamic_company_address" placeholder="<?php esc_attr_e('Address', 'pronamic_companies'); ?>" rows="1" cols="60"><?php echo esc_textarea(get_post_meta($post->ID, '_pronamic_company_address', true)); ?></textarea>
+					<textarea id="pronamic_company_address" name="_pronamic_company_address" placeholder="<?php esc_attr_e('Address', 'pronamic_companies'); ?>" rows="1" cols="60"><?php echo esc_textarea(get_post_meta($post->ID, '_pronamic_company_address', true)); ?></textarea>
 					<br />
-					<input id="pronamic_company_postal_code" name="pronamic_company_postal_code" placeholder="<?php esc_attr_e('Postal Code', 'pronamic_companies'); ?>" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_postal_code', true)); ?>" type="text" size="10" />
-					<input id="pronamic_company_city" name="pronamic_company_city" placeholder="<?php esc_attr_e('City', 'pronamic_companies'); ?>" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_city', true)); ?>" type="text" size="25" />
+					<input id="pronamic_company_postal_code" name="_pronamic_company_postal_code" placeholder="<?php esc_attr_e('Postal Code', 'pronamic_companies'); ?>" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_postal_code', true)); ?>" type="text" size="10" />
+					<input id="pronamic_company_city" name="_pronamic_company_city" placeholder="<?php esc_attr_e('City', 'pronamic_companies'); ?>" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_city', true)); ?>" type="text" size="25" />
 					<br />
-					<input id="pronamic_company_country" name="pronamic_company_country" placeholder="<?php esc_attr_e('Country', 'pronamic_companies'); ?>" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_country', true)); ?>" type="text" size="42" />
+					<input id="pronamic_company_country" name="_pronamic_company_country" placeholder="<?php esc_attr_e('Country', 'pronamic_companies'); ?>" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_country', true)); ?>" type="text" size="42" />
 				</td>
 			</tr>
+
 			<tr>
 				<th scope="col" colspan="2">
 					<h4 class="title"><?php _e('Phone', 'pronamic_companies'); ?></h3>
 				</th>
 			</tr>
+
 			<tr>
 				<th scope="row">
 					<label for="pronamic_company_phone_number"><?php _e('Phone Number', 'pronamic_companies'); ?></label>
 				</th>
 				<td>
-					<input id="pronamic_company_phone_number" name="pronamic_company_phone_number" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_phone_number', true)); ?>" type="tel" size="25" />
+					<input id="pronamic_company_phone_number" name="_pronamic_company_phone_number" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_phone_number', true)); ?>" type="tel" size="25" />
 				</td>
 			</tr>
 			<tr>
@@ -224,20 +226,22 @@ function pronamic_companies_information_box($post) {
 					<label for="pronamic_company_fax_number"><?php _e('Fax Number', 'pronamic_companies'); ?></label>
 				</th>
 				<td>
-					<input id="pronamic_company_fax_number" name="pronamic_company_fax_number" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_fax_number', true)); ?>" type="tel" size="25" />
+					<input id="pronamic_company_fax_number" name="_pronamic_company_fax_number" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_fax_number', true)); ?>" type="tel" size="25" />
 				</td>
 			</tr>
+
 			<tr>
 				<th scope="col" colspan="2">
 					<h4 class="title"><?php _e('Online', 'pronamic_companies'); ?></h3>
 				</th>
 			</tr>
+
 			<tr>
 				<th scope="row">
 					<label for="pronamic_company_email"><?php _e('E-mail Address', 'pronamic_companies'); ?></label>
 				</th>
 				<td>
-					<input id="pronamic_company_email" name="pronamic_company_email" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_email', true)); ?>" type="email" size="25" />
+					<input id="pronamic_company_email" name="_pronamic_company_email" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_email', true)); ?>" type="email" size="25" />
 				</td>
 			</tr>
 			<tr>
@@ -245,20 +249,22 @@ function pronamic_companies_information_box($post) {
 					<label for="pronamic_company_website"><?php _e('Website', 'pronamic_companies'); ?></label>
 				</th>
 				<td>
-					<input id="pronamic_company_website" name="pronamic_company_website" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_website', true)); ?>" type="url" size="25" />
+					<input id="pronamic_company_website" name="_pronamic_company_website" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_website', true)); ?>" type="url" size="25" />
 				</td>
 			</tr>
+
 			<tr>
 				<th scope="col" colspan="2">
 					<h4 class="title"><?php _e('Social Networks', 'pronamic_companies'); ?></h3>
 				</th>
 			</tr>
+
 			<tr>
 				<th scope="row">
 					<label for="pronamic_company_twitter"><?php _e('Twitter', 'pronamic_companies'); ?></label>
 				</th>
 				<td>
-					<input id="pronamic_company_twitter" name="pronamic_company_twitter" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_twitter', true)); ?>" type="text" size="25" />
+					<input id="pronamic_company_twitter" name="_pronamic_company_twitter" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_twitter', true)); ?>" type="text" size="25" />
 				</td>
 			</tr>
 			<tr>
@@ -266,7 +272,7 @@ function pronamic_companies_information_box($post) {
 					<label for="pronamic_company_facebook"><?php _e('Facebook', 'pronamic_companies'); ?></label>
 				</th>
 				<td>
-					<input id="pronamic_company_facebook" name="pronamic_company_facebook" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_facebook', true)); ?>" type="text" size="25" />
+					<input id="pronamic_company_facebook" name="_pronamic_company_facebook" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_facebook', true)); ?>" type="text" size="25" />
 				</td>
 			</tr>
 			<tr>
@@ -274,7 +280,7 @@ function pronamic_companies_information_box($post) {
 					<label for="pronamic_company_linkedin"><?php _e('LinkedIN', 'pronamic_companies'); ?></label>
 				</th>
 				<td>
-					<input id="pronamic_company_linkedin" name="pronamic_company_linkedin" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_linkedin', true)); ?>" type="text" size="25" />
+					<input id="pronamic_company_linkedin" name="_pronamic_company_linkedin" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_linkedin', true)); ?>" type="text" size="25" />
 				</td>
 			</tr>
 			<tr>
@@ -282,7 +288,7 @@ function pronamic_companies_information_box($post) {
 					<label for="pronamic_company_google_plus"><?php _e('Google+', 'pronamic_companies'); ?></label>
 				</th>
 				<td>
-					<input id="pronamic_company_google_plus" name="pronamic_company_google_plus" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_google_plus', true)); ?>" type="text" size="25" />
+					<input id="pronamic_company_google_plus" name="_pronamic_company_google_plus" value="<?php echo esc_attr(get_post_meta($post->ID, '_pronamic_company_google_plus', true)); ?>" type="text" size="25" />
 				</td>
 			</tr>
 		</tbody>
@@ -310,36 +316,26 @@ function pronamic_companies_save_postdata($post_id) {
 		return;
 		
 	// Save data
-	if(isset($_POST['pronamic_company_address'])) {
-		update_post_meta($post->ID, '_pronamic_company_address', $_POST['pronamic_company_address']);
-	}
+	$data = filter_input_array(INPUT_POST, array(
+		'_pronamic_company_address' => FILTER_SANITIZE_STRING , 
+		'_pronamic_company_postal_code' => FILTER_SANITIZE_STRING ,
+		'_pronamic_company_city' => FILTER_SANITIZE_STRING ,
+		'_pronamic_company_country' => FILTER_SANITIZE_STRING ,
 
-	if(isset($_POST['pronamic_company_postal_code'])) {
-		update_post_meta($post->ID, '_pronamic_company_postal_code', $_POST['pronamic_company_postal_code']);
-	}
+		'_pronamic_company_phone_number' => FILTER_SANITIZE_STRING ,
+		'_pronamic_company_fax_number' => FILTER_SANITIZE_STRING ,
 
-	if(isset($_POST['pronamic_company_city'])) {
-		update_post_meta($post->ID, '_pronamic_company_city', $_POST['pronamic_company_city']);
-	}
+		'_pronamic_company_email' => FILTER_SANITIZE_STRING ,
+		'_pronamic_company_website' => FILTER_SANITIZE_STRING ,
 
-	if(isset($_POST['pronamic_company_country'])) {
-		update_post_meta($post->ID, '_pronamic_company_country', $_POST['pronamic_company_country']);
-	}
+		'_pronamic_company_twitter' => FILTER_SANITIZE_STRING ,
+		'_pronamic_company_facebook' => FILTER_SANITIZE_STRING ,
+		'_pronamic_company_linkedin' => FILTER_SANITIZE_STRING ,
+		'_pronamic_company_google_plus' => FILTER_SANITIZE_STRING 
+	));
 
-	if(isset($_POST['pronamic_company_phone_number'])) {
-		update_post_meta($post->ID, '_pronamic_company_phone_number', $_POST['pronamic_company_phone_number']);
-	}
-
-	if(isset($_POST['pronamic_company_fax_number'])) {
-		update_post_meta($post->ID, '_pronamic_company_fax_number', $_POST['pronamic_company_fax_number']);
-	}
-
-	if(isset($_POST['pronamic_company_email'])) {
-		update_post_meta($post->ID, '_pronamic_company_email', $_POST['pronamic_company_email']);
-	}
-
-	if(isset($_POST['pronamic_company_website'])) {
-		update_post_meta($post->ID, '_pronamic_company_website', $_POST['pronamic_company_website']);
+	foreach($data as $key => $value) {
+		update_post_meta( $post_id , $key, $value );
 	}
 }
 
@@ -375,7 +371,7 @@ function pronamic_companies_set_columns($columns) {
 	return $newColumns;
 }
 
-add_filter('manage_edit-pronamic_company_columns' , 'pronamic_companies_set_columns');
+add_filter( 'manage_edit-pronamic_company_columns' , 'pronamic_companies_set_columns');
 
 function pronamic_companies_custom_columns($column, $post_id) {
 	switch($column) {
@@ -397,4 +393,19 @@ function pronamic_companies_custom_columns($column, $post_id) {
 	}
 }
 
-add_action('manage_posts_custom_column' , 'pronamic_companies_custom_columns', 10, 2 );
+add_action( 'manage_posts_custom_column' , 'pronamic_companies_custom_columns', 10, 2 );
+
+/**
+ * Posts 2 Posts
+ */
+function pronamic_companies_p2p() {
+	if ( function_exists( 'p2p_register_connection_type' ) ) {
+		p2p_register_connection_type( array(
+			'name' => 'posts_to_pronamic_companies',
+			'from' => 'post',
+			'to' => 'pronamic_company'
+		) );
+	}
+}
+
+add_action( 'wp_loaded', 'pronamic_companies_p2p' );
