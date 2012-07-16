@@ -59,7 +59,7 @@ function pronamic_companies_init() {
 		'query_var' => true ,
 		'capability_type' => 'post' ,
 		'has_archive' => true ,
-		'rewrite' => array('slug' => 'bedrijvengids') ,
+		'rewrite' => array( 'slug' => _x( 'companies', 'slug', 'pronamic_companies' ) ) , 
 		'menu_icon' => plugins_url('admin/icons/company.png', __FILE__) , 
 		'supports' => array('title', 'editor', 'author', 'thumbnail', 'custom-fields') 
 	));
@@ -82,7 +82,8 @@ function pronamic_companies_init() {
 				'menu_name' => __('Categories', 'pronamic_companies')
 			) , 
 			'show_ui' => true , 
-			'query_var' => true
+			'query_var' => true , 
+			'rewrite' => array( 'slug' => _x( 'company-category', 'slug', 'pronamic_companies' ) )
 		)
 	);
 
