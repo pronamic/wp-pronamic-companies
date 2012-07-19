@@ -4,7 +4,7 @@ Plugin Name: Pronamic Companies
 Plugin URI: http://pronamic.eu/wordpress/companies/
 Description: This plugin add some basic company directory functionality to WordPress
 
-Version: 1.0
+Version: 0.1
 Requires at least: 3.0
 
 Author: Pronamic
