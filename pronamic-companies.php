@@ -434,3 +434,4 @@ function pronamic_companies_p2p() {
 }
 
 add_action( 'wp_loaded', 'pronamic_companies_p2p' );
+
