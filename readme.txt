@@ -1,5 +1,5 @@
 === Pronamic Companies ===
-Contributors: pronamic, kareljantolsma 
+Contributors: pronamic, remcotolsma, kjtolsma 
 Tags: pronamic, companies
 Requires at least: 3.0
 Tested up to: 3.2
