@@ -411,7 +411,7 @@ function pronamic_companies_custom_columns($column, $post_id) {
 			if(is_string($terms)) {
 				echo $terms;
 			} else {
-				echo __('No Categorie', 'pronamic_companies');
+				echo __('No Category', 'pronamic_companies');
 			}
 
 			break;
