@@ -264,7 +264,7 @@ function pronamic_companies_information_box($post) {
 
 			<tr>
 				<th scope="row">
-					<label for="pronamic_company_twitter"><?php _e( 'Twitter', 'pronamic_companies' ); ?></label>
+					<label for="pronamic_company_twitter"><?php _e( 'Twitter Username', 'pronamic_companies' ); ?></label>
 				</th>
 				<td>
 					<input id="pronamic_company_twitter" name="_pronamic_company_twitter" value="<?php echo esc_attr( get_post_meta( $post->ID, '_pronamic_company_twitter', true ) ); ?>" type="text" size="25" class="regular-text" />
