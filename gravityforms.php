@@ -64,9 +64,9 @@ function pronamic_companies_gform_post_data( $post_data, $form, $lead ) {
 	// Form fields
 	foreach ( $form['fields'] as $field ) {
 		if ( isset( $field['isCompanyVisitingAddress'] ) ) {
-			$isCompanyVisitingAddress = filter_var( $field['isCompanyVisitingAddress'], FILTER_VALIDATE_BOOLEAN );
+			$is_company_visiting_address = filter_var( $field['isCompanyVisitingAddress'], FILTER_VALIDATE_BOOLEAN );
 
-			if ( $isCompanyVisitingAddress ) {
+			if ( $is_company_visiting_address ) {
 				$id = '' . $field['id'] . '.';
 				
 				$map['_pronamic_company_address'] = $id . '1'; // Street value
@@ -79,9 +79,9 @@ function pronamic_companies_gform_post_data( $post_data, $form, $lead ) {
 		}
 
 		if ( isset( $field['isCompanyMailingAddress'] ) ) {
-			$isCompanyVisitingAddress = filter_var( $field['isCompanyMailingAddress'], FILTER_VALIDATE_BOOLEAN );
+			$is_company_visiting_address = filter_var( $field['isCompanyMailingAddress'], FILTER_VALIDATE_BOOLEAN );
 
-			if ( $isCompanyVisitingAddress ) {
+			if ( $is_company_visiting_address ) {
 				$id = '' . $field['id'] . '.';
 				
 				$map['_pronamic_company_mailing_address'] = $id . '1'; // Street value
