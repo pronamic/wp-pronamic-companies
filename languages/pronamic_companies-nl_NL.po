@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic Companies\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-02 16:14+0100\n"
-"PO-Revision-Date: 2012-08-02 16:15+0100\n"
+"POT-Creation-Date: 2012-08-13 15:42+0100\n"
+"PO-Revision-Date: 2012-08-13 15:42+0100\n"
 "Last-Translator: Remco Tolsma <remco@pronamic.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "MIME-Version: 1.0\n"
@@ -16,298 +16,306 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: pronamic-companies.php:42
+#: pronamic-companies.php:44
 msgctxt "post type general name"
 msgid "Companies"
 msgstr "Bedrijven"
 
-#: pronamic-companies.php:43
+#: pronamic-companies.php:45
 msgctxt "post type singular name"
 msgid "Company"
 msgstr "Bedrijf"
 
-#: pronamic-companies.php:44
+#: pronamic-companies.php:46
 msgctxt "company"
 msgid "Add New"
 msgstr "Nieuwe toevoegen"
 
-#: pronamic-companies.php:45
+#: pronamic-companies.php:47
 msgid "Add New Company"
 msgstr "Nieuw bedrijf toevoegen"
 
-#: pronamic-companies.php:46
+#: pronamic-companies.php:48
 msgid "Edit Company"
 msgstr "Wijzig bedrijf"
 
-#: pronamic-companies.php:47
+#: pronamic-companies.php:49
 msgid "New Company"
 msgstr "Nieuw bedrijf"
 
-#: pronamic-companies.php:48
+#: pronamic-companies.php:50
 msgid "View Company"
 msgstr "Bekijk bedrijf"
 
-#: pronamic-companies.php:49
+#: pronamic-companies.php:51
 msgid "Search Companies"
 msgstr "Zoek bedrijven"
 
-#: pronamic-companies.php:50
+#: pronamic-companies.php:52
 msgid "No companies found"
 msgstr "Geen bedrijven gevonden"
 
-#: pronamic-companies.php:51
+#: pronamic-companies.php:53
 msgid "No companies found in Trash"
 msgstr "Geen bedrijven gevonden in de prullenbak"
 
-#: pronamic-companies.php:52
+#: pronamic-companies.php:54
 msgid "Parent Company:"
 msgstr "Bovenliggende bedrijf:"
 
-#: pronamic-companies.php:53
+#: pronamic-companies.php:55
 msgid "Companies"
 msgstr "Bedrijvengids"
 
-#: pronamic-companies.php:62
+#: pronamic-companies.php:64
 msgctxt "slug"
 msgid "companies"
 msgstr "bedrijvengids"
 
-#: pronamic-companies.php:72
+#: pronamic-companies.php:74
 msgctxt "category general name"
 msgid "Company Category"
 msgstr "Bedrijf categorie"
 
-#: pronamic-companies.php:73
+#: pronamic-companies.php:75
 msgctxt "category singular name"
 msgid "Company Category"
 msgstr "Bdrijf categorie"
 
-#: pronamic-companies.php:74
+#: pronamic-companies.php:76
 msgid "Search Company Categories"
 msgstr "Doorzoek bedrijf categorieen"
 
-#: pronamic-companies.php:75
+#: pronamic-companies.php:77
 msgid "All Company Categories"
 msgstr "Alle bedrijf categorieen"
 
-#: pronamic-companies.php:76
+#: pronamic-companies.php:78
 msgid "Parent Company Category"
 msgstr "Bovenliggende bedrijf categorie"
 
-#: pronamic-companies.php:77
+#: pronamic-companies.php:79
 msgid "Parent Company Category:"
 msgstr "Bovenliggende bedrijf categorie:"
 
-#: pronamic-companies.php:78
+#: pronamic-companies.php:80
 msgid "Edit Company Category"
 msgstr "Wijzig bedrijf categorie"
 
-#: pronamic-companies.php:79
+#: pronamic-companies.php:81
 msgid "Update Company Category"
 msgstr "Update bedrijf categorie"
 
-#: pronamic-companies.php:80
+#: pronamic-companies.php:82
 msgid "Add New Company Category"
 msgstr "Nieuwe bedrijf categorie toevoegen"
 
-#: pronamic-companies.php:81
+#: pronamic-companies.php:83
 msgid "New Company Category Name"
 msgstr "Nieuwe bedrijf categorie naam"
 
-#: pronamic-companies.php:82
-#: pronamic-companies.php:387
+#: pronamic-companies.php:84
+#: pronamic-companies.php:393
 msgid "Categories"
 msgstr "Categorieën"
 
-#: pronamic-companies.php:86
+#: pronamic-companies.php:88
 msgctxt "slug"
 msgid "company-category"
 msgstr "bedrijfscategorie"
 
-#: pronamic-companies.php:95
+#: pronamic-companies.php:97
 msgctxt "category general name"
 msgid "Company Character"
 msgstr "Bedrijf karakter"
 
-#: pronamic-companies.php:96
+#: pronamic-companies.php:98
 msgctxt "category singular name"
 msgid "Company Character"
 msgstr "Bedrijf karakter"
 
-#: pronamic-companies.php:97
+#: pronamic-companies.php:99
 msgid "Search Company Characters"
 msgstr "Doorzoek bedrijf karakters"
 
-#: pronamic-companies.php:98
+#: pronamic-companies.php:100
 msgid "All Company Characters"
 msgstr "Alle bedrijf karakters"
 
-#: pronamic-companies.php:99
+#: pronamic-companies.php:101
 msgid "Parent Company Character"
 msgstr "Bovenliggende bedrijf karakter"
 
-#: pronamic-companies.php:100
+#: pronamic-companies.php:102
 msgid "Parent Company Character:"
 msgstr "Bovenliggende bedrijf karakter:"
 
-#: pronamic-companies.php:101
+#: pronamic-companies.php:103
 msgid "Edit Company Character"
 msgstr "Wijzig bedrijf karakter"
 
-#: pronamic-companies.php:102
+#: pronamic-companies.php:104
 msgid "Update Company Character"
 msgstr "Update bedrijf karakter"
 
-#: pronamic-companies.php:103
+#: pronamic-companies.php:105
 msgid "Add New Company Character"
 msgstr "Nieuwe bedrijf karakter toevoegen"
 
-#: pronamic-companies.php:104
+#: pronamic-companies.php:106
 msgid "New Company Character Name"
 msgstr "Nieuwe bedrijf karakter naam"
 
-#: pronamic-companies.php:105
+#: pronamic-companies.php:107
 msgid "Characters"
 msgstr "Karakters"
 
-#: pronamic-companies.php:117
+#: pronamic-companies.php:119
 msgctxt "category general name"
 msgid "Company Region"
 msgstr "Bedrijf regio"
 
-#: pronamic-companies.php:118
+#: pronamic-companies.php:120
 msgctxt "category singular name"
 msgid "Company Region"
 msgstr "Bedrijf regio"
 
-#: pronamic-companies.php:119
+#: pronamic-companies.php:121
 msgid "Search Company Regions"
 msgstr "Zoek bedrijf regio's"
 
-#: pronamic-companies.php:120
+#: pronamic-companies.php:122
 msgid "All Company Regions"
 msgstr "Alle bedrijf regios"
 
-#: pronamic-companies.php:121
+#: pronamic-companies.php:123
 msgid "Parent Company Region"
 msgstr "Bovenliggende bedrijf regio"
 
-#: pronamic-companies.php:122
+#: pronamic-companies.php:124
 msgid "Parent Company Region:"
 msgstr "Bovenliggende bedrijf regio:"
 
-#: pronamic-companies.php:123
+#: pronamic-companies.php:125
 msgid "Edit Company Region"
 msgstr "Wijzig bedrijf regio"
 
-#: pronamic-companies.php:124
+#: pronamic-companies.php:126
 msgid "Update Company Region"
 msgstr "Update bedrijf regio"
 
-#: pronamic-companies.php:125
+#: pronamic-companies.php:127
 msgid "Add New Company Region"
 msgstr "Nieuwe bedrijf regio toevoegen"
 
-#: pronamic-companies.php:126
+#: pronamic-companies.php:128
 msgid "New Company Region Name"
 msgstr "Nieuwe bedrijf regio naam"
 
-#: pronamic-companies.php:127
+#: pronamic-companies.php:129
 msgid "Regions"
 msgstr "Regio's"
 
-#: pronamic-companies.php:154
+#: pronamic-companies.php:160
 msgid "Company information"
 msgstr "Bedrijf informatie"
 
-#: pronamic-companies.php:176
+#: pronamic-companies.php:182
 msgid "Addresses"
 msgstr "Adressen"
 
-#: pronamic-companies.php:181
+#: pronamic-companies.php:187
 msgid "Visiting Address"
 msgstr "Bezoekadres"
 
-#: pronamic-companies.php:184
-#: pronamic-companies.php:204
-#: pronamic-companies.php:385
+#: pronamic-companies.php:190
+#: pronamic-companies.php:210
+#: pronamic-companies.php:391
 msgid "Address"
 msgstr "Adres"
 
-#: pronamic-companies.php:186
-#: pronamic-companies.php:206
+#: pronamic-companies.php:192
+#: pronamic-companies.php:212
 msgid "Postal Code"
 msgstr "Postcode"
 
-#: pronamic-companies.php:187
-#: pronamic-companies.php:207
+#: pronamic-companies.php:193
+#: pronamic-companies.php:213
 msgid "City"
 msgstr "Plaats"
 
-#: pronamic-companies.php:189
-#: pronamic-companies.php:209
+#: pronamic-companies.php:195
+#: pronamic-companies.php:215
 msgid "Country"
 msgstr "Land"
 
-#: pronamic-companies.php:194
+#: pronamic-companies.php:200
 msgid "Mailing Address"
 msgstr "Postadres"
 
-#: pronamic-companies.php:200
+#: pronamic-companies.php:206
 msgid "Mailing address equals visiting address."
 msgstr "Postadres gelijk aan bezoekadres."
 
-#: pronamic-companies.php:215
+#: pronamic-companies.php:221
 msgid "Phone"
 msgstr "Telefoonnummers"
 
-#: pronamic-companies.php:221
+#: pronamic-companies.php:227
 msgid "Phone Number"
 msgstr "Telefoonnummer"
 
-#: pronamic-companies.php:229
+#: pronamic-companies.php:235
 msgid "Fax Number"
 msgstr "Faxnummer"
 
-#: pronamic-companies.php:238
+#: pronamic-companies.php:244
 msgid "Online"
 msgstr "Online"
 
-#: pronamic-companies.php:244
+#: pronamic-companies.php:250
 msgid "E-mail Address"
 msgstr "E-mailadres"
 
-#: pronamic-companies.php:252
+#: pronamic-companies.php:258
 msgid "Website"
 msgstr "Website"
 
-#: pronamic-companies.php:261
+#: pronamic-companies.php:267
 msgid "Social Networks"
 msgstr "Sociale netwerken"
 
-#: pronamic-companies.php:267
+#: pronamic-companies.php:273
 msgid "Twitter Username"
 msgstr "Twitter gebruikersnaam"
 
-#: pronamic-companies.php:275
+#: pronamic-companies.php:281
 msgid "Facebook"
 msgstr "Facebook"
 
-#: pronamic-companies.php:283
+#: pronamic-companies.php:289
 msgid "LinkedIN"
 msgstr "LinkedIN"
 
-#: pronamic-companies.php:291
+#: pronamic-companies.php:297
 msgid "Google+"
 msgstr "Google+"
 
-#: pronamic-companies.php:378
+#: pronamic-companies.php:384
 msgid "Company"
 msgstr "Bedrijf"
 
-#: pronamic-companies.php:415
+#: pronamic-companies.php:421
 msgid "No Category"
 msgstr "Geen categorie"
+
+#: pronamic-companies.php:458
+msgid "Is Company Visiting Address"
+msgstr "Is bedrijf bezoekadres"
+
+#: pronamic-companies.php:465
+msgid "Is Company Mailing Address"
+msgstr "Is bedrijf postadres"
 
 #~ msgid "Email address"
 #~ msgstr "E-mailadres"

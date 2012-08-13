@@ -33,10 +33,12 @@ register_activation_hook( __FILE__, 'pronamic_companies_rewrite_flush' );
  * Register post type
  */
 function pronamic_companies_init() {
+	// Text domain
 	$relPath = dirname( plugin_basename( __FILE__ ) ) . '/languages/';
 
 	load_plugin_textdomain( 'pronamic_companies', false, $relPath );
 
+	// Post types
 	register_post_type( 'pronamic_company', array(
 		'labels' => array(
 			'name' => _x( 'Companies', 'post type general name', 'pronamic_companies' ) , 
@@ -130,6 +132,9 @@ function pronamic_companies_init() {
 			'query_var' => true
 		)
 	);
+
+	// Require
+	require_once 'gravityforms.php';
 }
 
 add_action( 'init', 'pronamic_companies_init' );
@@ -325,7 +330,7 @@ function pronamic_companies_save_post( $post_id ) {
 		'_pronamic_company_postal_code' => FILTER_SANITIZE_STRING ,
 		'_pronamic_company_city' => FILTER_SANITIZE_STRING ,
 		'_pronamic_company_country' => FILTER_SANITIZE_STRING ,
-		// Visiting Address
+		// Mailing Address
 		'_pronamic_company_mailing_address' => FILTER_SANITIZE_STRING , 
 		'_pronamic_company_mailing_postal_code' => FILTER_SANITIZE_STRING ,
 		'_pronamic_company_mailing_city' => FILTER_SANITIZE_STRING ,
@@ -435,4 +440,3 @@ function pronamic_companies_p2p() {
 }
 
 add_action( 'wp_loaded', 'pronamic_companies_p2p' );
-
