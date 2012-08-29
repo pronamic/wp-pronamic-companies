@@ -34,36 +34,36 @@ register_activation_hook( __FILE__, 'pronamic_companies_rewrite_flush' );
  */
 function pronamic_companies_init() {
 	// Text domain
-	$relPath = dirname( plugin_basename( __FILE__ ) ) . '/languages/';
+	$rel_path = dirname( plugin_basename( __FILE__ ) ) . '/languages/';
 
-	load_plugin_textdomain( 'pronamic_companies', false, $relPath );
+	load_plugin_textdomain( 'pronamic_companies', false, $rel_path );
 
 	// Post types
 	register_post_type( 'pronamic_company', array(
-		'labels' => array(
-			'name' => _x( 'Companies', 'post type general name', 'pronamic_companies' ) , 
-			'singular_name' => _x( 'Company', 'post type singular name', 'pronamic_companies' ) , 
-			'add_new' => _x( 'Add New', 'company', 'pronamic_companies' ) , 
-			'add_new_item' => __( 'Add New Company', 'pronamic_companies' ) , 
-			'edit_item' => __( 'Edit Company', 'pronamic_companies' ) , 
-			'new_item' => __( 'New Company', 'pronamic_companies' ) , 
-			'view_item' => __( 'View Company', 'pronamic_companies' ) , 
-			'search_items' => __( 'Search Companies', 'pronamic_companies' ) , 
-			'not_found' =>  __( 'No companies found', 'pronamic_companies' ) , 
+		'labels'             => array(
+			'name'               => _x( 'Companies', 'post type general name', 'pronamic_companies' ) , 
+			'singular_name'      => _x( 'Company', 'post type singular name', 'pronamic_companies' ) , 
+			'add_new'            => _x( 'Add New', 'company', 'pronamic_companies' ) , 
+			'add_new_item'       => __( 'Add New Company', 'pronamic_companies' ) , 
+			'edit_item'          => __( 'Edit Company', 'pronamic_companies' ) , 
+			'new_item'           => __( 'New Company', 'pronamic_companies' ) , 
+			'view_item'          => __( 'View Company', 'pronamic_companies' ) , 
+			'search_items'       => __( 'Search Companies', 'pronamic_companies' ) , 
+			'not_found'          => __( 'No companies found', 'pronamic_companies' ) , 
 			'not_found_in_trash' => __( 'No companies found in Trash', 'pronamic_companies' ) ,  
-			'parent_item_colon' => __( 'Parent Company:', 'pronamic_companies' ) , 
-			'menu_name' => __( 'Companies', 'pronamic_companies' )
+			'parent_item_colon'  => __( 'Parent Company:', 'pronamic_companies' ) , 
+			'menu_name'          => __( 'Companies', 'pronamic_companies' )
 		) , 
-		'public' => true ,
+		'public'             => true ,
 		'publicly_queryable' => true ,
-		'show_ui' => true ,
-		'show_in_menu' => true ,
-		'query_var' => true ,
-		'capability_type' => 'post' ,
-		'has_archive' => true ,
-		'rewrite' => array( 'slug' => _x( 'companies', 'slug', 'pronamic_companies' ) ) , 
-		'menu_icon' => plugins_url( 'admin/icons/company.png', __FILE__ ) , 
-		'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields' ) 
+		'show_ui'            => true ,
+		'show_in_menu'       => true ,
+		'query_var'          => true ,
+		'capability_type'    => 'post' ,
+		'has_archive'        => true ,
+		'rewrite'            => array( 'slug' => _x( 'companies', 'slug', 'pronamic_companies' ) ) , 
+		'menu_icon'          => plugins_url( 'admin/icons/company.png', __FILE__ ) , 
+		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields' ) 
 	));
 
 	/* Include the company category taxonomy */
@@ -71,21 +71,21 @@ function pronamic_companies_init() {
 		array( 
 			'hierarchical' => true , 
 			'labels' => array(
-				'name' => _x( 'Company Category', 'category general name', 'pronamic_companies' ) ,
-				'singular_name' => _x( 'Company Category', 'category singular name', 'pronamic_companies' ) ,
-				'search_items' =>  __( 'Search Company Categories', 'pronamic_companies' ) , 
-				'all_items' => __( 'All Company Categories', 'pronamic_companies' ) , 
-				'parent_item' => __( 'Parent Company Category', 'pronamic_companies' ) , 
+				'name'              => _x( 'Company Category', 'category general name', 'pronamic_companies' ) ,
+				'singular_name'     => _x( 'Company Category', 'category singular name', 'pronamic_companies' ) ,
+				'search_items'      => __( 'Search Company Categories', 'pronamic_companies' ) , 
+				'all_items'         => __( 'All Company Categories', 'pronamic_companies' ) , 
+				'parent_item'       => __( 'Parent Company Category', 'pronamic_companies' ) , 
 				'parent_item_colon' => __( 'Parent Company Category:', 'pronamic_companies' ) ,
-				'edit_item' => __( 'Edit Company Category', 'pronamic_companies' ) ,
-				'update_item' => __( 'Update Company Category', 'pronamic_companies' ) ,
-				'add_new_item' => __( 'Add New Company Category', 'pronamic_companies' ) ,
-				'new_item_name' => __( 'New Company Category Name', 'pronamic_companies' ) ,
-				'menu_name' => __( 'Categories', 'pronamic_companies' )
+				'edit_item'         => __( 'Edit Company Category', 'pronamic_companies' ) ,
+				'update_item'       => __( 'Update Company Category', 'pronamic_companies' ) ,
+				'add_new_item'      => __( 'Add New Company Category', 'pronamic_companies' ) ,
+				'new_item_name'     => __( 'New Company Category Name', 'pronamic_companies' ) ,
+				'menu_name'         => __( 'Categories', 'pronamic_companies' )
 			) , 
-			'show_ui' => true , 
-			'query_var' => true , 
-			'rewrite' => array( 'slug' => _x( 'company-category', 'slug', 'pronamic_companies' ) )
+			'show_ui'      => true , 
+			'query_var'    => true , 
+			'rewrite'      => array( 'slug' => _x( 'company-category', 'slug', 'pronamic_companies' ) )
 		)
 	);
 
@@ -93,21 +93,21 @@ function pronamic_companies_init() {
 	register_taxonomy( 'pronamic_company_character', 'pronamic_company', 
 		array( 
 			'hierarchical' => false , 
-			'labels' => array(
-				'name' => _x( 'Company Character', 'category general name', 'pronamic_companies' ) ,
-				'singular_name' => _x( 'Company Character', 'category singular name', 'pronamic_companies' ) ,
-				'search_items' =>  __( 'Search Company Characters', 'pronamic_companies' ) , 
-				'all_items' => __( 'All Company Characters', 'pronamic_companies' ) , 
-				'parent_item' => __( 'Parent Company Character', 'pronamic_companies' ) , 
+			'labels'       => array(
+				'name'              => _x( 'Company Character', 'category general name', 'pronamic_companies' ) ,
+				'singular_name'     => _x( 'Company Character', 'category singular name', 'pronamic_companies' ) ,
+				'search_items'      => __( 'Search Company Characters', 'pronamic_companies' ) , 
+				'all_items'         => __( 'All Company Characters', 'pronamic_companies' ) , 
+				'parent_item'       => __( 'Parent Company Character', 'pronamic_companies' ) , 
 				'parent_item_colon' => __( 'Parent Company Character:', 'pronamic_companies' ) ,
-				'edit_item' => __( 'Edit Company Character', 'pronamic_companies' ) ,
-				'update_item' => __( 'Update Company Character', 'pronamic_companies' ) ,
-				'add_new_item' => __( 'Add New Company Character', 'pronamic_companies' ) ,
-				'new_item_name' => __( 'New Company Character Name', 'pronamic_companies' ) ,
-				'menu_name' => __( 'Characters', 'pronamic_companies' )
+				'edit_item'         => __( 'Edit Company Character', 'pronamic_companies' ) ,
+				'update_item'       => __( 'Update Company Character', 'pronamic_companies' ) ,
+				'add_new_item'      => __( 'Add New Company Character', 'pronamic_companies' ) ,
+				'new_item_name'     => __( 'New Company Character Name', 'pronamic_companies' ) ,
+				'menu_name'         => __( 'Characters', 'pronamic_companies' )
 			) , 
-			'show_ui' => true , 
-			'query_var' => true
+			'show_ui'      => true , 
+			'query_var'    => true
 		)
 	);
 	
@@ -115,21 +115,21 @@ function pronamic_companies_init() {
 	register_taxonomy( 'pronamic_company_region', 'pronamic_company', 
 		array( 
 			'hierarchical' => true , 
-			'labels' => array(
-				'name' => _x( 'Company Region', 'category general name', 'pronamic_companies' ) ,
-				'singular_name' => _x( 'Company Region', 'category singular name', 'pronamic_companies' ) ,
-				'search_items' =>  __( 'Search Company Regions', 'pronamic_companies' ) ,
-				'all_items' => __( 'All Company Regions', 'pronamic_companies' ) ,
-				'parent_item' => __( 'Parent Company Region', 'pronamic_companies' ) ,
+			'labels'       => array(
+				'name'              => _x( 'Company Region', 'category general name', 'pronamic_companies' ) ,
+				'singular_name'     => _x( 'Company Region', 'category singular name', 'pronamic_companies' ) ,
+				'search_items'      => __( 'Search Company Regions', 'pronamic_companies' ) ,
+				'all_items'         => __( 'All Company Regions', 'pronamic_companies' ) ,
+				'parent_item'       => __( 'Parent Company Region', 'pronamic_companies' ) ,
 				'parent_item_colon' => __( 'Parent Company Region:', 'pronamic_companies' ) ,
-				'edit_item' => __( 'Edit Company Region', 'pronamic_companies' ) ,
-				'update_item' => __( 'Update Company Region', 'pronamic_companies' ) ,
-				'add_new_item' => __( 'Add New Company Region', 'pronamic_companies' ) ,
-				'new_item_name' => __( 'New Company Region Name', 'pronamic_companies' ) ,
-				'menu_name' => __( 'Regions', 'pronamic_companies' )
+				'edit_item'         => __( 'Edit Company Region', 'pronamic_companies' ) ,
+				'update_item'       => __( 'Update Company Region', 'pronamic_companies' ) ,
+				'add_new_item'      => __( 'Add New Company Region', 'pronamic_companies' ) ,
+				'new_item_name'     => __( 'New Company Region Name', 'pronamic_companies' ) ,
+				'menu_name'         => __( 'Regions', 'pronamic_companies' )
 			) , 
-			'show_ui' => true , 
-			'query_var' => true
+			'show_ui'      => true , 
+			'query_var'    => true
 		)
 	);
 
@@ -440,3 +440,26 @@ function pronamic_companies_p2p() {
 }
 
 add_action( 'wp_loaded', 'pronamic_companies_p2p' );
+
+/**
+ * Admin menu
+ */
+function pronamic_companies_admin_menu() {
+	add_submenu_page( 
+		'edit.php?post_type=pronamic_company' , // parent_slug
+		__( 'Companies Export', 'pronamic_companies' ) , // page_title
+		__( 'Export', 'pronamic_companies' ), // menu_title
+		'read' , // capability
+		'pronamic_companies_export' , // menu_slug
+		'pronamic_companies_export_page' // function 
+	);
+}
+
+add_action( 'admin_menu', 'pronamic_companies_admin_menu' );
+
+/**
+ * Page export
+ */
+function pronamic_companies_export_page() {
+	include 'admin/export.php';
+}

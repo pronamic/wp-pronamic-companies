@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic Companies\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-13 15:42+0100\n"
-"PO-Revision-Date: 2012-08-13 15:42+0100\n"
+"POT-Creation-Date: 2012-08-29 09:48+0100\n"
+"PO-Revision-Date: 2012-08-29 09:48+0100\n"
 "Last-Translator: Remco Tolsma <remco@pronamic.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "MIME-Version: 1.0\n"
@@ -15,6 +15,14 @@ msgstr ""
 "X-Poedit-Country: NETHERLANDS\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: gravityforms.php:16
+msgid "Is Company Visiting Address"
+msgstr "Is bedrijf bezoekadres"
+
+#: gravityforms.php:23
+msgid "Is Company Mailing Address"
+msgstr "Is bedrijf postadres"
 
 #: pronamic-companies.php:44
 msgctxt "post type general name"
@@ -115,7 +123,8 @@ msgid "New Company Category Name"
 msgstr "Nieuwe bedrijf categorie naam"
 
 #: pronamic-companies.php:84
-#: pronamic-companies.php:393
+#: pronamic-companies.php:392
+#: admin/export.php:71
 msgid "Categories"
 msgstr "Categorieën"
 
@@ -216,106 +225,140 @@ msgstr "Nieuwe bedrijf regio naam"
 msgid "Regions"
 msgstr "Regio's"
 
-#: pronamic-companies.php:160
+#: pronamic-companies.php:159
 msgid "Company information"
 msgstr "Bedrijf informatie"
 
-#: pronamic-companies.php:182
+#: pronamic-companies.php:181
 msgid "Addresses"
 msgstr "Adressen"
 
-#: pronamic-companies.php:187
+#: pronamic-companies.php:186
+#: admin/export.php:63
 msgid "Visiting Address"
 msgstr "Bezoekadres"
 
-#: pronamic-companies.php:190
-#: pronamic-companies.php:210
-#: pronamic-companies.php:391
+#: pronamic-companies.php:189
+#: pronamic-companies.php:209
+#: pronamic-companies.php:390
+#: admin/export.php:76
+#: admin/export.php:81
 msgid "Address"
 msgstr "Adres"
 
-#: pronamic-companies.php:192
-#: pronamic-companies.php:212
+#: pronamic-companies.php:191
+#: pronamic-companies.php:211
+#: admin/export.php:77
+#: admin/export.php:82
 msgid "Postal Code"
 msgstr "Postcode"
 
-#: pronamic-companies.php:193
-#: pronamic-companies.php:213
+#: pronamic-companies.php:192
+#: pronamic-companies.php:212
+#: admin/export.php:78
+#: admin/export.php:83
 msgid "City"
 msgstr "Plaats"
 
-#: pronamic-companies.php:195
-#: pronamic-companies.php:215
+#: pronamic-companies.php:194
+#: pronamic-companies.php:214
+#: admin/export.php:79
+#: admin/export.php:84
 msgid "Country"
 msgstr "Land"
 
-#: pronamic-companies.php:200
+#: pronamic-companies.php:199
+#: admin/export.php:65
 msgid "Mailing Address"
 msgstr "Postadres"
 
-#: pronamic-companies.php:206
+#: pronamic-companies.php:205
 msgid "Mailing address equals visiting address."
 msgstr "Postadres gelijk aan bezoekadres."
 
-#: pronamic-companies.php:221
+#: pronamic-companies.php:220
 msgid "Phone"
 msgstr "Telefoonnummers"
 
-#: pronamic-companies.php:227
+#: pronamic-companies.php:226
 msgid "Phone Number"
 msgstr "Telefoonnummer"
 
-#: pronamic-companies.php:235
+#: pronamic-companies.php:234
 msgid "Fax Number"
 msgstr "Faxnummer"
 
-#: pronamic-companies.php:244
+#: pronamic-companies.php:243
 msgid "Online"
 msgstr "Online"
 
-#: pronamic-companies.php:250
+#: pronamic-companies.php:249
 msgid "E-mail Address"
 msgstr "E-mailadres"
 
-#: pronamic-companies.php:258
+#: pronamic-companies.php:257
 msgid "Website"
 msgstr "Website"
 
-#: pronamic-companies.php:267
+#: pronamic-companies.php:266
 msgid "Social Networks"
 msgstr "Sociale netwerken"
 
-#: pronamic-companies.php:273
+#: pronamic-companies.php:272
 msgid "Twitter Username"
 msgstr "Twitter gebruikersnaam"
 
-#: pronamic-companies.php:281
+#: pronamic-companies.php:280
 msgid "Facebook"
 msgstr "Facebook"
 
-#: pronamic-companies.php:289
+#: pronamic-companies.php:288
 msgid "LinkedIN"
 msgstr "LinkedIN"
 
-#: pronamic-companies.php:297
+#: pronamic-companies.php:296
 msgid "Google+"
 msgstr "Google+"
 
-#: pronamic-companies.php:384
+#: pronamic-companies.php:383
 msgid "Company"
 msgstr "Bedrijf"
 
-#: pronamic-companies.php:421
+#: pronamic-companies.php:420
 msgid "No Category"
 msgstr "Geen categorie"
 
-#: pronamic-companies.php:458
-msgid "Is Company Visiting Address"
-msgstr "Is bedrijf bezoekadres"
+#: pronamic-companies.php:450
+#: admin/export.php:5
+msgid "Companies Export"
+msgstr "Bedrijven exporteren"
 
-#: pronamic-companies.php:465
-msgid "Is Company Mailing Address"
-msgstr "Is bedrijf postadres"
+#: pronamic-companies.php:451
+msgid "Export"
+msgstr "Exporteren"
+
+#: admin/export.php:61
+msgid "Name"
+msgstr "Naam"
+
+#: admin/export.php:67
+msgid "Subscription"
+msgstr "Abonnement"
+
+#: admin/export.php:69
+msgid "User"
+msgstr "Gebruiker"
+
+#: admin/export.php:88
+msgid "Username"
+msgstr "Gebruikersnaam"
+
+#: admin/export.php:89
+msgid "E-mail"
+msgstr "E-mail"
+
+#~ msgid "ID"
+#~ msgstr "ID"
 
 #~ msgid "Email address"
 #~ msgstr "E-mailadres"
@@ -511,9 +554,6 @@ msgstr "Is bedrijf postadres"
 #~ msgid "General"
 #~ msgstr "Algemeen"
 
-#~ msgid "ID"
-#~ msgstr "ID"
-
 #~ msgid "Transaction"
 #~ msgstr "Transactie"
 
@@ -522,9 +562,6 @@ msgstr "Is bedrijf postadres"
 
 #~ msgid "Transaction ID"
 #~ msgstr "Transactie ID"
-
-#~ msgid "Description"
-#~ msgstr "Beschrijving"
 
 #~ msgid "Amount"
 #~ msgstr "Bedrag"
@@ -537,9 +574,6 @@ msgstr "Is bedrijf postadres"
 
 #~ msgid "Consumer"
 #~ msgstr "Consument"
-
-#~ msgid "Name"
-#~ msgstr "Naam"
 
 #~ msgid "Source"
 #~ msgstr "Bron"
@@ -912,9 +946,6 @@ msgstr "Is bedrijf postadres"
 
 #~ msgid "Error"
 #~ msgstr "Fout"
-
-#~ msgid "Expired"
-#~ msgstr "Verlopen"
 
 #~ msgid "Page:"
 #~ msgstr "Pagina:"
