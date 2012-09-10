@@ -40,6 +40,10 @@ function pronamic_companies_init() {
 
 	load_plugin_textdomain( 'pronamic_companies', false, $rel_path );
 
+	// Require
+	require_once dirname( __FILE__ ) . '/includes/taxonomy.php';
+	require_once dirname( __FILE__ ) . '/includes/gravityforms.php';
+
 	// Post types
 	register_post_type( 'pronamic_company', array(
 		'labels'             => array(
@@ -69,9 +73,6 @@ function pronamic_companies_init() {
 	));
 
 	pronamic_companies_create_taxonomies();
-
-	// Require
-	require_once 'includes/gravityforms.php';
 }
 
 add_action( 'init', 'pronamic_companies_init' );
