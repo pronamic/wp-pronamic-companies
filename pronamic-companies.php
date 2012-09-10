@@ -105,7 +105,7 @@ function pronamic_companies_add_information_box() {
 /**
  * Print metaboxes
  */
-function pronamic_companies_information_box($post) {
+function pronamic_companies_information_box( $post ) {
 	global $post;
 
 	wp_nonce_field( plugin_basename( __FILE__ ), 'pronamic_companies_nonce' );
