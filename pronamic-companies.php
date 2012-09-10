@@ -32,7 +32,7 @@ register_activation_hook( __FILE__, 'pronamic_companies_rewrite_flush' );
 ////////////////////////////////////////////////////////////
 
 /**
- * Register post type
+ * Initialize
  */
 function pronamic_companies_init() {
 	// Text domain
@@ -76,6 +76,77 @@ function pronamic_companies_init() {
 }
 
 add_action( 'init', 'pronamic_companies_init' );
+
+
+////////////////////////////////////////////////////////////
+
+/**
+ * Admin initialize
+ */
+function pronamic_companies_admin_init() {
+	add_settings_section(
+		'pronamic_copmanies_permalink', // id
+		__( 'Companies', 'pronamic_companies' ), // title
+		'pronamic_companies_settings_section', // callback
+		'permalink'
+	);
+
+	add_settings_field( 
+		'pronamic_company_category_base', // id
+		__( 'Category base', 'pronamic_companies' ), // title
+		'pronamic_company_category_base_input',  // callback
+		'permalink', // page
+		'pronamic_copmanies_permalink', // section 
+		array( 'label_for' => 'pronamic_company_category_base' ) // args 
+	);
+
+	add_settings_field( 
+		'pronamic_company_character_base', // id
+		__( 'Character base', 'pronamic_companies' ), // title
+		'pronamic_company_category_base_input',  // callback
+		'permalink', // page
+		'pronamic_copmanies_permalink', // section 
+		array( 'label_for' => 'pronamic_company_character_base' ) // args 
+	);
+
+	add_settings_field( 
+		'pronamic_company_region_base', // id
+		__( 'Region base', 'pronamic_companies' ), // title
+		'pronamic_company_region_base_input',  // callback
+		'permalink', // page
+		'pronamic_copmanies_permalink', // section 
+		array( 'label_for' => 'pronamic_company_region_base' ) // args 
+	);
+
+	add_settings_field( 
+		'pronamic_company_keyword', // id
+		__( 'Region base', 'pronamic_companies' ), // title
+		'pronamic_company_keyword_input',  // callback
+		'permalink', // page
+		'pronamic_copmanies_permalink', // section 
+		array( 'label_for' => 'pronamic_company_keyword' ) // args 
+	);
+
+	add_settings_field( 
+		'pronamic_company_brand', // id
+		__( 'Brand base', 'pronamic_companies' ), // title
+		'pronamic_company_brand_input',  // callback
+		'permalink', // page
+		'pronamic_copmanies_permalink', // section 
+		array( 'label_for' => 'pronamic_company_brand' ) // args 
+	);
+
+	add_settings_field( 
+		'pronamic_company_type', // id
+		__( 'Type base', 'pronamic_companies' ), // title
+		'pronamic_company_type_input',  // callback
+		'permalink', // page
+		'pronamic_copmanies_permalink', // section 
+		array( 'label_for' => 'pronamic_company_type' ) // args 
+	);
+}
+
+add_action( 'admin_init', 'pronamic_companies_admin_init' );
 
 ////////////////////////////////////////////////////////////
 
