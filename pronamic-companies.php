@@ -136,7 +136,7 @@ function pronamic_companies_init() {
 	);
 
 	// Require
-	require_once 'gravityforms.php';
+	require_once 'includes/gravityforms.php';
 }
 
 add_action( 'init', 'pronamic_companies_init' );
