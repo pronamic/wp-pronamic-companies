@@ -372,7 +372,7 @@ function pronamic_companies_p2p() {
 		p2p_register_connection_type( array(
 			'name' => 'posts_to_pronamic_companies',
 			'from' => 'post',
-			'to' => 'pronamic_company'
+			'to'   => 'pronamic_company'
 		) );
 	}
 }
