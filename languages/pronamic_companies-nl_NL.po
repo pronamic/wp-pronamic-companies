@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic Companies\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-10 13:38+0100\n"
-"PO-Revision-Date: 2012-09-10 13:39+0100\n"
+"POT-Creation-Date: 2012-09-11 13:56+0100\n"
+"PO-Revision-Date: 2012-09-11 13:56+0100\n"
 "Last-Translator: Remco Tolsma <remco@pronamic.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -17,165 +17,205 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: pronamic-companies.php:50
-msgctxt "post type general name"
-msgid "Companies"
-msgstr "Bedrijven"
-
-#: pronamic-companies.php:51
-msgctxt "post type singular name"
-msgid "Company"
-msgstr "Bedrijf"
-
-#: pronamic-companies.php:52
-msgctxt "company"
-msgid "Add New"
-msgstr "Nieuwe toevoegen"
-
-#: pronamic-companies.php:53
-msgid "Add New Company"
-msgstr "Nieuw bedrijf toevoegen"
-
-#: pronamic-companies.php:54
-msgid "Edit Company"
-msgstr "Wijzig bedrijf"
-
-#: pronamic-companies.php:55
-msgid "New Company"
-msgstr "Nieuw bedrijf"
-
-#: pronamic-companies.php:56
-msgid "View Company"
-msgstr "Bekijk bedrijf"
-
-#: pronamic-companies.php:57
-msgid "Search Companies"
-msgstr "Zoek bedrijven"
-
-#: pronamic-companies.php:58
-msgid "No companies found"
-msgstr "Geen bedrijven gevonden"
-
-#: pronamic-companies.php:59
-msgid "No companies found in Trash"
-msgstr "Geen bedrijven gevonden in de prullenbak"
-
-#: pronamic-companies.php:60
-msgid "Parent Company:"
-msgstr "Bovenliggende bedrijf:"
-
-#: pronamic-companies.php:61
-msgid "Companies"
-msgstr "Bedrijvengids"
-
-#: pronamic-companies.php:70
+#: pronamic-companies.php:49
 msgctxt "slug"
 msgid "companies"
 msgstr "bedrijvengids"
 
-#: pronamic-companies.php:97
+#: pronamic-companies.php:53
+msgctxt "post type general name"
+msgid "Companies"
+msgstr "Bedrijven"
+
+#: pronamic-companies.php:54
+msgctxt "post type singular name"
+msgid "Company"
+msgstr "Bedrijf"
+
+#: pronamic-companies.php:55
+msgctxt "company"
+msgid "Add New"
+msgstr "Nieuwe toevoegen"
+
+#: pronamic-companies.php:56
+msgid "Add New Company"
+msgstr "Nieuw bedrijf toevoegen"
+
+#: pronamic-companies.php:57
+msgid "Edit Company"
+msgstr "Wijzig bedrijf"
+
+#: pronamic-companies.php:58
+msgid "New Company"
+msgstr "Nieuw bedrijf"
+
+#: pronamic-companies.php:59
+msgid "View Company"
+msgstr "Bekijk bedrijf"
+
+#: pronamic-companies.php:60
+msgid "Search Companies"
+msgstr "Zoek bedrijven"
+
+#: pronamic-companies.php:61
+msgid "No companies found"
+msgstr "Geen bedrijven gevonden"
+
+#: pronamic-companies.php:62
+msgid "No companies found in Trash"
+msgstr "Geen bedrijven gevonden in de prullenbak"
+
+#: pronamic-companies.php:63
+msgid "Parent Company:"
+msgstr "Bovenliggende bedrijf:"
+
+#: pronamic-companies.php:64
+msgid "Companies"
+msgstr "Bedrijvengids"
+
+#: pronamic-companies.php:94
+msgid "Permalinks"
+msgstr "Permalinks"
+
+#: pronamic-companies.php:101
+msgid "Company base"
+msgstr "Bedrijfbasis"
+
+#: pronamic-companies.php:110
+msgid "Category base"
+msgstr "Categoriebasis"
+
+#: pronamic-companies.php:119
+msgid "Character base"
+msgstr "Karakterbasis"
+
+#: pronamic-companies.php:128
+msgid "Region base"
+msgstr "Regiobasis"
+
+#: pronamic-companies.php:137
+msgid "Keyword base"
+msgstr "Trefwoordbasis"
+
+#: pronamic-companies.php:146
+msgid "Brand base"
+msgstr "Merkbasis"
+
+#: pronamic-companies.php:155
+msgid "Type base"
+msgstr "Typebasis"
+
+#: pronamic-companies.php:204
 msgid "Company information"
 msgstr "Bedrijf informatie"
 
-#: pronamic-companies.php:119
+#: pronamic-companies.php:226
 msgid "Addresses"
 msgstr "Adressen"
 
-#: pronamic-companies.php:124 admin/export.php:63
+#: pronamic-companies.php:231 admin/export.php:63
 msgid "Visiting Address"
 msgstr "Bezoekadres"
 
-#: pronamic-companies.php:127 pronamic-companies.php:147
-#: pronamic-companies.php:328 admin/export.php:76 admin/export.php:81
+#: pronamic-companies.php:234 pronamic-companies.php:254
+#: pronamic-companies.php:435 admin/export.php:76 admin/export.php:81
 msgid "Address"
 msgstr "Adres"
 
-#: pronamic-companies.php:129 pronamic-companies.php:149 admin/export.php:77
+#: pronamic-companies.php:236 pronamic-companies.php:256 admin/export.php:77
 #: admin/export.php:82
 msgid "Postal Code"
 msgstr "Postcode"
 
-#: pronamic-companies.php:130 pronamic-companies.php:150 admin/export.php:78
+#: pronamic-companies.php:237 pronamic-companies.php:257 admin/export.php:78
 #: admin/export.php:83
 msgid "City"
 msgstr "Plaats"
 
-#: pronamic-companies.php:132 pronamic-companies.php:152 admin/export.php:79
+#: pronamic-companies.php:239 pronamic-companies.php:259 admin/export.php:79
 #: admin/export.php:84
 msgid "Country"
 msgstr "Land"
 
-#: pronamic-companies.php:137 admin/export.php:65
+#: pronamic-companies.php:244 admin/export.php:65
 msgid "Mailing Address"
 msgstr "Postadres"
 
-#: pronamic-companies.php:143
+#: pronamic-companies.php:250
 msgid "Mailing address equals visiting address."
 msgstr "Postadres gelijk aan bezoekadres."
 
-#: pronamic-companies.php:158
+#: pronamic-companies.php:265
 msgid "Phone"
 msgstr "Telefoonnummers"
 
-#: pronamic-companies.php:164
+#: pronamic-companies.php:271
 msgid "Phone Number"
 msgstr "Telefoonnummer"
 
-#: pronamic-companies.php:172
+#: pronamic-companies.php:279
 msgid "Fax Number"
 msgstr "Faxnummer"
 
-#: pronamic-companies.php:181
+#: pronamic-companies.php:288
 msgid "Online"
 msgstr "Online"
 
-#: pronamic-companies.php:187
+#: pronamic-companies.php:294
 msgid "E-mail Address"
 msgstr "E-mailadres"
 
-#: pronamic-companies.php:195
+#: pronamic-companies.php:302
 msgid "Website"
 msgstr "Website"
 
-#: pronamic-companies.php:204
+#: pronamic-companies.php:311
 msgid "Social Networks"
 msgstr "Sociale netwerken"
 
-#: pronamic-companies.php:210
+#: pronamic-companies.php:317
 msgid "Twitter Username"
 msgstr "Twitter gebruikersnaam"
 
-#: pronamic-companies.php:218
+#: pronamic-companies.php:325
 msgid "Facebook"
 msgstr "Facebook"
 
-#: pronamic-companies.php:226
+#: pronamic-companies.php:333
 msgid "LinkedIN"
 msgstr "LinkedIN"
 
-#: pronamic-companies.php:234
+#: pronamic-companies.php:341
 msgid "Google+"
 msgstr "Google+"
 
-#: pronamic-companies.php:321
+#: pronamic-companies.php:428
 msgid "Company"
 msgstr "Bedrijf"
 
-#: pronamic-companies.php:330 admin/export.php:71 includes/taxonomy.php:19
+#: pronamic-companies.php:437 admin/export.php:71 includes/taxonomy.php:22
 msgid "Categories"
 msgstr "Categorieën"
 
-#: pronamic-companies.php:358
+#: pronamic-companies.php:465
 msgid "No Category"
 msgstr "Geen categorie"
 
-#: pronamic-companies.php:388 admin/export.php:5
+#: pronamic-companies.php:495 admin/export.php:5
 msgid "Companies Export"
 msgstr "Bedrijven exporteren"
 
-#: pronamic-companies.php:389
+#: pronamic-companies.php:496
 msgid "Export"
 msgstr "Exporteren"
+
+#: pronamic-companies.php:504 admin/settings.php:10
+msgid "Companies Settings"
+msgstr "Bedrijven instellingen"
+
+#: pronamic-companies.php:505
+msgid "Settings"
+msgstr "Instellingen"
 
 #: admin/export.php:61
 msgid "Name"
@@ -205,297 +245,307 @@ msgstr "Is bedrijf bezoekadres"
 msgid "Is Company Mailing Address"
 msgstr "Is bedrijf postadres"
 
-#: includes/taxonomy.php:9
-msgctxt "category general name"
-msgid "Company Category"
-msgstr "Bedrijf categorie"
-
-#: includes/taxonomy.php:10
-msgctxt "category singular name"
-msgid "Company Category"
-msgstr "Bdrijf categorie"
-
-#: includes/taxonomy.php:11
-msgid "Search Company Categories"
-msgstr "Doorzoek bedrijf categorieen"
-
-#: includes/taxonomy.php:12
-msgid "All Company Categories"
-msgstr "Alle bedrijf categorieen"
-
-#: includes/taxonomy.php:13
-msgid "Parent Company Category"
-msgstr "Bovenliggende bedrijf categorie"
-
-#: includes/taxonomy.php:14
-msgid "Parent Company Category:"
-msgstr "Bovenliggende bedrijf categorie:"
-
-#: includes/taxonomy.php:15
-msgid "Edit Company Category"
-msgstr "Wijzig bedrijf categorie"
-
-#: includes/taxonomy.php:16
-msgid "Update Company Category"
-msgstr "Update bedrijf categorie"
-
-#: includes/taxonomy.php:17
-msgid "Add New Company Category"
-msgstr "Nieuwe bedrijf categorie toevoegen"
-
-#: includes/taxonomy.php:18
-msgid "New Company Category Name"
-msgstr "Nieuwe bedrijf categorie naam"
-
-#: includes/taxonomy.php:23
+#: includes/taxonomy.php:6
 msgctxt "slug"
 msgid "company-category"
 msgstr "bedrijfscategorie"
 
+#: includes/taxonomy.php:12
+msgctxt "category general name"
+msgid "Company Category"
+msgstr "Bedrijf categorie"
+
+#: includes/taxonomy.php:13
+msgctxt "category singular name"
+msgid "Company Category"
+msgstr "Bdrijf categorie"
+
+#: includes/taxonomy.php:14
+msgid "Search Company Categories"
+msgstr "Doorzoek bedrijf categorieen"
+
+#: includes/taxonomy.php:15
+msgid "All Company Categories"
+msgstr "Alle bedrijf categorieen"
+
+#: includes/taxonomy.php:16
+msgid "Parent Company Category"
+msgstr "Bovenliggende bedrijf categorie"
+
+#: includes/taxonomy.php:17
+msgid "Parent Company Category:"
+msgstr "Bovenliggende bedrijf categorie:"
+
+#: includes/taxonomy.php:18
+msgid "Edit Company Category"
+msgstr "Wijzig bedrijf categorie"
+
+#: includes/taxonomy.php:19
+msgid "Update Company Category"
+msgstr "Update bedrijf categorie"
+
+#: includes/taxonomy.php:20
+msgid "Add New Company Category"
+msgstr "Nieuwe bedrijf categorie toevoegen"
+
+#: includes/taxonomy.php:21
+msgid "New Company Category Name"
+msgstr "Nieuwe bedrijf categorie naam"
+
 #: includes/taxonomy.php:32
+msgctxt "slug"
+msgid "company-character"
+msgstr "bedrijfskarakter"
+
+#: includes/taxonomy.php:38
 msgctxt "category general name"
 msgid "Company Character"
 msgstr "Bedrijf karakter"
 
-#: includes/taxonomy.php:33
+#: includes/taxonomy.php:39
 msgctxt "category singular name"
 msgid "Company Character"
 msgstr "Bedrijf karakter"
 
-#: includes/taxonomy.php:34
+#: includes/taxonomy.php:40
 msgid "Search Company Characters"
 msgstr "Doorzoek bedrijf karakters"
 
-#: includes/taxonomy.php:35
+#: includes/taxonomy.php:41
 msgid "All Company Characters"
 msgstr "Alle bedrijf karakters"
 
-#: includes/taxonomy.php:36
+#: includes/taxonomy.php:42
 msgid "Parent Company Character"
 msgstr "Bovenliggende bedrijf karakter"
 
-#: includes/taxonomy.php:37
+#: includes/taxonomy.php:43
 msgid "Parent Company Character:"
 msgstr "Bovenliggende bedrijf karakter:"
 
-#: includes/taxonomy.php:38
+#: includes/taxonomy.php:44
 msgid "Edit Company Character"
 msgstr "Wijzig bedrijf karakter"
 
-#: includes/taxonomy.php:39
+#: includes/taxonomy.php:45
 msgid "Update Company Character"
 msgstr "Update bedrijf karakter"
 
-#: includes/taxonomy.php:40
+#: includes/taxonomy.php:46
 msgid "Add New Company Character"
 msgstr "Nieuwe bedrijf karakter toevoegen"
 
-#: includes/taxonomy.php:41
+#: includes/taxonomy.php:47
 msgid "New Company Character Name"
 msgstr "Nieuwe bedrijf karakter naam"
 
-#: includes/taxonomy.php:42
+#: includes/taxonomy.php:48
 msgid "Characters"
 msgstr "Karakters"
 
-#: includes/taxonomy.php:54
+#: includes/taxonomy.php:58
+msgctxt "slug"
+msgid "company-region"
+msgstr "bedrijfsregio"
+
+#: includes/taxonomy.php:64
 msgctxt "category general name"
 msgid "Company Region"
 msgstr "Bedrijf regio"
 
-#: includes/taxonomy.php:55
+#: includes/taxonomy.php:65
 msgctxt "category singular name"
 msgid "Company Region"
 msgstr "Bedrijf regio"
 
-#: includes/taxonomy.php:56
+#: includes/taxonomy.php:66
 msgid "Search Company Regions"
 msgstr "Zoek bedrijf regio's"
 
-#: includes/taxonomy.php:57
+#: includes/taxonomy.php:67
 msgid "All Company Regions"
 msgstr "Alle bedrijf regios"
 
-#: includes/taxonomy.php:58
+#: includes/taxonomy.php:68
 msgid "Parent Company Region"
 msgstr "Bovenliggende bedrijf regio"
 
-#: includes/taxonomy.php:59
+#: includes/taxonomy.php:69
 msgid "Parent Company Region:"
 msgstr "Bovenliggende bedrijf regio:"
 
-#: includes/taxonomy.php:60
+#: includes/taxonomy.php:70
 msgid "Edit Company Region"
 msgstr "Wijzig bedrijf regio"
 
-#: includes/taxonomy.php:61
+#: includes/taxonomy.php:71
 msgid "Update Company Region"
 msgstr "Update bedrijf regio"
 
-#: includes/taxonomy.php:62
+#: includes/taxonomy.php:72
 msgid "Add New Company Region"
 msgstr "Nieuwe bedrijf regio toevoegen"
 
-#: includes/taxonomy.php:63
+#: includes/taxonomy.php:73
 msgid "New Company Region Name"
 msgstr "Nieuwe bedrijf regio naam"
 
-#: includes/taxonomy.php:64
+#: includes/taxonomy.php:74
 msgid "Regions"
 msgstr "Regio's"
 
-#: includes/taxonomy.php:76
-msgctxt "category general name"
-msgid "Company Keyword"
-msgstr "Bedrijf trefwoord"
-
-#: includes/taxonomy.php:77
-msgctxt "category singular name"
-msgid "Company Keyword"
-msgstr "Bdrijf trefwoord"
-
-#: includes/taxonomy.php:78
-msgid "Search Company Keywords"
-msgstr "Zoek bedrijf trefwoorden"
-
-#: includes/taxonomy.php:79
-msgid "All Company Keywords"
-msgstr "Alle bedrijf trefwoorden"
-
-#: includes/taxonomy.php:80
-msgid "Parent Company Keyword"
-msgstr "Bovenliggende bedrijf trefwoord"
-
-#: includes/taxonomy.php:81
-msgid "Parent Company Keyword:"
-msgstr "Bovenliggende bedrijf trefwoord:"
-
-#: includes/taxonomy.php:82
-msgid "Edit Company Keyword"
-msgstr "Wijzig bedrijf trefwoord"
-
-#: includes/taxonomy.php:83
-msgid "Update Company Keyword"
-msgstr "Update bedrijf trefwoord"
-
 #: includes/taxonomy.php:84
-msgid "Add New Company Keyword"
-msgstr "Nieuwe bedrijf trefwoord toevoegen"
-
-#: includes/taxonomy.php:85
-msgid "New Company Keyword Name"
-msgstr "Nieuwe bedrijf trefwoord naam"
-
-#: includes/taxonomy.php:86
-msgid "Keywords"
-msgstr "Trefwoorden"
-
-#: includes/taxonomy.php:90
 msgctxt "slug"
 msgid "company-keyword"
 msgstr "bedrijfstrefwoord"
 
-#: includes/taxonomy.php:99
+#: includes/taxonomy.php:90
 msgctxt "category general name"
-msgid "Company Brand"
-msgstr "Bedrijf merk"
+msgid "Company Keyword"
+msgstr "Bedrijf trefwoord"
+
+#: includes/taxonomy.php:91
+msgctxt "category singular name"
+msgid "Company Keyword"
+msgstr "Bdrijf trefwoord"
+
+#: includes/taxonomy.php:92
+msgid "Search Company Keywords"
+msgstr "Zoek bedrijf trefwoorden"
+
+#: includes/taxonomy.php:93
+msgid "All Company Keywords"
+msgstr "Alle bedrijf trefwoorden"
+
+#: includes/taxonomy.php:94
+msgid "Parent Company Keyword"
+msgstr "Bovenliggende bedrijf trefwoord"
+
+#: includes/taxonomy.php:95
+msgid "Parent Company Keyword:"
+msgstr "Bovenliggende bedrijf trefwoord:"
+
+#: includes/taxonomy.php:96
+msgid "Edit Company Keyword"
+msgstr "Wijzig bedrijf trefwoord"
+
+#: includes/taxonomy.php:97
+msgid "Update Company Keyword"
+msgstr "Update bedrijf trefwoord"
+
+#: includes/taxonomy.php:98
+msgid "Add New Company Keyword"
+msgstr "Nieuwe bedrijf trefwoord toevoegen"
+
+#: includes/taxonomy.php:99
+msgid "New Company Keyword Name"
+msgstr "Nieuwe bedrijf trefwoord naam"
 
 #: includes/taxonomy.php:100
-msgctxt "category singular name"
-msgid "Company Brand"
-msgstr "Bedrijf merk"
+msgid "Keywords"
+msgstr "Trefwoorden"
 
-#: includes/taxonomy.php:101
-msgid "Search Company Brands"
-msgstr "Zoek bedrijf merken"
-
-#: includes/taxonomy.php:102
-msgid "All Company Brands"
-msgstr "Alle bedrijf merken"
-
-#: includes/taxonomy.php:103
-msgid "Parent Company Brand"
-msgstr "Bovenliggende bedrijf merk"
-
-#: includes/taxonomy.php:104
-msgid "Parent Company Brand:"
-msgstr "Bovenliggende bedrijf merk:"
-
-#: includes/taxonomy.php:105
-msgid "Edit Company Brand"
-msgstr "Wijzig bedrijf merk"
-
-#: includes/taxonomy.php:106
-msgid "Update Company Brand"
-msgstr "Update bedrijf merk"
-
-#: includes/taxonomy.php:107
-msgid "Add New Company Brand"
-msgstr "Nieuw bedrijf merk toevoegen"
-
-#: includes/taxonomy.php:108
-msgid "New Company Brand Name"
-msgstr "Nieuwe bedrijf merk naam"
-
-#: includes/taxonomy.php:109
-msgid "Brands"
-msgstr "Merken"
-
-#: includes/taxonomy.php:113
+#: includes/taxonomy.php:110
 msgctxt "slug"
 msgid "company-brand"
 msgstr "bedrijfsmerk"
 
-#: includes/taxonomy.php:122
+#: includes/taxonomy.php:116
 msgctxt "category general name"
-msgid "Company Type"
-msgstr "Bedrijf type"
+msgid "Company Brand"
+msgstr "Bedrijf merk"
+
+#: includes/taxonomy.php:117
+msgctxt "category singular name"
+msgid "Company Brand"
+msgstr "Bedrijf merk"
+
+#: includes/taxonomy.php:118
+msgid "Search Company Brands"
+msgstr "Zoek bedrijf merken"
+
+#: includes/taxonomy.php:119
+msgid "All Company Brands"
+msgstr "Alle bedrijf merken"
+
+#: includes/taxonomy.php:120
+msgid "Parent Company Brand"
+msgstr "Bovenliggende bedrijf merk"
+
+#: includes/taxonomy.php:121
+msgid "Parent Company Brand:"
+msgstr "Bovenliggende bedrijf merk:"
+
+#: includes/taxonomy.php:122
+msgid "Edit Company Brand"
+msgstr "Wijzig bedrijf merk"
 
 #: includes/taxonomy.php:123
-msgctxt "category singular name"
-msgid "Company Type"
-msgstr "Bedrijf type"
+msgid "Update Company Brand"
+msgstr "Update bedrijf merk"
 
 #: includes/taxonomy.php:124
-msgid "Search Company Types"
-msgstr "Zoek bedrijf types"
+msgid "Add New Company Brand"
+msgstr "Nieuw bedrijf merk toevoegen"
 
 #: includes/taxonomy.php:125
-msgid "All Company Types"
-msgstr "Alle bedrijf types"
+msgid "New Company Brand Name"
+msgstr "Nieuwe bedrijf merk naam"
 
 #: includes/taxonomy.php:126
-msgid "Parent Company Type"
-msgstr "Bovenliggende bedrijf type:"
-
-#: includes/taxonomy.php:127
-msgid "Parent Company Type:"
-msgstr "Bovenliggende bedrijf type:"
-
-#: includes/taxonomy.php:128
-msgid "Edit Company Type"
-msgstr "Wijzig bedrijf type"
-
-#: includes/taxonomy.php:129
-msgid "Update Company Type"
-msgstr "Update bedrijf type"
-
-#: includes/taxonomy.php:130
-msgid "Add New Company Type"
-msgstr "Nieuw bedrijf type toevoegen"
-
-#: includes/taxonomy.php:131
-msgid "New Company Type Name"
-msgstr "Nieuwe bedrijf type naam"
-
-#: includes/taxonomy.php:132
-msgid "Types"
-msgstr "Types"
+msgid "Brands"
+msgstr "Merken"
 
 #: includes/taxonomy.php:136
 msgctxt "slug"
 msgid "company-type"
 msgstr "bedrijfstype"
+
+#: includes/taxonomy.php:142
+msgctxt "category general name"
+msgid "Company Type"
+msgstr "Bedrijf type"
+
+#: includes/taxonomy.php:143
+msgctxt "category singular name"
+msgid "Company Type"
+msgstr "Bedrijf type"
+
+#: includes/taxonomy.php:144
+msgid "Search Company Types"
+msgstr "Zoek bedrijf types"
+
+#: includes/taxonomy.php:145
+msgid "All Company Types"
+msgstr "Alle bedrijf types"
+
+#: includes/taxonomy.php:146
+msgid "Parent Company Type"
+msgstr "Bovenliggende bedrijf type:"
+
+#: includes/taxonomy.php:147
+msgid "Parent Company Type:"
+msgstr "Bovenliggende bedrijf type:"
+
+#: includes/taxonomy.php:148
+msgid "Edit Company Type"
+msgstr "Wijzig bedrijf type"
+
+#: includes/taxonomy.php:149
+msgid "Update Company Type"
+msgstr "Update bedrijf type"
+
+#: includes/taxonomy.php:150
+msgid "Add New Company Type"
+msgstr "Nieuw bedrijf type toevoegen"
+
+#: includes/taxonomy.php:151
+msgid "New Company Type Name"
+msgstr "Nieuwe bedrijf type naam"
+
+#: includes/taxonomy.php:152
+msgid "Types"
+msgstr "Types"
 
 #~ msgid "ID"
 #~ msgstr "ID"
@@ -1146,9 +1196,6 @@ msgstr "bedrijfstype"
 
 #~ msgid "Payments"
 #~ msgstr "Betalingen"
-
-#~ msgid "Settings"
-#~ msgstr "Instellingen"
 
 #~ msgid "Pages Generator"
 #~ msgstr "Pagina's generator"

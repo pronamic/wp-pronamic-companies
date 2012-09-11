@@ -2,6 +2,9 @@
 
 function pronamic_companies_create_taxonomies() {
 	/* Company Category */
+	$slug = get_option( 'pronamic_company_category_base' );
+	$slug = empty( $slug ) ? _x( 'company-category', 'slug', 'pronamic_companies' ) : $slug;
+
 	register_taxonomy( 'pronamic_company_category', 'pronamic_company', 
 		array( 
 			'hierarchical' => true , 
@@ -20,11 +23,14 @@ function pronamic_companies_create_taxonomies() {
 			) , 
 			'show_ui'      => true , 
 			'query_var'    => true , 
-			'rewrite'      => array( 'slug' => _x( 'company-category', 'slug', 'pronamic_companies' ) )
+			'rewrite'      => array( 'slug' => $slug )
 		)
 	);
 
 	/* Company Character */
+	$slug = get_option( 'pronamic_company_character_base' );
+	$slug = empty( $slug ) ? _x( 'company-character', 'slug', 'pronamic_companies' ) : $slug;
+
 	register_taxonomy( 'pronamic_company_character', 'pronamic_company', 
 		array( 
 			'hierarchical' => false , 
@@ -42,11 +48,15 @@ function pronamic_companies_create_taxonomies() {
 				'menu_name'         => __( 'Characters', 'pronamic_companies' )
 			) , 
 			'show_ui'      => true , 
-			'query_var'    => true
+			'query_var'    => true , 
+			'rewrite'      => array( 'slug' => $slug )
 		)
 	);
 	
 	/* Company Region */
+	$slug = get_option( 'pronamic_company_region_base' );
+	$slug = empty( $slug ) ? _x( 'company-region', 'slug', 'pronamic_companies' ) : $slug;
+
 	register_taxonomy( 'pronamic_company_region', 'pronamic_company', 
 		array( 
 			'hierarchical' => true , 
@@ -64,11 +74,15 @@ function pronamic_companies_create_taxonomies() {
 				'menu_name'         => __( 'Regions', 'pronamic_companies' )
 			) , 
 			'show_ui'      => true , 
-			'query_var'    => true
+			'query_var'    => true , 
+			'rewrite'      => array( 'slug' => $slug )
 		)
 	);
 	
 	/* Company Keyword */
+	$slug = get_option( 'pronamic_company_keyword_base' );
+	$slug = empty( $slug ) ? _x( 'company-keyword', 'slug', 'pronamic_companies' ) : $slug;
+
 	register_taxonomy( 'pronamic_company_keyword', 'pronamic_company', 
 		array( 
 			'hierarchical' => true , 
@@ -87,11 +101,14 @@ function pronamic_companies_create_taxonomies() {
 			) , 
 			'show_ui'      => true , 
 			'query_var'    => true , 
-			'rewrite'      => array( 'slug' => _x( 'company-keyword', 'slug', 'pronamic_companies' ) )
+			'rewrite'      => array( 'slug' => $slug )
 		)
 	);
 	
 	/* Company Brand */
+	$slug = get_option( 'pronamic_company_brand_base' );
+	$slug = empty( $slug ) ? _x( 'company-brand', 'slug', 'pronamic_companies' ) : $slug;
+
 	register_taxonomy( 'pronamic_company_brand', 'pronamic_company', 
 		array( 
 			'hierarchical' => true , 
@@ -110,11 +127,14 @@ function pronamic_companies_create_taxonomies() {
 			) , 
 			'show_ui'      => true , 
 			'query_var'    => true , 
-			'rewrite'      => array( 'slug' => _x( 'company-brand', 'slug', 'pronamic_companies' ) )
+			'rewrite'      => array( 'slug' => $slug )
 		)
 	);
 	
 	/* Company Type */
+	$slug = get_option( 'pronamic_company_type_base' );
+	$slug = empty( $slug ) ? _x( 'company-type', 'slug', 'pronamic_companies' ) : $slug;
+
 	register_taxonomy( 'pronamic_company_type', 'pronamic_company', 
 		array( 
 			'hierarchical' => true , 
@@ -133,7 +153,7 @@ function pronamic_companies_create_taxonomies() {
 			) , 
 			'show_ui'      => true , 
 			'query_var'    => true , 
-			'rewrite'      => array( 'slug' => _x( 'company-type', 'slug', 'pronamic_companies' ) )
+			'rewrite'      => array( 'slug' => $slug )
 		)
 	);
 }
