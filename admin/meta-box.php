@@ -86,10 +86,26 @@ wp_nonce_field( 'pronamic_companies_save_post', 'pronamic_companies_nonce' );
 		</tr>
 		<tr>
 			<th scope="row">
-				<label for="pronamic_company_website"><?php _e( 'Website', 'pronamic_companies' ); ?></label>
+				<label for="pronamic_company_website"><?php _e( 'Website URL', 'pronamic_companies' ); ?></label>
 			</th>
 			<td>
 				<input id="pronamic_company_website" name="_pronamic_company_website" value="<?php echo esc_attr( get_post_meta( $post->ID, '_pronamic_company_website', true ) ); ?>" type="url" size="25" class="regular-text" />
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">
+				<label for="pronamic_company_rss"><?php _e( 'RSS URL', 'pronamic_companies' ); ?></label>
+			</th>
+			<td>
+				<input id="pronamic_company_rss" name="_pronamic_company_rss" value="<?php echo esc_attr( get_post_meta( $post->ID, '_pronamic_company_rss', true ) ); ?>" type="url" size="25" class="regular-text" />
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">
+				<label for="pronamic_company_video"><?php _e( 'Video URL', 'pronamic_companies' ); ?></label>
+			</th>
+			<td>
+				<input id="pronamic_company_video" name="_pronamic_company_video" value="<?php echo esc_attr( get_post_meta( $post->ID, '_pronamic_company_video', true ) ); ?>" type="url" size="25" class="regular-text" />
 			</td>
 		</tr>
 

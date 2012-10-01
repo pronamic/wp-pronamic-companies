@@ -254,9 +254,11 @@ function pronamic_companies_save_post( $post_id ) {
 		// Phone
 		'_pronamic_company_phone_number' => FILTER_SANITIZE_STRING ,
 		'_pronamic_company_fax_number' => FILTER_SANITIZE_STRING ,
-		// Social
+		// Online
 		'_pronamic_company_email' => FILTER_SANITIZE_STRING ,
 		'_pronamic_company_website' => FILTER_SANITIZE_STRING ,
+		'_pronamic_company_rss' => FILTER_SANITIZE_STRING ,
+		'_pronamic_company_video' => FILTER_SANITIZE_STRING ,
 		// Social Networks
 		'_pronamic_company_twitter' => FILTER_SANITIZE_STRING ,
 		'_pronamic_company_facebook' => FILTER_SANITIZE_STRING ,
