@@ -7,57 +7,18 @@
 
 	<?php 
 	
-	global $wpdb;
-
-	$results = $wpdb->get_results("
-		SELECT
-			post.ID , 
-			post.post_title , 
-
-			MAX(IF(meta.meta_key = '_pronamic_company_address', meta.meta_value, NULL)) AS company_address  , 
-			MAX(IF(meta.meta_key = '_pronamic_company_postal_code', meta.meta_value, NULL)) AS company_postal_code , 
-			MAX(IF(meta.meta_key = '_pronamic_company_city', meta.meta_value, NULL)) AS company_city , 
-			MAX(IF(meta.meta_key = '_pronamic_company_country', meta.meta_value, NULL)) AS company_country , 
-
-			MAX(IF(meta.meta_key = '_pronamic_company_mailing_address', meta.meta_value, NULL)) AS company_mailing_address  , 
-			MAX(IF(meta.meta_key = '_pronamic_company_mailing_postal_code', meta.meta_value, NULL)) AS company_mailing_postal_code , 
-			MAX(IF(meta.meta_key = '_pronamic_company_mailing_city', meta.meta_value, NULL)) AS company_mailing_city , 
-			MAX(IF(meta.meta_key = '_pronamic_company_mailing_country', meta.meta_value, NULL)) AS company_mailing_country , 
-
-			MAX(IF(meta.meta_key = '_pronamic_company_phone_number', meta.meta_value, NULL)) AS company_phone_number , 
-			MAX(IF(meta.meta_key = '_pronamic_company_fax_number', meta.meta_value, NULL)) AS company_fax_number , 
-
-			MAX(IF(meta.meta_key = '_pronamic_company_email', meta.meta_value, NULL)) AS company_email , 
-			MAX(IF(meta.meta_key = '_pronamic_company_website', meta.meta_value, NULL)) AS company_website , 
-
-			MAX(IF(meta.meta_key = '_emg_company_subscription_id', meta.meta_value, NULL)) AS company_subscription_id , 
-			
-			user.user_login , 
-			user.user_email
-		FROM
-			$wpdb->posts AS post
-				LEFT JOIN
-			$wpdb->postmeta AS meta
-					ON post.ID = meta.post_id
-				LEFT JOIN
-			$wpdb->users AS user
-					ON post.post_author = user.ID
-		WHERE
-			post_type = 'pronamic_company'
-		GROUP BY
-			post.ID
-		;
-	");
+	$results = Pronamic_Companies_Plugin::get_export();
 
 	if( ! empty( $results ) ): ?>
 
-		<div class="tablenav top">
-			
-		</div>
+		<h3>
+			<?php _e( 'Overview', 'pronamic_companies' ); ?>
+		</h3>
 
 		<table cellspacing="0" class="widefat fixed">
 			<thead>
 				<tr>
+					<th scope="col"><?php _e( 'ID', 'pronamic_companies' ); ?></th>
 					<th scope="col"><?php _e( 'Name', 'pronamic_companies' ); ?></th>
 
 					<th scope="col" colspan="4"><?php _e( 'Visiting Address', 'pronamic_companies' ); ?></th>
@@ -71,6 +32,7 @@
 					<th scope="col"><?php _e( 'Categories', 'pronamic_companies' ); ?></th>
 				</tr>
 				<tr>
+					<th scope="col"></th>
 					<th scope="col"></th>
 
 					<th scope="col"><?php _e( 'Address', 'pronamic_companies' ); ?></th>
@@ -95,6 +57,7 @@
 			<tbody>
 				<?php foreach ( $results as $result ): ?>
 					<tr>
+						<td><?php echo $result->ID; ?></td>
 						<td><?php echo $result->post_title; ?></td>
 
 						<td><?php echo $result->company_address; ?></td>
@@ -113,7 +76,7 @@
 						<td><?php echo $result->user_email; ?></td>
 
 						<td>
-							<?php	
+							<?php 
 						
 							$terms = get_the_terms( $result->ID, 'pronamic_company_category' );
 
@@ -135,4 +98,12 @@
 		</table>
 
 	<?php endif; ?>
+
+	<form method="post" action="">
+		<?php wp_nonce_field( 'pronamic_companies_export', 'pronamic_companies_nonce' ); ?>
+
+		<p>
+			<?php submit_button( __( 'Export to CSV', 'pronmic_companies' ), 'secondary', 'pronamic_companies_export' ); ?>
+		</p>
+	</form>
 </div>
