@@ -20,25 +20,38 @@ GitHub URI: https://github.com/pronamic/wp-pronamic-companies
 
 class Pronamic_Companies_Plugin {
 	/**
+	 * The plugin file
+	 * 
+	 * @var string
+	 */
+	public static $file;
+
+	//////////////////////////////////////////////////
+
+	/**
 	 * Bootstrap
 	 */
-	public static function bootstrap() {
+	public static function bootstrap( $file ) {
+		self::$file = $file;
+
 		add_action( 'init',           array( __CLASS__, 'init' ) );
 		add_action( 'admin_init',     array( __CLASS__, 'admin_init' ) );
 	}
+
+	//////////////////////////////////////////////////
 
 	/**
 	 * Initialize
 	 */
 	public static function init() {
 		// Text domain
-		$rel_path = dirname( plugin_basename( __FILE__ ) ) . '/languages/';
+		$rel_path = dirname( plugin_basename( self::$file ) ) . '/languages/';
 	
 		load_plugin_textdomain( 'pronamic_companies', false, $rel_path );
 	
 		// Require
-		require_once dirname( __FILE__ ) . '/includes/taxonomy.php';
-		require_once dirname( __FILE__ ) . '/includes/gravityforms.php';
+		require_once dirname( self::$file ) . '/includes/taxonomy.php';
+		require_once dirname( self::$file ) . '/includes/gravityforms.php';
 	
 		// Post types
 		$slug = get_option( 'pronamic_company_base' );
@@ -160,7 +173,7 @@ class Pronamic_Companies_Plugin {
 	}
 }
 
-Pronamic_Companies_Plugin::bootstrap();
+Pronamic_Companies_Plugin::bootstrap( __FILE__ );
 
 /**
  * Flush data
