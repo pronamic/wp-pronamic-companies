@@ -52,6 +52,7 @@ class Pronamic_Companies_Plugin {
 		// Require
 		require_once dirname( self::$file ) . '/includes/taxonomy.php';
 		require_once dirname( self::$file ) . '/includes/gravityforms.php';
+		require_once dirname( self::$file ) . '/includes/template.php';
 	
 		// Post types
 		$slug = get_option( 'pronamic_company_base' );
@@ -91,6 +92,9 @@ class Pronamic_Companies_Plugin {
 	 * Admin initialize
 	 */
 	public static function admin_init() {
+		// Export
+		self::maybe_export();
+
 		// Un we can't add the permalink options to permalink settings page
 		// @see http://core.trac.wordpress.org/ticket/9296
 		add_settings_section(
@@ -170,6 +174,132 @@ class Pronamic_Companies_Plugin {
 		register_setting( 'pronamic_companies', 'pronamic_company_keyword_base' );
 		register_setting( 'pronamic_companies', 'pronamic_company_brand_base' );
 		register_setting( 'pronamic_companies', 'pronamic_company_type_base' );
+	}
+
+	/**
+	 * Get export
+	 */
+	public static function get_export() {	
+		global $wpdb;
+	
+		$results = $wpdb->get_results("
+			SELECT
+				post.ID , 
+				post.post_title , 
+	
+				MAX(IF(meta.meta_key = '_pronamic_company_address', meta.meta_value, NULL)) AS company_address  , 
+				MAX(IF(meta.meta_key = '_pronamic_company_postal_code', meta.meta_value, NULL)) AS company_postal_code , 
+				MAX(IF(meta.meta_key = '_pronamic_company_city', meta.meta_value, NULL)) AS company_city , 
+				MAX(IF(meta.meta_key = '_pronamic_company_country', meta.meta_value, NULL)) AS company_country , 
+	
+				MAX(IF(meta.meta_key = '_pronamic_company_mailing_address', meta.meta_value, NULL)) AS company_mailing_address  , 
+				MAX(IF(meta.meta_key = '_pronamic_company_mailing_postal_code', meta.meta_value, NULL)) AS company_mailing_postal_code , 
+				MAX(IF(meta.meta_key = '_pronamic_company_mailing_city', meta.meta_value, NULL)) AS company_mailing_city , 
+				MAX(IF(meta.meta_key = '_pronamic_company_mailing_country', meta.meta_value, NULL)) AS company_mailing_country , 
+	
+				MAX(IF(meta.meta_key = '_pronamic_company_phone_number', meta.meta_value, NULL)) AS company_phone_number , 
+				MAX(IF(meta.meta_key = '_pronamic_company_fax_number', meta.meta_value, NULL)) AS company_fax_number , 
+	
+				MAX(IF(meta.meta_key = '_pronamic_company_email', meta.meta_value, NULL)) AS company_email , 
+				MAX(IF(meta.meta_key = '_pronamic_company_website', meta.meta_value, NULL)) AS company_website , 
+	
+				MAX(IF(meta.meta_key = '_pronamic_subscription_id', meta.meta_value, NULL)) AS company_subscription_id , 
+				
+				user.user_login , 
+				user.user_email 
+			FROM
+				$wpdb->posts AS post
+					LEFT JOIN
+				$wpdb->postmeta AS meta
+						ON post.ID = meta.post_id
+					LEFT JOIN
+				$wpdb->users AS user
+						ON post.post_author = user.ID
+			WHERE
+				post_type = 'pronamic_company'
+					AND
+				post_status IN ( 'publish', 'pending', 'draft', 'future' )
+			GROUP BY
+				post.ID
+			;
+		");
+
+		return $results;
+	}
+
+	/**
+	 * Export to CSV
+	 */
+	public static function maybe_export() {
+		if ( empty( $_POST ) || !wp_verify_nonce( filter_input( INPUT_POST, 'pronamic_companies_nonce', FILTER_SANITIZE_STRING ), 'pronamic_companies_export' ) )
+			return;
+
+		// Set headers for download
+		$filename  = __( 'pronamic-companies-export', 'pronamic_companies' );
+		$filename .= '-' . date('Y-m-d_H-i') . '.csv';
+
+		header( 'Content-Type: text/csv;' );
+		header( 'Content-Disposition: attachment; filename=' . $filename );
+
+		// Results
+		$results = self::get_export();
+
+		$data = array();
+
+		$resource = fopen( 'php://output', 'w' );
+
+		// Header
+		$header = array( 
+			__( 'ID', 'pronamic_companies' ), 
+			__( 'Name', 'pronamic_companies' ),
+			__( 'Address', 'pronamic_companies' ),
+			__( 'Postal Code', 'pronamic_companies' ),
+			__( 'City', 'pronamic_companies' ),
+			__( 'Country', 'pronamic_companies' ),
+			__( 'Address', 'pronamic_companies' ),
+			__( 'Postal Code', 'pronamic_companies' ),
+			__( 'City', 'pronamic_companies' ),
+			__( 'Country', 'pronamic_companies' ),
+			__( 'Subscription ID', 'pronamic_companies' ),
+			__( 'User Login', 'pronamic_companies' ),
+			__( 'User E-mail', 'pronamic_companies' ),
+			__( 'Categories', 'pronamic_companies' )
+		);
+
+		fputcsv( $resource, $header );
+
+		foreach ( $results as $result ) {
+			$categories = array();
+
+			$terms = get_the_terms( $result->ID, 'pronamic_company_category' );
+			if ( $terms && ! is_wp_error( $terms ) ) {				
+				foreach ( $terms as $term ) {
+					$categories[] = $term->parent . ',' . $term->name;
+				}
+			}
+
+			// Row
+			$row = array( 
+				$result->ID,
+				$result->post_title,
+				$result->company_address,
+				$result->company_postal_code,
+				$result->company_city,
+				$result->company_country,
+				$result->company_mailing_address,
+				$result->company_mailing_postal_code,
+				$result->company_mailing_city,
+				$result->company_mailing_country,
+				$result->company_subscription_id,
+				$result->user_login,
+				$result->user_email,
+				implode( "\r\n", $categories )
+			);
+
+			fputcsv( $resource, $row );
+		}
+
+		exit;
 	}
 }
 
