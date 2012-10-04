@@ -48,7 +48,7 @@ class Pronamic_Companies_Plugin {
 		$rel_path = dirname( plugin_basename( self::$file ) ) . '/languages/';
 	
 		load_plugin_textdomain( 'pronamic_companies', false, $rel_path );
-	
+
 		// Require
 		require_once dirname( self::$file ) . '/includes/taxonomy.php';
 		require_once dirname( self::$file ) . '/includes/gravityforms.php';
@@ -86,6 +86,24 @@ class Pronamic_Companies_Plugin {
 		));
 	
 		pronamic_companies_create_taxonomies();
+
+		// Actions
+		add_action( 'save_post', array( __CLASS__, 'save_post_title_index_automatic' ), 10, 2 );
+	}
+
+	/**
+	 * Save post character term
+	 * 
+	 * @param string $post_id
+	 * @param stdClass $post
+	 */
+	public static function save_post_title_index_automatic( $post_id, $post ) {
+
+		if ( is_object_in_taxonomy( $post->post_type, 'pronamic_company_character' ) ) {
+			$character = strtoupper( substr( $post->post_title, 0, 1 ) );
+
+			$result = wp_set_object_terms( $post_id, $character, 'pronamic_company_character', false );
+		}
 	}
 
 	/**
