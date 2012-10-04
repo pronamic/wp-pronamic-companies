@@ -50,6 +50,7 @@ class Pronamic_Companies_Plugin {
 		load_plugin_textdomain( 'pronamic_companies', false, $rel_path );
 
 		// Require
+		require_once dirname( self::$file ) . '/includes/functions.php';
 		require_once dirname( self::$file ) . '/includes/taxonomy.php';
 		require_once dirname( self::$file ) . '/includes/gravityforms.php';
 		require_once dirname( self::$file ) . '/includes/template.php';
