@@ -192,7 +192,8 @@ class Pronamic_Companies_Plugin {
 			'pronamic_copmanies_permalink', // section 
 			array( 'label_for' => 'pronamic_company_type_base' ) // args 
 		);
-	
+
+		// Register settings
 		register_setting( 'pronamic_companies', 'pronamic_company_base' );
 		register_setting( 'pronamic_companies', 'pronamic_company_category_base' );
 		register_setting( 'pronamic_companies', 'pronamic_company_character_base' );
