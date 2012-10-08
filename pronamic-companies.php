@@ -406,6 +406,11 @@ class Pronamic_Companies_Plugin {
 		exit;
 	}
 
+	/**
+	 * Admin include file
+	 * 
+	 * @param string $file
+	 */
 	public static function admin_include( $file ) {
 		include 'admin/' . $file;
 	}
