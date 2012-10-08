@@ -17,4 +17,6 @@ flush_rewrite_rules();
 
 		<?php submit_button(); ?>
 	</form>
+	
+	<?php include 'pronamic.php'; ?>
 </div>
