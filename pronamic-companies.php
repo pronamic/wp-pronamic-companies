@@ -26,6 +26,13 @@ class Pronamic_Companies_Plugin {
 	 */
 	public static $file;
 
+	/**
+	 * The plugin dirname
+	 * 
+	 * @var string
+	 */
+	public static $dirname;
+
 	//////////////////////////////////////////////////
 
 	/**
@@ -33,6 +40,7 @@ class Pronamic_Companies_Plugin {
 	 */
 	public static function bootstrap( $file ) {
 		self::$file = $file;
+		self::$dirname = dirname( $file );
 
 		add_action( 'init',           array( __CLASS__, 'init' ) );
 		add_action( 'admin_init',     array( __CLASS__, 'admin_init' ) );
@@ -50,10 +58,10 @@ class Pronamic_Companies_Plugin {
 		load_plugin_textdomain( 'pronamic_companies', false, $rel_path );
 
 		// Require
-		require_once dirname( self::$file ) . '/includes/functions.php';
-		require_once dirname( self::$file ) . '/includes/taxonomy.php';
-		require_once dirname( self::$file ) . '/includes/gravityforms.php';
-		require_once dirname( self::$file ) . '/includes/template.php';
+		require_once self::$dirname . '/includes/functions.php';
+		require_once self::$dirname . '/includes/taxonomy.php';
+		require_once self::$dirname . '/includes/gravityforms.php';
+		require_once self::$dirname . '/includes/template.php';
 	
 		// Post types
 		$slug = get_option( 'pronamic_company_base' );
