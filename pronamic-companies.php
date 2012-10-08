@@ -107,7 +107,6 @@ class Pronamic_Companies_Plugin {
 	 * @param stdClass $post
 	 */
 	public static function save_post_title_index_automatic( $post_id, $post ) {
-
 		if ( is_object_in_taxonomy( $post->post_type, 'pronamic_company_character' ) ) {
 			$character = strtoupper( substr( $post->post_title, 0, 1 ) );
 
