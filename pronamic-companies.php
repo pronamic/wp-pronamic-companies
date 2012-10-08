@@ -405,6 +405,10 @@ class Pronamic_Companies_Plugin {
 
 		exit;
 	}
+
+	public static function admin_include( $file ) {
+		include 'admin/' . $file;
+	}
 }
 
 Pronamic_Companies_Plugin::bootstrap( __FILE__ );

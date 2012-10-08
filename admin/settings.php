@@ -18,5 +18,6 @@ flush_rewrite_rules();
 		<?php submit_button(); ?>
 	</form>
 	
-	<?php include 'pronamic.php'; ?>
+	<?php Pronamic_Companies_Plugin::admin_include( 'plugins.php' ); ?>	
+	<?php Pronamic_Companies_Plugin::admin_include( 'pronamic.php' ); ?>
 </div>

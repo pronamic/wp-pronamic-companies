@@ -106,6 +106,6 @@
 			<?php submit_button( __( 'Export to CSV', 'pronmic_companies' ), 'secondary', 'pronamic_companies_export' ); ?>
 		</p>
 	</form>
-	
-	<?php include 'pronamic.php'; ?>
+
+	<?php Pronamic_Companies_Plugin::admin_include( 'pronamic.php' ); ?>
 </div>
