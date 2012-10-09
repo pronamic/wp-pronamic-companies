@@ -111,3 +111,20 @@ function pronamic_companies_gform_post_data( $post_data, $form, $lead ) {
 }
 
 add_filter( 'gform_post_data', 'pronamic_companies_gform_post_data', 10, 3 );
+
+/**
+ * Gravity Forms - Pre render
+ * 
+ * @param unknown_type $form
+ */
+function pronamic_companies_gform_update_post_field_default_value( $field ) {
+	$field_type = RGFormsModel::get_input_type( $field );
+
+	if ( $field_type = 'address' ) {
+		var_dump( $field );
+	}
+
+	return $field;
+}
+
+add_filter( 'gform_update_post_field_default_value', 'pronamic_companies_gform_update_post_field_default_value' );
