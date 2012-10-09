@@ -12,13 +12,42 @@ Pronamic Companies is a basic plugin to build a company directory.
 This plugin uses custom post types to add company directory functionality. Pronamic Companies allows you to 
 add, edit and remove companies.
 
+
 == Installation ==
 
 Upload the Pronamic Companies folder to your wp-content/plugins folder.
 
+
 == Screenshots ==
 
 ...
+
+
+== Custom Fields ==
+
+*	_pronamic_company_address
+*	_pronamic_company_postal_code
+*	_pronamic_company_city
+*	_pronamic_company_country
+
+*	_pronamic_company_mailing_address
+*	_pronamic_company_mailing_postal_code
+*	_pronamic_company_mailing_city
+*	_pronamic_company_mailing_country
+
+*	_pronamic_company_phone_number
+*	_pronamic_company_fax_number
+
+*	_pronamic_company_email
+*	_pronamic_company_website
+*	_pronamic_company_rss
+*	_pronamic_company_video
+
+*	_pronamic_company_twitter
+*	_pronamic_company_facebook
+*	_pronamic_company_linkedin
+*	_pronamic_company_google_plus
+
 
 == Changelog ==
 
