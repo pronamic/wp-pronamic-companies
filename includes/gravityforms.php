@@ -64,9 +64,9 @@ function pronamic_companies_gform_post_data( $post_data, $form, $lead ) {
 	// Form fields
 	foreach ( $form['fields'] as $field ) {
 		if ( isset( $field['isCompanyVisitingAddress'] ) ) {
-			$is_company_visiting_address = filter_var( $field['isCompanyVisitingAddress'], FILTER_VALIDATE_BOOLEAN );
+			$is_company_address = filter_var( $field['isCompanyVisitingAddress'], FILTER_VALIDATE_BOOLEAN );
 
-			if ( $is_company_visiting_address ) {
+			if ( $is_company_address ) {
 				$id = '' . $field['id'] . '.';
 				
 				$map['_pronamic_company_address'] = $id . '1'; // Street value
@@ -79,9 +79,9 @@ function pronamic_companies_gform_post_data( $post_data, $form, $lead ) {
 		}
 
 		if ( isset( $field['isCompanyMailingAddress'] ) ) {
-			$is_company_visiting_address = filter_var( $field['isCompanyMailingAddress'], FILTER_VALIDATE_BOOLEAN );
+			$is_company_address = filter_var( $field['isCompanyMailingAddress'], FILTER_VALIDATE_BOOLEAN );
 
-			if ( $is_company_visiting_address ) {
+			if ( $is_company_address ) {
 				$id = '' . $field['id'] . '.';
 				
 				$map['_pronamic_company_mailing_address'] = $id . '1'; // Street value
@@ -113,15 +113,55 @@ function pronamic_companies_gform_post_data( $post_data, $form, $lead ) {
 add_filter( 'gform_post_data', 'pronamic_companies_gform_post_data', 10, 3 );
 
 /**
- * Gravity Forms - Pre render
+ * Gravity Forms - Update post field default value
  * 
- * @param unknown_type $form
+ * @see http://plugins.trac.wordpress.org/browser/gravity-forms-update-post/tags/0.5.3/gravityforms-update-post.php#L190
+ * @param array $field
+ * @return array
  */
 function pronamic_companies_gform_update_post_field_default_value( $field ) {
-	$field_type = RGFormsModel::get_input_type( $field );
+	global $gform_update_post;
 
-	if ( $field_type = 'address' ) {
-		var_dump( $field );
+	if ( isset( $gform_update_post, $gform_update_post->options, $gform_update_post->options['request_id'] ) ) {
+		$name = $gform_update_post->options['request_id'];
+
+		$post_id = filter_input( INPUT_GET, $name, FILTER_SANITIZE_STRING );
+
+		if ( !empty( $post_id ) ) {
+			$field_type = RGFormsModel::get_input_type( $field );
+		
+			if ( $field_type == 'address' ) {
+				if ( isset( $field['isCompanyVisitingAddress'] ) ) {
+					$is_company_address = filter_var( $field['isCompanyVisitingAddress'], FILTER_VALIDATE_BOOLEAN );
+		
+					if ( $is_company_address ) {
+						$field['defaultValue'] = array(
+							$field['id'] . '.1' => get_post_meta( $post_id, '_pronamic_company_address', true ), // Street value
+							// $field['id'] . '.2' => get_post_meta( $post_id, '', true ), // Street 2 value
+							$field['id'] . '.3' => get_post_meta( $post_id, '_pronamic_company_city', true ), // City value
+							// $field['id'] . '.4' => get_post_meta( $post_id, '', true ), // State value
+							$field['id'] . '.5' => get_post_meta( $post_id, '_pronamic_company_postal_code', true ), // Zip code
+							$field['id'] . '.6' => get_post_meta( $post_id, '_pronamic_company_country', true ) // Country value
+						);
+					}
+				}
+
+				if ( isset( $field['isCompanyMailingAddress'] ) ) {
+					$is_company_address = filter_var( $field['isCompanyMailingAddress'], FILTER_VALIDATE_BOOLEAN );
+		
+					if ( $is_company_address ) {
+						$field['defaultValue'] = array(
+							$field['id'] . '.1' => get_post_meta( $post_id, '_pronamic_company_mailing_address', true ), // Street value
+							// $field['id'] . '.2' => get_post_meta( $post_id, '', true ), // Street 2 value
+							$field['id'] . '.3' => get_post_meta( $post_id, '_pronamic_company_mailing_city', true ), // City value
+							// $field['id'] . '.4' => get_post_meta( $post_id, '', true ), // State value
+							$field['id'] . '.5' => get_post_meta( $post_id, '_pronamic_company_mailing_postal_code', true ), // Zip code
+							$field['id'] . '.6' => get_post_meta( $post_id, '_pronamic_company_mailing_country', true ) // Country value
+						);
+					}
+				}
+			}
+		}
 	}
 
 	return $field;
