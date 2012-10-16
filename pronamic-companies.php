@@ -99,7 +99,7 @@ class Pronamic_Companies_Plugin {
 		pronamic_companies_create_taxonomies();
 
 		// Actions
-		//add_action( 'save_post', array( __CLASS__, 'save_post_title_index_automatic' ), 10, 2 );
+		add_action( 'save_post', array( __CLASS__, 'save_post_title_index_automatic' ), 10, 2 );
 	}
 
 	/**
