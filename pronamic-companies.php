@@ -39,11 +39,13 @@ class Pronamic_Companies_Plugin {
 	 * Bootstrap
 	 */
 	public static function bootstrap( $file ) {
-		self::$file = $file;
+		self::$file    = $file;
 		self::$dirname = dirname( $file );
 
-		add_action( 'init',           array( __CLASS__, 'init' ) );
-		add_action( 'admin_init',     array( __CLASS__, 'admin_init' ) );
+		add_action( 'init',              array( __CLASS__, 'init' ) );
+		add_action( 'admin_init',        array( __CLASS__, 'admin_init' ) );
+
+		register_activation_hook( $file, array( __CLASS__, 'activate' ) );
 	}
 
 	//////////////////////////////////////////////////
@@ -66,7 +68,7 @@ class Pronamic_Companies_Plugin {
 		// Post types
 		$slug = get_option( 'pronamic_company_base' );
 		$slug = empty( $slug ) ? _x( 'companies', 'slug', 'pronamic_companies' ) : $slug;
-	
+
 		register_post_type( 'pronamic_company', array(
 			'labels'             => array(
 				'name'               => _x( 'Companies', 'post type general name', 'pronamic_companies' ), 
@@ -97,7 +99,16 @@ class Pronamic_Companies_Plugin {
 		pronamic_companies_create_taxonomies();
 
 		// Actions
-		add_action( 'save_post', array( __CLASS__, 'save_post_title_index_automatic' ), 10, 2 );
+		//add_action( 'save_post', array( __CLASS__, 'save_post_title_index_automatic' ), 10, 2 );
+	}
+
+	/**
+	 * Activate
+	 */
+	public static function activate() {
+	    self::init();
+	
+	    flush_rewrite_rules();
 	}
 
 	/**
@@ -418,17 +429,6 @@ class Pronamic_Companies_Plugin {
 
 Pronamic_Companies_Plugin::bootstrap( __FILE__ );
 
-/**
- * Flush data
- */
-function pronamic_companies_rewrite_flush() {
-    pronamic_companies_init();
-
-    flush_rewrite_rules();
-}
-
-register_activation_hook( __FILE__, 'pronamic_companies_rewrite_flush' );
-
 ////////////////////////////////////////////////////////////
 
 function pronamic_companies_admin_enqueue(){
@@ -464,9 +464,7 @@ function pronamic_companies_information_box( $post ) {
 /**
  * Save metaboxes
  */
-function pronamic_companies_save_post( $post_id ) {
-	global $post;
-
+function pronamic_companies_save_post( $post_id, $post ) {
 	if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
 		return;
 
@@ -521,7 +519,7 @@ function pronamic_companies_save_post( $post_id ) {
 }
 
 
-add_action( 'save_post', 'pronamic_companies_save_post', 50 );
+add_action( 'save_post', 'pronamic_companies_save_post', 50, 2 );
 
 /**
  * Columns
@@ -535,7 +533,7 @@ function pronamic_companies_set_columns( $columns ) {
 		$new_columns['cb'] = $columns['cb'];
 	}
 
-	// $newColumns['thumbnail'] = __('Thumbnail', 'pronamic_companies');
+	// $new_columns['thumbnail'] = __('Thumbnail', 'pronamic_companies');
 
 	if( isset( $columns['title'] ) ) {
 		$new_columns['title'] = __( 'Company', 'pronamic_companies' );
