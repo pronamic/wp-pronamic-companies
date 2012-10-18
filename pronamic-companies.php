@@ -42,8 +42,8 @@ class Pronamic_Companies_Plugin {
 		self::$file    = $file;
 		self::$dirname = dirname( $file );
 
-		add_action( 'init',              array( __CLASS__, 'init' ) );
-		add_action( 'admin_init',        array( __CLASS__, 'admin_init' ) );
+		add_action( 'init',       array( __CLASS__, 'init' ) );
+		add_action( 'admin_init', array( __CLASS__, 'admin_init' ) );
 
 		register_activation_hook( $file, array( __CLASS__, 'activate' ) );
 	}
