@@ -42,10 +42,12 @@ class Pronamic_Companies_Plugin {
 		self::$file    = $file;
 		self::$dirname = dirname( $file );
 
-		add_action( 'init',       array( __CLASS__, 'init' ) );
-		add_action( 'admin_init', array( __CLASS__, 'admin_init' ) );
+		register_activation_hook(   $file, array( __CLASS__, 'activate' ) );
+		register_deactivation_hook( $file, array( __CLASS__, 'deactivate' ) );
 
-		register_activation_hook( $file, array( __CLASS__, 'activate' ) );
+		add_action( 'init', array( __CLASS__, 'init' ) );
+
+		Pronamic_Companies_Plugin_Admin::bootstrap();
 	}
 
 	//////////////////////////////////////////////////
@@ -101,15 +103,28 @@ class Pronamic_Companies_Plugin {
 		// Actions
 		add_action( 'save_post', array( __CLASS__, 'save_post_title_index_automatic' ), 10, 2 );
 	}
+	
+	//////////////////////////////////////////////////
 
 	/**
 	 * Activate
 	 */
 	public static function activate() {
-	    self::init();
-	
-	    flush_rewrite_rules();
+		// Flush rewrite rules on activation
+		// @see http://wpengineer.com/2044/custom-post-type-and-permalink/
+		add_action( 'init', 'flush_rewrite_rules', 20 );
 	}
+
+	/**
+	 * Activate
+	 */
+	public static function deactivate() {
+		// Flush rewrite rules on activation
+		// @see http://wpengineer.com/2044/custom-post-type-and-permalink/
+		add_action( 'init', 'flush_rewrite_rules', 20 );
+	}
+	
+	//////////////////////////////////////////////////
 
 	/**
 	 * Save post character term
@@ -124,11 +139,25 @@ class Pronamic_Companies_Plugin {
 			$result = wp_set_object_terms( $post_id, $character, 'pronamic_company_character', false );
 		}
 	}
+}
+
+class Pronamic_Companies_Plugin_Admin {
+	/**
+	 * Bootstrap
+	 */
+	public static function bootstrap() {
+		add_action( 'admin_init', array( __CLASS__, 'admin_init' ) );
+	}
+	
+	//////////////////////////////////////////////////
 
 	/**
 	 * Admin initialize
 	 */
 	public static function admin_init() {
+		// Actions
+		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'enqueue_scripts' ) );
+
 		// Export
 		self::maybe_export();
 
@@ -254,6 +283,17 @@ class Pronamic_Companies_Plugin {
 		register_setting( 'pronamic_companies', 'pronamic_company_type_base' );
 	}
 
+	//////////////////////////////////////////////////
+
+	/**
+	 * Enqueue scripts
+	 */
+	public static function enqueue_scripts() {
+		wp_enqueue_style( 'pronamic_companies', plugins_url( '/admin/css/admin.css', Pronamic_Companies_Plugin::$file ) );
+	}
+
+	//////////////////////////////////////////////////
+
 	/**
 	 * Settings section
 	 */
@@ -290,6 +330,8 @@ class Pronamic_Companies_Plugin {
 			'show_option_none' => __( '&mdash; Select a page &mdash;', 'pronamic_companies' ) 
 		) );
 	}
+
+	//////////////////////////////////////////////////
 
 	/**
 	 * Get export
@@ -417,6 +459,8 @@ class Pronamic_Companies_Plugin {
 		exit;
 	}
 
+	//////////////////////////////////////////////////
+
 	/**
 	 * Admin include file
 	 * 
@@ -431,11 +475,6 @@ Pronamic_Companies_Plugin::bootstrap( __FILE__ );
 
 ////////////////////////////////////////////////////////////
 
-function pronamic_companies_admin_enqueue(){
-	wp_enqueue_style( 'pronamic_companies', plugins_url('/assets/css/admin.css', __FILE__ ) );
-}
-
-add_action( 'admin_enqueue_scripts', 'pronamic_companies_admin_enqueue' );
 
 /**
  * Meta boxes
