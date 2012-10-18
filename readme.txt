@@ -23,6 +23,49 @@ Upload the Pronamic Companies folder to your wp-content/plugins folder.
 ...
 
 
+== Template Functions ==
+
+*	pronamic_company_get_address
+*	pronamic_company_has_address
+*	pronamic_company_the_address
+
+*	pronamic_company_get_postal_code
+*	pronamic_company_has_postal_code
+*	pronamic_company_the_postal_code
+
+*	pronamic_company_get_city
+*	pronamic_company_has_city
+*	pronamic_company_the_city
+
+*	pronamic_company_get_phone_number
+*	pronamic_company_has_phone_number
+*	pronamic_company_the_phone_number
+
+*	pronamic_company_get_fax_number
+*	pronamic_company_has_fax_number
+*	pronamic_company_the_fax_number
+
+*	pronamic_company_get_email
+*	pronamic_company_has_email
+*	pronamic_company_the_email
+
+*	pronamic_company_get_website
+*	pronamic_company_has_website
+*	pronamic_company_the_website
+
+*	pronamic_company_get_twitter
+*	pronamic_company_has_twitter
+*	pronamic_company_the_twitter
+
+*	pronamic_company_get_facebook
+*	pronamic_company_has_facebook
+*	pronamic_company_the_facebook
+
+*	pronamic_company_get_linkedin
+*	pronamic_company_has_linkedin
+*	pronamic_company_the_linkedin
+
+
 == Custom Fields ==
 
 *	_pronamic_company_address
