@@ -45,7 +45,8 @@ class Pronamic_Companies_Plugin {
 		register_activation_hook(   $file, array( __CLASS__, 'activate' ) );
 		register_deactivation_hook( $file, array( __CLASS__, 'deactivate' ) );
 
-		add_action( 'init', array( __CLASS__, 'init' ) );
+		add_action( 'init',      array( __CLASS__, 'init' ) );
+		add_action( 'wp_loaded', array( __CLASS__, 'p2p_register_connection_type' ) );
 
 		Pronamic_Companies_Plugin_Admin::bootstrap();
 	}
@@ -99,9 +100,6 @@ class Pronamic_Companies_Plugin {
 		));
 	
 		pronamic_companies_create_taxonomies();
-
-		// Actions
-		add_action( 'save_post', array( __CLASS__, 'save_post_title_index_automatic' ), 10, 2 );
 	}
 	
 	//////////////////////////////////////////////////
@@ -124,19 +122,16 @@ class Pronamic_Companies_Plugin {
 		add_action( 'init', 'flush_rewrite_rules', 20 );
 	}
 	
-	//////////////////////////////////////////////////
-
 	/**
-	 * Save post character term
-	 * 
-	 * @param string $post_id
-	 * @param stdClass $post
+	 * Posts 2 Posts
 	 */
-	public static function save_post_title_index_automatic( $post_id, $post ) {
-		if ( is_object_in_taxonomy( $post->post_type, 'pronamic_company_character' ) ) {
-			$character = strtoupper( substr( $post->post_title, 0, 1 ) );
-
-			$result = wp_set_object_terms( $post_id, $character, 'pronamic_company_character', false );
+	public static function p2p_register_connection_type() {
+		if ( function_exists( 'p2p_register_connection_type' ) ) {
+			p2p_register_connection_type( array(
+				'name' => 'posts_to_pronamic_companies',
+				'from' => 'post',
+				'to'   => 'pronamic_company'
+			) );
 		}
 	}
 }
@@ -147,6 +142,7 @@ class Pronamic_Companies_Plugin_Admin {
 	 */
 	public static function bootstrap() {
 		add_action( 'admin_init', array( __CLASS__, 'admin_init' ) );
+		add_action( 'admin_menu', array( __CLASS__, 'admin_menu' ) );
 	}
 	
 	//////////////////////////////////////////////////
@@ -156,7 +152,17 @@ class Pronamic_Companies_Plugin_Admin {
 	 */
 	public static function admin_init() {
 		// Actions
+		add_action( 'add_meta_boxes', array( __CLASS__, 'add_meta_boxes' ) );
+
 		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'enqueue_scripts' ) );
+
+		add_action( 'save_post', array( __CLASS__, 'save_post_company_details' ),       50, 2 );
+		add_action( 'save_post', array( __CLASS__, 'save_post_title_index_automatic' ), 10, 2 );
+
+		add_action( 'manage_posts_custom_column', array( __CLASS__, 'custom_column' ), 10, 2 );
+
+		// Filters
+		add_filter( 'manage_edit-pronamic_company_columns' ,  array( __CLASS__, 'company_columns' ) );
 
 		// Export
 		self::maybe_export();
@@ -286,10 +292,190 @@ class Pronamic_Companies_Plugin_Admin {
 	//////////////////////////////////////////////////
 
 	/**
+	 * Admin menu
+	 */
+	public static function admin_menu() {
+		add_submenu_page( 
+			'edit.php?post_type=pronamic_company', // parent_slug
+			__( 'Companies Export', 'pronamic_companies' ), // page_title
+			__( 'Export', 'pronamic_companies' ), // menu_title
+			'read', // capability
+			'pronamic_companies_export', // menu_slug
+			array( __CLASS__, 'page_export' ) // function 
+		);
+	
+		add_submenu_page( 
+			'edit.php?post_type=pronamic_company', // parent_slug
+			__( 'Companies Settings', 'pronamic_companies' ), // page_title
+			__( 'Settings', 'pronamic_companies' ), // menu_title
+			'read', // capability
+			'pronamic_companies_settings', // menu_slug
+			array( __CLASS__, 'page_settings' ) // function 
+		);
+	}
+
+	//////////////////////////////////////////////////
+
+	/**
 	 * Enqueue scripts
 	 */
 	public static function enqueue_scripts() {
 		wp_enqueue_style( 'pronamic_companies', plugins_url( '/admin/css/admin.css', Pronamic_Companies_Plugin::$file ) );
+	}
+
+	//////////////////////////////////////////////////
+
+	/**
+	 * Add meta boxes
+	 */
+	public static function add_meta_boxes() {
+		add_meta_box(
+			'pronamic_companies_meta_box', // id
+			__( 'Company Details', 'pronamic_companies' ), // title
+			array( __CLASS__, 'meta_box_company_details' ), // callback
+			'pronamic_company', // post_type
+			'normal', // context
+			'high' // priority
+	    );
+	}
+
+	/**
+	 * Meta box company details
+	 * 
+	 * @param stdClass $post
+	 */
+	public static function meta_box_company_details( $post ) {
+		include 'admin/meta-box.php';
+	}
+	
+	//////////////////////////////////////////////////
+
+	/**
+	 * Save post character term
+	 * 
+	 * @param string $post_id
+	 * @param stdClass $post
+	 */
+	public static function save_post_title_index_automatic( $post_id, $post ) {
+		if ( is_object_in_taxonomy( $post->post_type, 'pronamic_company_character' ) ) {
+			$character = strtoupper( substr( $post->post_title, 0, 1 ) );
+
+			$result = wp_set_object_terms( $post_id, $character, 'pronamic_company_character', false );
+		}
+	}
+	
+	/**
+	 * Save metaboxes
+	 */
+	public static function save_post_company_details( $post_id, $post ) {
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+			return;
+	
+		if ( !isset( $_POST['pronamic_companies_nonce'] ) )
+			return;
+	
+		if ( !wp_verify_nonce( $_POST['pronamic_companies_nonce'], 'pronamic_companies_save_post' ) )
+			return;
+	
+		if ( !current_user_can( 'edit_post', $post->ID ) )
+			return;
+			
+		// Save data
+		$data = filter_input_array( INPUT_POST, array(
+			// Visiting Address
+			'_pronamic_company_address'             => FILTER_SANITIZE_STRING,
+			'_pronamic_company_postal_code'         => FILTER_SANITIZE_STRING,
+			'_pronamic_company_city'                => FILTER_SANITIZE_STRING,
+			'_pronamic_company_country'             => FILTER_SANITIZE_STRING,
+			// Mailing Address
+			'_pronamic_company_mailing_address'     => FILTER_SANITIZE_STRING,
+			'_pronamic_company_mailing_postal_code' => FILTER_SANITIZE_STRING,
+			'_pronamic_company_mailing_city'        => FILTER_SANITIZE_STRING,
+			'_pronamic_company_mailing_country'     => FILTER_SANITIZE_STRING,
+			// Phone
+			'_pronamic_company_phone_number'        => FILTER_SANITIZE_STRING,
+			'_pronamic_company_fax_number'          => FILTER_SANITIZE_STRING,
+			// Online
+			'_pronamic_company_email'               => FILTER_SANITIZE_STRING,
+			'_pronamic_company_website'             => FILTER_SANITIZE_STRING,
+			'_pronamic_company_rss'                 => FILTER_SANITIZE_STRING,
+			'_pronamic_company_video'               => FILTER_SANITIZE_STRING,
+			// Social Networks
+			'_pronamic_company_twitter'             => FILTER_SANITIZE_STRING,
+			'_pronamic_company_facebook'            => FILTER_SANITIZE_STRING,
+			'_pronamic_company_linkedin'            => FILTER_SANITIZE_STRING,
+			'_pronamic_company_google_plus'         => FILTER_SANITIZE_STRING
+		) );
+	
+		foreach ( $data as $key => $value ) {
+			update_post_meta( $post_id, $key, $value );
+		}
+	
+		// Google Maps address
+		$address  = '';
+	
+		$address .= $data['_pronamic_company_address'] . "\r\n";
+		$address .= $data['_pronamic_company_postal_code'] . ' ' . $data['_pronamic_company_city'] . "\r\n";
+		$address .= $data['_pronamic_company_country'];
+	
+		update_post_meta( $post_id, '_pronamic_google_maps_address', $address );
+	}
+		
+	/**
+	 * Columns
+	 * 
+	 * @param array $columns
+	 */
+	public static function company_columns( $columns ) {
+		$new_columns = array();
+	
+		if( isset( $columns['cb'] ) ) {
+			$new_columns['cb'] = $columns['cb'];
+		}
+	
+		// $new_columns['thumbnail'] = __('Thumbnail', 'pronamic_companies');
+	
+		if( isset( $columns['title'] ) ) {
+			$new_columns['title'] = __( 'Company', 'pronamic_companies' );
+		}
+	
+		if( isset( $columns['author'] ) ) {
+			$new_columns['author'] = $columns['author'];
+		}
+	
+		$new_columns['pronamic_company_address'] = __( 'Address', 'pronamic_companies' );
+	
+		$new_columns['pronamic_company_categories'] = __( 'Categories', 'pronamic_companies' );
+	
+		if( isset( $columns['comments'] ) ) {
+			$new_columns['comments'] = $columns['comments'];
+		}
+	
+		if( isset( $columns['date'] ) ) {
+			$new_columns['date'] = $columns['date'];
+		}
+		
+		return $new_columns;
+	}
+
+	public static function custom_column( $column, $post_id ) {
+		switch( $column ) {
+			case 'pronamic_company_address':
+				echo get_post_meta( $post_id, '_pronamic_company_address', true ), '<br />';
+				echo get_post_meta( $post_id, '_pronamic_company_postal_code', true ), ' ', get_post_meta( $post_id, '_pronamic_company_city', true );
+	
+				break;
+			case 'pronamic_company_categories':
+				$terms = get_the_term_list( $post_id, 'pronamic_company_category' , '' , ', ' , '' );
+	
+				if( is_string( $terms ) ) {
+					echo $terms;
+				} else {
+					echo __( 'No Category', 'pronamic_companies' );
+				}
+	
+				break;
+		}
 	}
 
 	//////////////////////////////////////////////////
@@ -466,211 +652,25 @@ class Pronamic_Companies_Plugin_Admin {
 	 * 
 	 * @param string $file
 	 */
-	public static function admin_include( $file ) {
-		include 'admin/' . $file;
+	public static function include_file( $file ) {
+		include Pronamic_Companies_Plugin::$dirname . '/admin/' . $file;
+	}
+
+	//////////////////////////////////////////////////
+
+	/**
+	 * Page export
+	 */
+	function page_export() {
+		include 'admin/export.php';
+	}
+	
+	/**
+	 * Page settings
+	 */
+	function page_settings() {
+		include 'admin/settings.php';
 	}
 }
 
 Pronamic_Companies_Plugin::bootstrap( __FILE__ );
-
-////////////////////////////////////////////////////////////
-
-
-/**
- * Meta boxes
- */
-add_action( 'add_meta_boxes', 'pronamic_companies_add_information_box' );
-
-/* Add metaboxes */
-function pronamic_companies_add_information_box() {
-    add_meta_box( 
-        'pronamic_companies_meta_box' , // id
-        __( 'Company information', 'pronamic_companies') , // title
-        'pronamic_companies_information_box' , // callback
-        'pronamic_company' , // post_type
-        'normal' , // context
-        'high' // priority
-    );
-}
-
-/**
- * Print metaboxes
- */
-function pronamic_companies_information_box( $post ) {
-	include 'admin/meta-box.php';
-}
-
-/**
- * Save metaboxes
- */
-function pronamic_companies_save_post( $post_id, $post ) {
-	if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
-		return;
-
-	if( ! isset( $_POST['pronamic_companies_nonce'] ) )
-		return;
-
-	if( ! wp_verify_nonce( $_POST['pronamic_companies_nonce'], 'pronamic_companies_save_post' ) )
-		return;
-
-	if( ! current_user_can( 'edit_post', $post->ID ) )
-		return;
-		
-	// Save data
-	$data = filter_input_array( INPUT_POST, array(
-		// Visiting Address
-		'_pronamic_company_address' => FILTER_SANITIZE_STRING , 
-		'_pronamic_company_postal_code' => FILTER_SANITIZE_STRING ,
-		'_pronamic_company_city' => FILTER_SANITIZE_STRING ,
-		'_pronamic_company_country' => FILTER_SANITIZE_STRING ,
-		// Mailing Address
-		'_pronamic_company_mailing_address' => FILTER_SANITIZE_STRING , 
-		'_pronamic_company_mailing_postal_code' => FILTER_SANITIZE_STRING ,
-		'_pronamic_company_mailing_city' => FILTER_SANITIZE_STRING ,
-		'_pronamic_company_mailing_country' => FILTER_SANITIZE_STRING ,
-		// Phone
-		'_pronamic_company_phone_number' => FILTER_SANITIZE_STRING ,
-		'_pronamic_company_fax_number' => FILTER_SANITIZE_STRING ,
-		// Online
-		'_pronamic_company_email' => FILTER_SANITIZE_STRING ,
-		'_pronamic_company_website' => FILTER_SANITIZE_STRING ,
-		'_pronamic_company_rss' => FILTER_SANITIZE_STRING ,
-		'_pronamic_company_video' => FILTER_SANITIZE_STRING ,
-		// Social Networks
-		'_pronamic_company_twitter' => FILTER_SANITIZE_STRING ,
-		'_pronamic_company_facebook' => FILTER_SANITIZE_STRING ,
-		'_pronamic_company_linkedin' => FILTER_SANITIZE_STRING ,
-		'_pronamic_company_google_plus' => FILTER_SANITIZE_STRING 
-	));
-
-	foreach( $data as $key => $value ) {
-		update_post_meta( $post_id, $key, $value );
-	}
-
-	// Google Maps address
-	$address  = '';
-
-	$address .= $data['_pronamic_company_address'] . "\r\n";
-	$address .= $data['_pronamic_company_postal_code'] . ' ' . $data['_pronamic_company_city'] . "\r\n";
-	$address .= $data['_pronamic_company_country'];
-
-	update_post_meta( $post_id, '_pronamic_google_maps_address', $address );
-}
-
-
-add_action( 'save_post', 'pronamic_companies_save_post', 50, 2 );
-
-/**
- * Columns
- * 
- * @param array $columns
- */
-function pronamic_companies_set_columns( $columns ) {
-	$new_columns = array();
-
-	if( isset( $columns['cb'] ) ) {
-		$new_columns['cb'] = $columns['cb'];
-	}
-
-	// $new_columns['thumbnail'] = __('Thumbnail', 'pronamic_companies');
-
-	if( isset( $columns['title'] ) ) {
-		$new_columns['title'] = __( 'Company', 'pronamic_companies' );
-	}
-
-	if( isset( $columns['author'] ) ) {
-		$new_columns['author'] = $columns['author'];
-	}
-
-	$new_columns['pronamic_company_address'] = __( 'Address', 'pronamic_companies' );
-
-	$new_columns['pronamic_company_categories'] = __( 'Categories', 'pronamic_companies' );
-
-	if( isset( $columns['comments'] ) ) {
-		$new_columns['comments'] = $columns['comments'];
-	}
-
-	if( isset( $columns['date'] ) ) {
-		$new_columns['date'] = $columns['date'];
-	}
-	
-	return $new_columns;
-}
-
-add_filter( 'manage_edit-pronamic_company_columns' , 'pronamic_companies_set_columns' );
-
-function pronamic_companies_custom_columns( $column, $post_id ) {
-	switch( $column ) {
-		case 'pronamic_company_address':
-			echo get_post_meta( $post_id, '_pronamic_company_address', true ), '<br />';
-			echo get_post_meta( $post_id, '_pronamic_company_postal_code', true ), ' ', get_post_meta( $post_id, '_pronamic_company_city', true );
-
-			break;
-		case 'pronamic_company_categories':
-			$terms = get_the_term_list( $post_id, 'pronamic_company_category' , '' , ', ' , '' );
-
-			if( is_string( $terms ) ) {
-				echo $terms;
-			} else {
-				echo __( 'No Category', 'pronamic_companies' );
-			}
-
-			break;
-	}
-}
-
-add_action( 'manage_posts_custom_column' , 'pronamic_companies_custom_columns', 10, 2 );
-
-/**
- * Posts 2 Posts
- */
-function pronamic_companies_p2p() {
-	if ( function_exists( 'p2p_register_connection_type' ) ) {
-		p2p_register_connection_type( array(
-			'name' => 'posts_to_pronamic_companies',
-			'from' => 'post',
-			'to'   => 'pronamic_company'
-		) );
-	}
-}
-
-add_action( 'wp_loaded', 'pronamic_companies_p2p' );
-
-/**
- * Admin menu
- */
-function pronamic_companies_admin_menu() {
-	add_submenu_page( 
-		'edit.php?post_type=pronamic_company' , // parent_slug
-		__( 'Companies Export', 'pronamic_companies' ) , // page_title
-		__( 'Export', 'pronamic_companies' ), // menu_title
-		'read' , // capability
-		'pronamic_companies_export' , // menu_slug
-		'pronamic_companies_page_export' // function 
-	);
-
-	add_submenu_page( 
-		'edit.php?post_type=pronamic_company' , // parent_slug
-		__( 'Companies Settings', 'pronamic_companies' ) , // page_title
-		__( 'Settings', 'pronamic_companies' ), // menu_title
-		'read' , // capability
-		'pronamic_companies_settings' , // menu_slug
-		'pronamic_companies_page_settings' // function 
-	);
-}
-
-add_action( 'admin_menu', 'pronamic_companies_admin_menu' );
-
-/**
- * Page export
- */
-function pronamic_companies_page_export() {
-	include 'admin/export.php';
-}
-
-/**
- * Page settings
- */
-function pronamic_companies_page_settings() {
-	include 'admin/settings.php';
-}

@@ -107,5 +107,5 @@
 		</p>
 	</form>
 
-	<?php Pronamic_Companies_Plugin::admin_include( 'pronamic.php' ); ?>
+	<?php Pronamic_Companies_Plugin_Admin::include_file( 'pronamic.php' ); ?>
 </div>
