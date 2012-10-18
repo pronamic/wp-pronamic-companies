@@ -65,6 +65,10 @@ Upload the Pronamic Companies folder to your wp-content/plugins folder.
 *	pronamic_company_has_linkedin( $post_id = null )
 *	pronamic_company_the_linkedin( $post_id = null )
 
+*	pronamic_company_get_google_plus( $post_id = null )
+*	pronamic_company_has_google_plus( $post_id = null )
+*	pronamic_company_the_google_plus( $post_id = null )
+
 
 == Custom Fields ==
 

@@ -252,6 +252,25 @@ function pronamic_company_the_linkedin( $post_id = null ) {
 
 //////////////////////////////////////////////////
 
+/**
+ * Get the company Google+
+ * 
+ * @return string
+ */
+function pronamic_company_get_google_plus( $post_id = null ) {
+	return pronamic_company_get_meta( '_pronamic_company_google_plus', $post_id );
+}
 
+/**
+ * Check if company has Google+
+ */
+function pronamic_company_has_google_plus( $post_id = null ) {
+	return pronamic_company_has_meta( '_pronamic_company_google_plus', $post_id );
+}
 
-
+/**
+ * Output the company Google+
+ */
+function pronamic_company_the_google_plus( $post_id = null ) {
+	echo pronamic_company_get_google_plus( $post_id );
+}
