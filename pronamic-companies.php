@@ -157,7 +157,8 @@ class Pronamic_Companies_Plugin_Admin {
 		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'enqueue_scripts' ) );
 
 		add_action( 'save_post', array( __CLASS__, 'save_post_company_details' ),       50, 2 );
-		add_action( 'save_post', array( __CLASS__, 'save_post_title_index_automatic' ), 10, 2 );
+		add_action( 'save_post', array( __CLASS__, 'save_post_title_index_automatic' ), 50, 2 );
+		add_action( 'save_post', array( __CLASS__, 'save_post_company_google_maps' ),   50, 2 );
 
 		add_action( 'manage_posts_custom_column', array( __CLASS__, 'custom_column' ), 10, 2 );
 
@@ -200,6 +201,24 @@ class Pronamic_Companies_Plugin_Admin {
 			'pronamic_companies', // page
 			'pronamic_companies_pages', // section 
 			array( 'label_for' => 'pronamic_companies_edit_page_id' ) // args 
+		);
+	
+		add_settings_field( 
+			'pronamic_companies_keywords_page_id', // id
+			__( 'Company Keywords Page', 'pronamic_companies' ), // title
+			array( __CLASS__, 'input_page' ),  // callback
+			'pronamic_companies', // page
+			'pronamic_companies_pages', // section 
+			array( 'label_for' => 'pronamic_companies_keywords_page_id' ) // args 
+		);
+	
+		add_settings_field( 
+			'pronamic_companies_brands_page_id', // id
+			__( 'Company Brands Page', 'pronamic_companies' ), // title
+			array( __CLASS__, 'input_page' ),  // callback
+			'pronamic_companies', // page
+			'pronamic_companies_pages', // section 
+			array( 'label_for' => 'pronamic_companies_brands_page_id' ) // args 
 		);
 
 		// Permalinks
@@ -279,6 +298,8 @@ class Pronamic_Companies_Plugin_Admin {
 		register_setting( 'pronamic_companies', 'pronamic_companies_register_page_id' );
 		register_setting( 'pronamic_companies', 'pronamic_companies_upgrade_page_id' );
 		register_setting( 'pronamic_companies', 'pronamic_companies_edit_page_id' );
+		register_setting( 'pronamic_companies', 'pronamic_companies_keywords_page_id' );
+		register_setting( 'pronamic_companies', 'pronamic_companies_brands_page_id' );
 
 		register_setting( 'pronamic_companies', 'pronamic_company_base' );
 		register_setting( 'pronamic_companies', 'pronamic_company_category_base' );
@@ -410,14 +431,41 @@ class Pronamic_Companies_Plugin_Admin {
 		foreach ( $data as $key => $value ) {
 			update_post_meta( $post_id, $key, $value );
 		}
+	}
+
+	/**
+	 * Save post company Google Maps
+	 * 
+	 * @param string $post_id
+	 */
+	public static function save_post_company_google_maps( $post_id, $post ) {
+		// Doing autosave
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE) { 
+			return;
+		}
 	
-		// Google Maps address
+		// Check post type
+		if ( ! ( $post->post_type == 'pronamic_company' ) ) {
+			return;
+		}
+	
+		// Revision
+		if ( wp_is_post_revision( $post_id ) ) {
+			return;
+		}
+	
+		// Publish
+		if ( $post->post_status != 'publish' ) {
+			return;
+		}
+	
+		// OK
 		$address  = '';
 	
-		$address .= $data['_pronamic_company_address'] . "\r\n";
-		$address .= $data['_pronamic_company_postal_code'] . ' ' . $data['_pronamic_company_city'] . "\r\n";
-		$address .= $data['_pronamic_company_country'];
-	
+		$address .= pronamic_company_get_address( $post_id ) . "\r\n";
+		$address .= pronamic_company_get_postal_code( $post_id ) . ' ' . pronamic_company_get_city( $post_id ) . "\r\n";
+		$address .= pronamic_company_get_city( $post_id );
+
 		update_post_meta( $post_id, '_pronamic_google_maps_address', $address );
 	}
 		
