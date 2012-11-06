@@ -24,6 +24,16 @@ function pronamic_companies_gform_field_advanced_settings( $position, $form_id )
 			</label>
 		</li>
 
+	<?php elseif ( $position == 500 ): ?>
+
+		<li class="prepopulate_field_setting field_setting" style="display: list-item;">
+			<input type="checkbox" id="pronamic_populate_current_user_companies" onclick="SetFieldProperty('populateCurrentUserCompanies', this.checked); ToggleInputName();" />
+
+			<label for="pronamic_populate_current_user_companies" class="inline">
+				<?php _e( 'Populate with Current User Companies', 'pronamic_companies' ); ?>
+			</label>
+		</li>
+
 	<?php endif;
 }
 
@@ -43,12 +53,57 @@ function pronamic_companies_gform_editor_js() {
 				var isCompanyMailingAddress = typeof field.isCompanyMailingAddress == "boolean" ? field.isCompanyMailingAddress : false; 			
 				jQuery("#pronamic_companies_is_mailing_address").prop("checked", isCompanyMailingAddress);
 			}
+
+			var populateCurrentUserCompanies = typeof field.populateCurrentUserCompanies == "boolean" ? field.populateCurrentUserCompanies : false;
+			jQuery("#pronamic_populate_current_user_companies").prop("checked", populateCurrentUserCompanies);
 		});
 	</script>
 	<?php
 }
 
 add_action( 'gform_editor_js', 'pronamic_companies_gform_editor_js' );
+
+/**
+ * Gravity Forms - Populate subscription
+ * 
+ * @param array $form
+ */
+function pronamic_companies_gform_populate_current_user_companies( $form ) {
+	foreach ( $form['fields'] as &$field ) {
+		if ( isset( $field['populateCurrentUserCompanies'] ) ) {
+			$populate_current_user_companies = filter_var( $field['populateCurrentUserCompanies'], FILTER_VALIDATE_BOOLEAN );
+
+			if ( $populate_current_user_companies ) {
+				global $user_ID;
+
+				// Make sure we only get subscriptions once
+				if ( !isset( $companies ) ) {
+					$companies = get_posts( array(
+						'post_type' => 'pronamic_company',
+						'nopaging'  => true,
+						'author'    => $user_ID
+					) );
+				}
+
+				// Build new choices array
+				$field['choices'] = array();
+
+				foreach ( $companies as $company ) {
+					$field['choices'][] = array(
+						'text'       => $company->post_title,
+						'value'      => '' . $company->ID,
+						'isSelected' => false
+					);
+				}
+			}
+		}
+	}
+
+	return $form;
+}
+
+add_filter( 'gform_admin_pre_render', 'pronamic_companies_gform_populate_current_user_companies' );
+add_filter( 'gform_pre_render',       'pronamic_companies_gform_populate_current_user_companies' );
 
 /**
  * Gravity Forms - Post data
@@ -90,6 +145,14 @@ function pronamic_companies_gform_post_data( $post_data, $form, $lead ) {
 				// $map['_pronamic_company_mailing_state'] = $id . '4'; // State value
 				$map['_pronamic_company_mailing_postal_code'] = $id . '5'; // Zip code
 				$map['_pronamic_company_mailing_country'] = $id . '6'; // Country value
+			}
+		}
+
+		if ( isset( $field['populateCurrentUserCompanies'] ) ) {
+			$populate_current_user_companies = filter_var( $field['populateCurrentUserCompanies'], FILTER_VALIDATE_BOOLEAN );
+
+			if ( $populate_current_user_companies ) {
+				$post_data['post_custom_fields']['_pronamic_company_id'] = RGFormsModel::get_field_value( $field );
 			}
 		}
 	}
