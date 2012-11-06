@@ -100,6 +100,9 @@ class Pronamic_Companies_Plugin {
 		) );
 	
 		pronamic_companies_create_taxonomies();
+
+		// Actions
+		add_action( 'save_post', array( __CLASS__, 'save_post_company_google_maps' ), 50, 2 );
 	}
 	
 	//////////////////////////////////////////////////
@@ -166,6 +169,37 @@ class Pronamic_Companies_Plugin {
 			}
 		}
 	}
+
+	/**
+	 * Save post company Google Maps
+	 * 
+	 * @param string $post_id
+	 */
+	public static function save_post_company_google_maps( $post_id, $post ) {
+		// Doing autosave
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE) { 
+			return;
+		}
+	
+		// Check post type
+		if ( ! ( $post->post_type == 'pronamic_company' ) ) {
+			return;
+		}
+	
+		// Revision
+		if ( wp_is_post_revision( $post_id ) ) {
+			return;
+		}
+	
+		// OK
+		$address  = '';
+	
+		$address .= pronamic_company_get_address( $post_id ) . "\r\n";
+		$address .= pronamic_company_get_postal_code( $post_id ) . ' ' . pronamic_company_get_city( $post_id ) . "\r\n";
+		$address .= pronamic_company_get_city( $post_id );
+
+		update_post_meta( $post_id, '_pronamic_google_maps_address', $address );
+	}
 }
 
 class Pronamic_Companies_Plugin_Admin {
@@ -190,7 +224,6 @@ class Pronamic_Companies_Plugin_Admin {
 
 		add_action( 'save_post', array( __CLASS__, 'save_post_company_details' ),       50, 2 );
 		add_action( 'save_post', array( __CLASS__, 'save_post_title_index_automatic' ), 50, 2 );
-		add_action( 'save_post', array( __CLASS__, 'save_post_company_google_maps' ),   50, 2 );
 
 		add_action( 'manage_posts_custom_column', array( __CLASS__, 'custom_column' ), 10, 2 );
 
@@ -463,42 +496,6 @@ class Pronamic_Companies_Plugin_Admin {
 		foreach ( $data as $key => $value ) {
 			update_post_meta( $post_id, $key, $value );
 		}
-	}
-
-	/**
-	 * Save post company Google Maps
-	 * 
-	 * @param string $post_id
-	 */
-	public static function save_post_company_google_maps( $post_id, $post ) {
-		// Doing autosave
-		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE) { 
-			return;
-		}
-	
-		// Check post type
-		if ( ! ( $post->post_type == 'pronamic_company' ) ) {
-			return;
-		}
-	
-		// Revision
-		if ( wp_is_post_revision( $post_id ) ) {
-			return;
-		}
-	
-		// Publish
-		if ( $post->post_status != 'publish' ) {
-			return;
-		}
-	
-		// OK
-		$address  = '';
-	
-		$address .= pronamic_company_get_address( $post_id ) . "\r\n";
-		$address .= pronamic_company_get_postal_code( $post_id ) . ' ' . pronamic_company_get_city( $post_id ) . "\r\n";
-		$address .= pronamic_company_get_city( $post_id );
-
-		update_post_meta( $post_id, '_pronamic_google_maps_address', $address );
 	}
 		
 	/**
