@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic Companies\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-18 13:55+0100\n"
-"PO-Revision-Date: 2012-10-18 13:55+0100\n"
+"POT-Creation-Date: 2012-11-06 15:50+0100\n"
+"PO-Revision-Date: 2012-11-06 15:50+0100\n"
 "Last-Translator: Remco Tolsma <remco@pronamic.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -74,133 +74,141 @@ msgstr "Bovenliggende bedrijf:"
 msgid "Companies"
 msgstr "Bedrijven"
 
-#: pronamic-companies.php:173
+#: pronamic-companies.php:206
 msgid "Pages"
 msgstr "Pagina's"
 
-#: pronamic-companies.php:180
+#: pronamic-companies.php:213
 msgid "Company Register Page"
 msgstr "Bedrijf registratie pagina"
 
-#: pronamic-companies.php:189
+#: pronamic-companies.php:222
 msgid "Company Upgrade Page"
 msgstr "Bedrijf upgrade pagina"
 
-#: pronamic-companies.php:198
+#: pronamic-companies.php:231
 msgid "Company Edit Page"
 msgstr "Bedrijf bewerken pagina"
 
-#: pronamic-companies.php:210
+#: pronamic-companies.php:240
+msgid "Company Keywords Page"
+msgstr "Bedrijf trefwoorden pagina"
+
+#: pronamic-companies.php:249
+msgid "Company Brands Page"
+msgstr "Bedrijf merken pagina"
+
+#: pronamic-companies.php:261
 msgid "Permalinks"
 msgstr "Permalinks"
 
-#: pronamic-companies.php:217
+#: pronamic-companies.php:268
 msgid "Company base"
 msgstr "Bedrijfbasis"
 
-#: pronamic-companies.php:226
+#: pronamic-companies.php:277
 msgid "Category base"
 msgstr "Categoriebasis"
 
-#: pronamic-companies.php:235
+#: pronamic-companies.php:286
 msgid "Character base"
 msgstr "Karakterbasis"
 
-#: pronamic-companies.php:244
+#: pronamic-companies.php:295
 msgid "Region base"
 msgstr "Regiobasis"
 
-#: pronamic-companies.php:253
+#: pronamic-companies.php:304
 msgid "Keyword base"
 msgstr "Trefwoordbasis"
 
-#: pronamic-companies.php:262
+#: pronamic-companies.php:313
 msgid "Brand base"
 msgstr "Merkbasis"
 
-#: pronamic-companies.php:271
+#: pronamic-companies.php:322
 msgid "Type base"
 msgstr "Typebasis"
 
-#: pronamic-companies.php:300 admin/export.php:5
+#: pronamic-companies.php:353 admin/export.php:5
 msgid "Companies Export"
 msgstr "Bedrijven exporteren"
 
-#: pronamic-companies.php:301
+#: pronamic-companies.php:354
 msgid "Export"
 msgstr "Exporteren"
 
-#: pronamic-companies.php:309 admin/settings.php:10
+#: pronamic-companies.php:362 admin/settings.php:10
 msgid "Companies Settings"
 msgstr "Bedrijven instellingen"
 
-#: pronamic-companies.php:310
+#: pronamic-companies.php:363
 msgid "Settings"
 msgstr "Instellingen"
 
-#: pronamic-companies.php:334
+#: pronamic-companies.php:387
 msgid "Company Details"
 msgstr "Bedrijfsgegevens"
 
-#: pronamic-companies.php:439
+#: pronamic-companies.php:519
 msgid "Company"
 msgstr "Bedrijf"
 
-#: pronamic-companies.php:446 pronamic-companies.php:598
-#: pronamic-companies.php:602 admin/export.php:38 admin/export.php:43
+#: pronamic-companies.php:526 pronamic-companies.php:678
+#: pronamic-companies.php:682 admin/export.php:38 admin/export.php:43
 #: admin/meta-box.php:21 admin/meta-box.php:41
 msgid "Address"
 msgstr "Adres"
 
-#: pronamic-companies.php:448 pronamic-companies.php:609 admin/export.php:32
+#: pronamic-companies.php:528 pronamic-companies.php:689 admin/export.php:32
 #: includes/taxonomy.php:22
 msgid "Categories"
 msgstr "Categorieën"
 
-#: pronamic-companies.php:474
+#: pronamic-companies.php:554
 msgid "No Category"
 msgstr "Geen categorie"
 
-#: pronamic-companies.php:516
+#: pronamic-companies.php:596
 msgid "&mdash; Select a page &mdash;"
 msgstr "&mdash; Selecteer een pagina &mdash;"
 
-#: pronamic-companies.php:581
+#: pronamic-companies.php:661
 msgid "pronamic-companies-export"
 msgstr "pronamic-bedrijven-export"
 
-#: pronamic-companies.php:596 admin/export.php:21
+#: pronamic-companies.php:676 admin/export.php:21
 msgid "ID"
 msgstr "ID"
 
-#: pronamic-companies.php:597 admin/export.php:22
+#: pronamic-companies.php:677 admin/export.php:22
 msgid "Name"
 msgstr "Naam"
 
-#: pronamic-companies.php:599 pronamic-companies.php:603 admin/export.php:39
+#: pronamic-companies.php:679 pronamic-companies.php:683 admin/export.php:39
 #: admin/export.php:44 admin/meta-box.php:23 admin/meta-box.php:43
 msgid "Postal Code"
 msgstr "Postcode"
 
-#: pronamic-companies.php:600 pronamic-companies.php:604 admin/export.php:40
+#: pronamic-companies.php:680 pronamic-companies.php:684 admin/export.php:40
 #: admin/export.php:45 admin/meta-box.php:24 admin/meta-box.php:44
 msgid "City"
 msgstr "Plaats"
 
-#: pronamic-companies.php:601 pronamic-companies.php:605 admin/export.php:41
+#: pronamic-companies.php:681 pronamic-companies.php:685 admin/export.php:41
 #: admin/export.php:46 admin/meta-box.php:26 admin/meta-box.php:46
 msgid "Country"
 msgstr "Land"
 
-#: pronamic-companies.php:606
+#: pronamic-companies.php:686
 msgid "Subscription ID"
 msgstr "Abonnement ID"
 
-#: pronamic-companies.php:607
+#: pronamic-companies.php:687
 msgid "User Login"
 msgstr "Gebruiker login"
 
-#: pronamic-companies.php:608
+#: pronamic-companies.php:688
 msgid "User E-mail"
 msgstr "Gebruiker e-mailadres"
 
@@ -311,6 +319,10 @@ msgstr "Is bedrijf bezoekadres"
 #: includes/gravityforms.php:23
 msgid "Is Company Mailing Address"
 msgstr "Is bedrijf postadres"
+
+#: includes/gravityforms.php:33
+msgid "Populate with Current User Companies"
+msgstr "Vullen met huidige gebruiker bedrijven"
 
 #: includes/taxonomy.php:6
 msgctxt "slug"
