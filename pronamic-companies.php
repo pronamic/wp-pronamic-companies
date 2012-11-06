@@ -46,7 +46,7 @@ class Pronamic_Companies_Plugin {
 		register_deactivation_hook( $file, array( __CLASS__, 'deactivate' ) );
 
 		add_action( 'init',      array( __CLASS__, 'init' ) );
-		add_action( 'wp_loaded', array( __CLASS__, 'p2p_register_connection_type' ) );
+		add_action( 'p2p_init',  array( __CLASS__, 'p2p_init' ) );
 
 		Pronamic_Companies_Plugin_Admin::bootstrap();
 	}
@@ -97,7 +97,7 @@ class Pronamic_Companies_Plugin {
 			'rewrite'            => array( 'slug' => $slug ), 
 			'menu_icon'          => plugins_url( 'admin/icons/company.png', __FILE__ ), 
 			'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields' ) 
-		));
+		) );
 	
 		pronamic_companies_create_taxonomies();
 	}
@@ -123,15 +123,47 @@ class Pronamic_Companies_Plugin {
 	}
 	
 	/**
-	 * Posts 2 Posts
+	 * Posts 2 Posts initialize
 	 */
-	public static function p2p_register_connection_type() {
-		if ( function_exists( 'p2p_register_connection_type' ) ) {
-			p2p_register_connection_type( array(
-				'name' => 'posts_to_pronamic_companies',
-				'from' => 'post',
-				'to'   => 'pronamic_company'
-			) );
+	public static function p2p_init() {
+		p2p_register_connection_type( array(
+			'name' => 'posts_to_pronamic_companies',
+			'from' => 'post',
+			'to'   => 'pronamic_company'
+		) );
+
+		// Let's do some voodoo
+		// 
+		// When post metdata with the meta key '_pronamic_company_id' is used we catch it and 
+		// prefent it from adding, we'll use the Post 2 Posts plugin to connect
+		// 
+		// @see http://core.trac.wordpress.org/browser/tags/3.4.2/wp-includes/meta.php#L50
+		add_action( 'add_post_metadata', array( __CLASS__, 'add_post_metadata_p2p_connect' ), 10, 4 );
+	}
+
+	/**
+	 * Added post meta connect
+	 * 
+	 * @param string $mid
+	 * @param string $object_id
+	 * @param string $meta_key
+	 * @param string $meta_value
+	 */
+	function add_post_metadata_p2p_connect( $mid, $object_id, $meta_key, $meta_value ) {
+		if ( $meta_key == '_pronamic_company_id' ) {
+			// @see https://github.com/scribu/wp-posts-to-posts/blob/1.4.2/core/type-factory.php#L77
+			$p2p_type = p2p_type( 'posts_to_pronamic_companies' );
+						
+			if( $p2p_type ) {
+				// @see https://github.com/scribu/wp-posts-to-posts/blob/1.4.2/core/directed-type.php#L184
+				$p2p_id = $p2p_type->connect( $object_id, $meta_value );
+	
+				if ( !is_wp_error( $p2p_id ) ) {
+					// @see http://core.trac.wordpress.org/browser/tags/3.4.2/wp-includes/meta.php#L50
+					// return somehting else as null will prefent adding post metadata
+					return false;
+				}
+			}
 		}
 	}
 }
