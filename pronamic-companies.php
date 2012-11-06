@@ -149,7 +149,7 @@ class Pronamic_Companies_Plugin {
 	 * @param string $meta_key
 	 * @param string $meta_value
 	 */
-	function add_post_metadata_p2p_connect( $mid, $object_id, $meta_key, $meta_value ) {
+	public static function add_post_metadata_p2p_connect( $mid, $object_id, $meta_key, $meta_value ) {
 		if ( $meta_key == '_pronamic_company_id' ) {
 			// @see https://github.com/scribu/wp-posts-to-posts/blob/1.4.2/core/type-factory.php#L77
 			$p2p_type = p2p_type( 'posts_to_pronamic_companies' );
