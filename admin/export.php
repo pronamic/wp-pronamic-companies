@@ -7,7 +7,7 @@
 
 	<?php 
 	
-	$results = Pronamic_Companies_Plugin::get_export();
+	$results = Pronamic_Companies_Plugin_Admin::get_export();
 
 	if( ! empty( $results ) ): ?>
 
