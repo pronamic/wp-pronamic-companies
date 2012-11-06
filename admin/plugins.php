@@ -21,6 +21,10 @@ $plugin_tips = array(
 		'slug' => 'gravityformsuserregistration',
 		'name' => 'Gravity Forms User Registration Add-On'
 	),
+	'posts-to-posts/posts-to-posts.php' => array(
+		'slug' => 'posts-to-posts',
+		'name' => 'Posts 2 Posts'
+	),
 	'pronamic-google-maps/pronamic-google-maps.php' => array(
 		'slug' => 'pronamic-google-maps',
 		'name' => 'Pronamic Google Maps'
