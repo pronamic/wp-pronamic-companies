@@ -195,8 +195,7 @@ class Pronamic_Companies_Plugin {
 		$address  = '';
 	
 		$address .= pronamic_company_get_address( $post_id ) . "\r\n";
-		$address .= pronamic_company_get_postal_code( $post_id ) . ' ' . pronamic_company_get_city( $post_id ) . "\r\n";
-		$address .= pronamic_company_get_city( $post_id );
+		$address .= pronamic_company_get_postal_code( $post_id ) . ' ' . pronamic_company_get_city( $post_id );
 
 		update_post_meta( $post_id, '_pronamic_google_maps_address', $address );
 	}
