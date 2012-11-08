@@ -259,6 +259,15 @@ class Pronamic_Companies_Plugin_Admin {
 		);
 	
 		add_settings_field( 
+			'pronamic_companies_downgrade_page_id', // id
+			__( 'Company Downgrade Page', 'pronamic_companies' ), // title
+			array( __CLASS__, 'input_page' ),  // callback
+			'pronamic_companies', // page
+			'pronamic_companies_pages', // section 
+			array( 'label_for' => 'pronamic_companies_downgrade_page_id' ) // args 
+		);
+	
+		add_settings_field( 
 			'pronamic_companies_edit_page_id', // id
 			__( 'Company Edit Page', 'pronamic_companies' ), // title
 			array( __CLASS__, 'input_page' ),  // callback
@@ -361,6 +370,7 @@ class Pronamic_Companies_Plugin_Admin {
 		// Register settings		
 		register_setting( 'pronamic_companies', 'pronamic_companies_register_page_id' );
 		register_setting( 'pronamic_companies', 'pronamic_companies_upgrade_page_id' );
+		register_setting( 'pronamic_companies', 'pronamic_companies_downgrade_page_id' );
 		register_setting( 'pronamic_companies', 'pronamic_companies_edit_page_id' );
 		register_setting( 'pronamic_companies', 'pronamic_companies_keywords_page_id' );
 		register_setting( 'pronamic_companies', 'pronamic_companies_brands_page_id' );
