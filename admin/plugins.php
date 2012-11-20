@@ -38,7 +38,7 @@ $plugin_tips = array(
 ?>
 
 <table class="form-table">
-	<?php foreach ( $plugin_tips as $file => $data ): ?>
+	<?php foreach ( $plugin_tips as $file => $data ) : ?>
 		<tr>
 			<td>
 				<?php echo $data['name']; ?>

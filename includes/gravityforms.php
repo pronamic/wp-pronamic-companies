@@ -7,7 +7,7 @@
  * @param int $form_id
  */
 function pronamic_companies_gform_field_advanced_settings( $position, $form_id ) {
-	if ( $position == 100 ): ?>
+	if ( $position == 100 ) : ?>
 
 		<li class="address_setting field_setting" style="display: list-item;">
 			<input type="checkbox" id="pronamic_companies_is_visiting_address" onclick="SetFieldProperty('isCompanyVisitingAddress', this.checked); ToggleInputName();" />
@@ -24,7 +24,7 @@ function pronamic_companies_gform_field_advanced_settings( $position, $form_id )
 			</label>
 		</li>
 
-	<?php elseif ( $position == 500 ): ?>
+	<?php elseif ( $position == 500 ) : ?>
 
 		<li class="prepopulate_field_setting field_setting" style="display: list-item;">
 			<input type="checkbox" id="pronamic_populate_current_user_companies" onclick="SetFieldProperty('populateCurrentUserCompanies', this.checked); ToggleInputName();" />

@@ -9,7 +9,7 @@
 	
 	$results = Pronamic_Companies_Plugin_Admin::get_export();
 
-	if( ! empty( $results ) ): ?>
+	if ( ! empty( $results ) ) : ?>
 
 		<h3>
 			<?php _e( 'Overview', 'pronamic_companies' ); ?>
@@ -55,7 +55,7 @@
 			</thead>
 	
 			<tbody>
-				<?php foreach ( $results as $result ): ?>
+				<?php foreach ( $results as $result ) : ?>
 					<tr>
 						<td><?php echo $result->ID; ?></td>
 						<td><?php echo $result->post_title; ?></td>

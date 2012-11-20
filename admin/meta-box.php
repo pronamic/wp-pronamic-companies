@@ -31,12 +31,12 @@ wp_nonce_field( 'pronamic_companies_save_post', 'pronamic_companies_nonce' );
 				<label for="pronamic_company_address"><?php _e( 'Mailing Address', 'pronamic_companies' ); ?></label>
 			</th>
 			<td>
-				<?php if( false ): ?>
-				<label>
-					<input name="" type="checkbox" /> 
-					<?php _e( 'Mailing address equals visiting address.', 'pronamic_companies' ); ?>
-				</label>
-				<br />
+				<?php if( false ) : ?>
+					<label>
+						<input name="" type="checkbox" /> 
+						<?php _e( 'Mailing address equals visiting address.', 'pronamic_companies' ); ?>
+					</label>
+					<br />
 				<?php endif; ?>
 				<textarea id="pronamic_company_mailing_address" name="_pronamic_company_mailing_address" placeholder="<?php esc_attr_e( 'Address', 'pronamic_companies' ); ?>" rows="1" cols="60"><?php echo esc_textarea( get_post_meta( $post->ID, '_pronamic_company_mailing_address', true ) ); ?></textarea>
 				<br />
