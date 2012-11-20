@@ -10,7 +10,7 @@ flush_rewrite_rules();
 		<?php _e( 'Companies Settings', 'pronamic_companies' ); ?>
 	</h2>
 
-	<form name="form" action="options.php" method="post"> 
+	<form name="form" action="options.php" method="post">
 		<?php settings_fields( 'pronamic_companies' ); ?>
 
 		<?php do_settings_sections( 'pronamic_companies' ); ?>
