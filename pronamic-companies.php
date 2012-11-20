@@ -232,7 +232,7 @@ class Pronamic_Companies_Plugin_Admin {
 		// Export
 		self::maybe_export();
 
-		// Pages
+		// Settings - Pages
 		add_settings_section(
 			'pronamic_companies_pages', // id
 			__( 'Pages', 'pronamic_companies' ), // title
@@ -475,16 +475,16 @@ class Pronamic_Companies_Plugin_Admin {
 	public static function save_post_company_details( $post_id, $post ) {
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
 			return;
-	
+
 		if ( !isset( $_POST['pronamic_companies_nonce'] ) )
 			return;
-	
+
 		if ( !wp_verify_nonce( $_POST['pronamic_companies_nonce'], 'pronamic_companies_save_post' ) )
 			return;
-	
+
 		if ( !current_user_can( 'edit_post', $post->ID ) )
 			return;
-			
+
 		// Save data
 		$data = filter_input_array( INPUT_POST, array(
 			// Visiting Address
@@ -511,7 +511,7 @@ class Pronamic_Companies_Plugin_Admin {
 			'_pronamic_company_linkedin'            => FILTER_SANITIZE_STRING,
 			'_pronamic_company_google_plus'         => FILTER_SANITIZE_STRING
 		) );
-	
+
 		foreach ( $data as $key => $value ) {
 			update_post_meta( $post_id, $key, $value );
 		}
