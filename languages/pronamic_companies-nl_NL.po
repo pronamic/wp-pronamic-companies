@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Pronamic Companies\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-11-06 16:11+0100\n"
-"PO-Revision-Date: 2012-11-06 16:11+0100\n"
+"PO-Revision-Date: 2012-11-20 12:46+0100\n"
 "Last-Translator: Remco Tolsma <remco@pronamic.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -44,7 +44,7 @@ msgstr "Nieuw bedrijf toevoegen"
 
 #: pronamic-companies.php:81
 msgid "Edit Company"
-msgstr "Wijzig bedrijf"
+msgstr "Bedrijf bewerken"
 
 #: pronamic-companies.php:82
 msgid "New Company"
