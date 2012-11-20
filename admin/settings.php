@@ -17,7 +17,12 @@ flush_rewrite_rules();
 
 		<?php submit_button(); ?>
 	</form>
-	
-	<?php Pronamic_Companies_Plugin_Admin::include_file( 'plugins.php' ); ?>	
-	<?php Pronamic_Companies_Plugin_Admin::include_file( 'pronamic.php' ); ?>
+
+	<div style="margin-bottom: 20px;">
+		<?php Pronamic_Companies_Plugin_Admin::include_file( 'plugins.php' ); ?>
+	</div>
+
+	<div style="margin-bottom: 20px;">
+		<?php Pronamic_Companies_Plugin_Admin::include_file( 'pronamic.php' ); ?>
+	</div>
 </div>
