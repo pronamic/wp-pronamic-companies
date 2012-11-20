@@ -423,9 +423,15 @@ class Pronamic_Companies_Plugin_Admin {
 
 	/**
 	 * Enqueue scripts
+	 * 
+	 * @param string $hook
 	 */
-	public static function enqueue_scripts() {
-		wp_enqueue_style( 'pronamic_companies', plugins_url( '/admin/css/admin.css', Pronamic_Companies_Plugin::$file ) );
+	public static function enqueue_scripts( $hook_suffix ) {
+		$screen = get_current_screen();
+
+		if ( $screen->id == 'pronamic_company' ) {
+			wp_enqueue_style( 'pronamic_companies', plugins_url( '/admin/css/admin.css', Pronamic_Companies_Plugin::$file ) );
+		}
 	}
 
 	//////////////////////////////////////////////////
