@@ -20,7 +20,13 @@ Upload the Pronamic Companies folder to your wp-content/plugins folder.
 
 == Screenshots ==
 
-...
+1.	Companies overview page
+2.	Edit company page
+3.	Company categories overview page
+4.	Companies settings page
+5.	Companies export page
+6.	Companies export Firefox save dialog
+7.	Companies export OpenOffice open dialog
 
 
 == Template Functions ==
