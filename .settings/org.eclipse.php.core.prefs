@@ -1,3 +1,5 @@
-#Thu May 24 09:55:41 CEST 2012
 eclipse.preferences.version=1
 include_path=0;/pronamic-companies
+phpVersion=php5.3
+useShortTags=false
+use_asp_tags_as_php=false
