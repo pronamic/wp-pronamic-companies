@@ -2,7 +2,7 @@
 Contributors: pronamic, remcotolsma, kjtolsma 
 Tags: pronamic, companies, company
 Requires at least: 3.0
-Tested up to: 3.2
+Tested up to: 3.6.1
 Stable tag: 0.1.3
 
 Pronamic Companies is a basic plugin to build a company directory.
