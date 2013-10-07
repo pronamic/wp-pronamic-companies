@@ -9,6 +9,14 @@ wp_nonce_field( 'pronamic_companies_save_post', 'pronamic_companies_nonce' );
 <table class="form-table">
 	<tbody>
 		<tr>
+			<th scope="row">
+				<label for="pronamic_company_contact"><?php _e( 'Contact', 'pronamic_companies' ); ?></label>
+			</th>
+			<td>
+				<input id="pronamic_company_contact" name="_pronamic_company_contact" value="<?php echo esc_attr( get_post_meta( $post->ID, '_pronamic_company_contact', true ) ); ?>" type="text" size="25" class="regular-text" />
+			</td>
+		</tr>
+		<tr>
 			<th scope="col" colspan="2">
 				<h4 class="title"><?php _e( 'Addresses', 'pronamic_companies' ); ?></h3>
 			</th>

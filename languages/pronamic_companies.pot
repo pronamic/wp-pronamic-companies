@@ -1,0 +1,633 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Pronamic
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: Pronamic <info@pronamic.nl>\n"
+"POT-Creation-Date: 2013-08-15 08:35+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: admin/export.php:5 pronamic-companies.php:405
+msgid "Companies Export"
+msgstr ""
+
+#: admin/export.php:15
+msgid "Overview"
+msgstr ""
+
+#: admin/export.php:21 pronamic-companies.php:698
+msgid "ID"
+msgstr ""
+
+#: admin/export.php:22 pronamic-companies.php:699
+msgid "Name"
+msgstr ""
+
+#: admin/export.php:24 admin/meta-box.php:18
+msgid "Visiting Address"
+msgstr ""
+
+#: admin/export.php:26 admin/meta-box.php:31
+msgid "Mailing Address"
+msgstr ""
+
+#: admin/export.php:28
+msgid "Subscription"
+msgstr ""
+
+#: admin/export.php:30
+msgid "User"
+msgstr ""
+
+#: admin/export.php:32 includes/taxonomy.php:22 pronamic-companies.php:550
+#: pronamic-companies.php:711
+msgid "Categories"
+msgstr ""
+
+#: admin/export.php:38 admin/export.php:43 pronamic-companies.php:548
+#: pronamic-companies.php:700 pronamic-companies.php:704
+msgid "Address"
+msgstr ""
+
+#: admin/export.php:39 admin/export.php:44 pronamic-companies.php:701
+#: pronamic-companies.php:705
+msgid "Postal Code"
+msgstr ""
+
+#: admin/export.php:40 admin/export.php:45 pronamic-companies.php:702
+#: pronamic-companies.php:706
+msgid "City"
+msgstr ""
+
+#: admin/export.php:41 admin/export.php:46 pronamic-companies.php:703
+#: pronamic-companies.php:707
+msgid "Country"
+msgstr ""
+
+#: admin/export.php:50
+msgid "Username"
+msgstr ""
+
+#: admin/export.php:51
+msgid "E-mail"
+msgstr ""
+
+#: admin/export.php:106
+msgid "Export to CSV"
+msgstr ""
+
+#: admin/meta-box.php:13
+msgid "Addresses"
+msgstr ""
+
+#: admin/meta-box.php:37
+msgid "Mailing address equals visiting address."
+msgstr ""
+
+#: admin/meta-box.php:52
+msgid "Phone"
+msgstr ""
+
+#: admin/meta-box.php:58
+msgid "Phone Number"
+msgstr ""
+
+#: admin/meta-box.php:66
+msgid "Fax Number"
+msgstr ""
+
+#: admin/meta-box.php:75
+msgid "Online"
+msgstr ""
+
+#: admin/meta-box.php:81
+msgid "E-mail Address"
+msgstr ""
+
+#: admin/meta-box.php:89
+msgid "Website URL"
+msgstr ""
+
+#: admin/meta-box.php:97
+msgid "RSS URL"
+msgstr ""
+
+#: admin/meta-box.php:105
+msgid "Video URL"
+msgstr ""
+
+#: admin/meta-box.php:114
+msgid "Social Networks"
+msgstr ""
+
+#: admin/meta-box.php:120
+msgid "Twitter Username"
+msgstr ""
+
+#: admin/meta-box.php:128
+msgid "Facebook"
+msgstr ""
+
+#: admin/meta-box.php:136
+msgid "LinkedIN"
+msgstr ""
+
+#: admin/meta-box.php:144
+msgid "Google+"
+msgstr ""
+
+#: admin/plugins.php:2
+msgid "Plugins"
+msgstr ""
+
+#: admin/plugins.php:71
+msgid "Search Plugin"
+msgstr ""
+
+#: admin/settings.php:12 pronamic-companies.php:414
+msgid "Companies Settings"
+msgstr ""
+
+#: includes/gravityforms.php:16
+msgid "Is Company Visiting Address"
+msgstr ""
+
+#: includes/gravityforms.php:23
+msgid "Is Company Mailing Address"
+msgstr ""
+
+#: includes/gravityforms.php:33
+msgid "Populate with Current User Companies"
+msgstr ""
+
+#: includes/taxonomy.php:6
+msgctxt "slug"
+msgid "company-category"
+msgstr ""
+
+#: includes/taxonomy.php:12
+msgctxt "category general name"
+msgid "Company Category"
+msgstr ""
+
+#: includes/taxonomy.php:13
+msgctxt "category singular name"
+msgid "Company Category"
+msgstr ""
+
+#: includes/taxonomy.php:14
+msgid "Search Company Categories"
+msgstr ""
+
+#: includes/taxonomy.php:15
+msgid "All Company Categories"
+msgstr ""
+
+#: includes/taxonomy.php:16
+msgid "Parent Company Category"
+msgstr ""
+
+#: includes/taxonomy.php:17
+msgid "Parent Company Category:"
+msgstr ""
+
+#: includes/taxonomy.php:18
+msgid "Edit Company Category"
+msgstr ""
+
+#: includes/taxonomy.php:19
+msgid "Update Company Category"
+msgstr ""
+
+#: includes/taxonomy.php:20
+msgid "Add New Company Category"
+msgstr ""
+
+#: includes/taxonomy.php:21
+msgid "New Company Category Name"
+msgstr ""
+
+#: includes/taxonomy.php:32
+msgctxt "slug"
+msgid "company-character"
+msgstr ""
+
+#: includes/taxonomy.php:38
+msgctxt "category general name"
+msgid "Company Character"
+msgstr ""
+
+#: includes/taxonomy.php:39
+msgctxt "category singular name"
+msgid "Company Character"
+msgstr ""
+
+#: includes/taxonomy.php:40
+msgid "Search Company Characters"
+msgstr ""
+
+#: includes/taxonomy.php:41
+msgid "All Company Characters"
+msgstr ""
+
+#: includes/taxonomy.php:42
+msgid "Parent Company Character"
+msgstr ""
+
+#: includes/taxonomy.php:43
+msgid "Parent Company Character:"
+msgstr ""
+
+#: includes/taxonomy.php:44
+msgid "Edit Company Character"
+msgstr ""
+
+#: includes/taxonomy.php:45
+msgid "Update Company Character"
+msgstr ""
+
+#: includes/taxonomy.php:46
+msgid "Add New Company Character"
+msgstr ""
+
+#: includes/taxonomy.php:47
+msgid "New Company Character Name"
+msgstr ""
+
+#: includes/taxonomy.php:48
+msgid "Characters"
+msgstr ""
+
+#: includes/taxonomy.php:58
+msgctxt "slug"
+msgid "company-region"
+msgstr ""
+
+#: includes/taxonomy.php:64
+msgctxt "category general name"
+msgid "Company Region"
+msgstr ""
+
+#: includes/taxonomy.php:65
+msgctxt "category singular name"
+msgid "Company Region"
+msgstr ""
+
+#: includes/taxonomy.php:66
+msgid "Search Company Regions"
+msgstr ""
+
+#: includes/taxonomy.php:67
+msgid "All Company Regions"
+msgstr ""
+
+#: includes/taxonomy.php:68
+msgid "Parent Company Region"
+msgstr ""
+
+#: includes/taxonomy.php:69
+msgid "Parent Company Region:"
+msgstr ""
+
+#: includes/taxonomy.php:70
+msgid "Edit Company Region"
+msgstr ""
+
+#: includes/taxonomy.php:71
+msgid "Update Company Region"
+msgstr ""
+
+#: includes/taxonomy.php:72
+msgid "Add New Company Region"
+msgstr ""
+
+#: includes/taxonomy.php:73
+msgid "New Company Region Name"
+msgstr ""
+
+#: includes/taxonomy.php:74
+msgid "Regions"
+msgstr ""
+
+#: includes/taxonomy.php:84
+msgctxt "slug"
+msgid "company-keyword"
+msgstr ""
+
+#: includes/taxonomy.php:90
+msgctxt "category general name"
+msgid "Company Keyword"
+msgstr ""
+
+#: includes/taxonomy.php:91
+msgctxt "category singular name"
+msgid "Company Keyword"
+msgstr ""
+
+#: includes/taxonomy.php:92
+msgid "Search Company Keywords"
+msgstr ""
+
+#: includes/taxonomy.php:93
+msgid "All Company Keywords"
+msgstr ""
+
+#: includes/taxonomy.php:94
+msgid "Parent Company Keyword"
+msgstr ""
+
+#: includes/taxonomy.php:95
+msgid "Parent Company Keyword:"
+msgstr ""
+
+#: includes/taxonomy.php:96
+msgid "Edit Company Keyword"
+msgstr ""
+
+#: includes/taxonomy.php:97
+msgid "Update Company Keyword"
+msgstr ""
+
+#: includes/taxonomy.php:98
+msgid "Add New Company Keyword"
+msgstr ""
+
+#: includes/taxonomy.php:99
+msgid "New Company Keyword Name"
+msgstr ""
+
+#: includes/taxonomy.php:100
+msgid "Keywords"
+msgstr ""
+
+#: includes/taxonomy.php:110
+msgctxt "slug"
+msgid "company-brand"
+msgstr ""
+
+#: includes/taxonomy.php:116
+msgctxt "category general name"
+msgid "Company Brand"
+msgstr ""
+
+#: includes/taxonomy.php:117
+msgctxt "category singular name"
+msgid "Company Brand"
+msgstr ""
+
+#: includes/taxonomy.php:118
+msgid "Search Company Brands"
+msgstr ""
+
+#: includes/taxonomy.php:119
+msgid "All Company Brands"
+msgstr ""
+
+#: includes/taxonomy.php:120
+msgid "Parent Company Brand"
+msgstr ""
+
+#: includes/taxonomy.php:121
+msgid "Parent Company Brand:"
+msgstr ""
+
+#: includes/taxonomy.php:122
+msgid "Edit Company Brand"
+msgstr ""
+
+#: includes/taxonomy.php:123
+msgid "Update Company Brand"
+msgstr ""
+
+#: includes/taxonomy.php:124
+msgid "Add New Company Brand"
+msgstr ""
+
+#: includes/taxonomy.php:125
+msgid "New Company Brand Name"
+msgstr ""
+
+#: includes/taxonomy.php:126
+msgid "Brands"
+msgstr ""
+
+#: includes/taxonomy.php:136
+msgctxt "slug"
+msgid "company-type"
+msgstr ""
+
+#: includes/taxonomy.php:142
+msgctxt "category general name"
+msgid "Company Type"
+msgstr ""
+
+#: includes/taxonomy.php:143
+msgctxt "category singular name"
+msgid "Company Type"
+msgstr ""
+
+#: includes/taxonomy.php:144
+msgid "Search Company Types"
+msgstr ""
+
+#: includes/taxonomy.php:145
+msgid "All Company Types"
+msgstr ""
+
+#: includes/taxonomy.php:146
+msgid "Parent Company Type"
+msgstr ""
+
+#: includes/taxonomy.php:147
+msgid "Parent Company Type:"
+msgstr ""
+
+#: includes/taxonomy.php:148
+msgid "Edit Company Type"
+msgstr ""
+
+#: includes/taxonomy.php:149
+msgid "Update Company Type"
+msgstr ""
+
+#: includes/taxonomy.php:150
+msgid "Add New Company Type"
+msgstr ""
+
+#: includes/taxonomy.php:151
+msgid "New Company Type Name"
+msgstr ""
+
+#: includes/taxonomy.php:152
+msgid "Types"
+msgstr ""
+
+#: pronamic-companies.php:73
+msgctxt "slug"
+msgid "companies"
+msgstr ""
+
+#: pronamic-companies.php:77
+msgctxt "post type general name"
+msgid "Companies"
+msgstr ""
+
+#: pronamic-companies.php:78
+msgctxt "post type singular name"
+msgid "Company"
+msgstr ""
+
+#: pronamic-companies.php:79
+msgctxt "company"
+msgid "Add New"
+msgstr ""
+
+#: pronamic-companies.php:80
+msgid "Add New Company"
+msgstr ""
+
+#: pronamic-companies.php:81
+msgid "Edit Company"
+msgstr ""
+
+#: pronamic-companies.php:82
+msgid "New Company"
+msgstr ""
+
+#: pronamic-companies.php:83
+msgid "View Company"
+msgstr ""
+
+#: pronamic-companies.php:84
+msgid "Search Companies"
+msgstr ""
+
+#: pronamic-companies.php:85
+msgid "No companies found"
+msgstr ""
+
+#: pronamic-companies.php:86
+msgid "No companies found in Trash"
+msgstr ""
+
+#: pronamic-companies.php:87
+msgid "Parent Company:"
+msgstr ""
+
+#: pronamic-companies.php:88
+msgid "Companies"
+msgstr ""
+
+#: pronamic-companies.php:238
+msgid "Pages"
+msgstr ""
+
+#: pronamic-companies.php:245
+msgid "Company Register Page"
+msgstr ""
+
+#: pronamic-companies.php:254
+msgid "Company Upgrade Page"
+msgstr ""
+
+#: pronamic-companies.php:263
+msgid "Company Downgrade Page"
+msgstr ""
+
+#: pronamic-companies.php:272
+msgid "Company Edit Page"
+msgstr ""
+
+#: pronamic-companies.php:281
+msgid "Company New Post Page"
+msgstr ""
+
+#: pronamic-companies.php:290
+msgid "Company Keywords Page"
+msgstr ""
+
+#: pronamic-companies.php:299
+msgid "Company Brands Page"
+msgstr ""
+
+#: pronamic-companies.php:311
+msgid "Permalinks"
+msgstr ""
+
+#: pronamic-companies.php:318
+msgid "Company base"
+msgstr ""
+
+#: pronamic-companies.php:327
+msgid "Category base"
+msgstr ""
+
+#: pronamic-companies.php:336
+msgid "Character base"
+msgstr ""
+
+#: pronamic-companies.php:345
+msgid "Region base"
+msgstr ""
+
+#: pronamic-companies.php:354
+msgid "Keyword base"
+msgstr ""
+
+#: pronamic-companies.php:363
+msgid "Brand base"
+msgstr ""
+
+#: pronamic-companies.php:372
+msgid "Type base"
+msgstr ""
+
+#: pronamic-companies.php:406
+msgid "Export"
+msgstr ""
+
+#: pronamic-companies.php:415
+msgid "Settings"
+msgstr ""
+
+#: pronamic-companies.php:445
+msgid "Company Details"
+msgstr ""
+
+#: pronamic-companies.php:541
+msgid "Company"
+msgstr ""
+
+#: pronamic-companies.php:576
+msgid "No Category"
+msgstr ""
+
+#: pronamic-companies.php:618
+msgid "&mdash; Select a page &mdash;"
+msgstr ""
+
+#: pronamic-companies.php:683
+msgid "pronamic-companies-export"
+msgstr ""
+
+#: pronamic-companies.php:708
+msgid "Subscription ID"
+msgstr ""
+
+#: pronamic-companies.php:709
+msgid "User Login"
+msgstr ""
+
+#: pronamic-companies.php:710
+msgid "User E-mail"
+msgstr ""
