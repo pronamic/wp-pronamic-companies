@@ -504,6 +504,10 @@ class Pronamic_Companies_Plugin_Admin {
 			'_pronamic_company_mailing_postal_code' => FILTER_SANITIZE_STRING,
 			'_pronamic_company_mailing_city'        => FILTER_SANITIZE_STRING,
 			'_pronamic_company_mailing_country'     => FILTER_SANITIZE_STRING,
+			// Chamber of Commerce and Tax information
+			'_pronamic_company_kvk_establishment'   => FILTER_SANITIZE_STRING,
+			'_pronamic_company_kvk_number'          => FILTER_SANITIZE_STRING,
+			'_pronamic_company_tax_number'          => FILTER_SNAITIZE_STRING,
 			// Phone
 			'_pronamic_company_phone_number'        => FILTER_SANITIZE_STRING,
 			'_pronamic_company_fax_number'          => FILTER_SANITIZE_STRING,
@@ -636,7 +640,10 @@ class Pronamic_Companies_Plugin_Admin {
 				MAX(IF(meta.meta_key = '_pronamic_company_address', meta.meta_value, NULL)) AS company_address  , 
 				MAX(IF(meta.meta_key = '_pronamic_company_postal_code', meta.meta_value, NULL)) AS company_postal_code , 
 				MAX(IF(meta.meta_key = '_pronamic_company_city', meta.meta_value, NULL)) AS company_city , 
-				MAX(IF(meta.meta_key = '_pronamic_company_country', meta.meta_value, NULL)) AS company_country , 
+				MAX(IF(meta.meta_key = '_pronamic_company_country', meta.meta_value, NULL)) AS company_country ,
+				MAX(IF(meta.meta_key = '_pronamic_company_kvk_establishment', meta.meta_value, NULL)) AS kvk_establishment ,
+				MAX(IF(meta.meta_key = '_pronamic_company_kvk_number', meta.meta_value, NULL)) AS kvk_number ,
+				MAX(IF(meta.meta_key = '_pronamic_company_tax_number', meta.meta_value, NULL)) AS tax_number ,
 	
 				MAX(IF(meta.meta_key = '_pronamic_company_mailing_address', meta.meta_value, NULL)) AS company_mailing_address  , 
 				MAX(IF(meta.meta_key = '_pronamic_company_mailing_postal_code', meta.meta_value, NULL)) AS company_mailing_postal_code , 
