@@ -96,7 +96,7 @@ class Pronamic_Companies_Plugin {
 			'has_archive'        => true,
 			'rewrite'            => array( 'slug' => $slug ), 
 			'menu_icon'          => plugins_url( 'admin/icons/company.png', __FILE__ ), 
-			'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields' ) 
+			'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields', 'pronamic_company' ) 
 		) );
 	
 		pronamic_companies_create_taxonomies();
@@ -440,14 +440,20 @@ class Pronamic_Companies_Plugin_Admin {
 	 * Add meta boxes
 	 */
 	public static function add_meta_boxes() {
-		add_meta_box(
-			'pronamic_companies_meta_box', // id
-			__( 'Company Details', 'pronamic_companies' ), // title
-			array( __CLASS__, 'meta_box_company_details' ), // callback
-			'pronamic_company', // post_type
-			'normal', // context
-			'high' // priority
-	    );
+		$post_types = get_post_types( '', 'names' );
+
+		foreach ( $post_types as $post_type ) {
+			if ( post_type_supports( $post_type, 'pronamic_company' ) ) {
+				add_meta_box(
+					'pronamic_companies_meta_box', // id
+					__( 'Company Details', 'pronamic_companies' ), // title
+					array( __CLASS__, 'meta_box_company_details' ), // callback
+					$post_type, // post_type
+					'normal', // context
+					'high' // priority
+			    );
+			}
+		}
 	}
 
 	/**
