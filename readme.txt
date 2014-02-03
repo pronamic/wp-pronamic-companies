@@ -88,6 +88,10 @@ Upload the Pronamic Companies folder to your wp-content/plugins folder.
 *	_pronamic_company_mailing_city
 *	_pronamic_company_mailing_country
 
+*	_pronamic_company_kvk_establishment
+*	_pronamic_company_kvk_number
+*	_pronamic_company_tax_number
+
 *	_pronamic_company_phone_number
 *	_pronamic_company_fax_number
 
