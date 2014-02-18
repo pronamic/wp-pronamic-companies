@@ -96,7 +96,7 @@ class Pronamic_Companies_Plugin {
 			'has_archive'        => true,
 			'rewrite'            => array( 'slug' => $slug ), 
 			'menu_icon'          => plugins_url( 'admin/icons/company.png', __FILE__ ), 
-			'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields' ) 
+			'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields', 'pronamic_company' ) 
 		) );
 	
 		pronamic_companies_create_taxonomies();
@@ -440,14 +440,20 @@ class Pronamic_Companies_Plugin_Admin {
 	 * Add meta boxes
 	 */
 	public static function add_meta_boxes() {
-		add_meta_box(
-			'pronamic_companies_meta_box', // id
-			__( 'Company Details', 'pronamic_companies' ), // title
-			array( __CLASS__, 'meta_box_company_details' ), // callback
-			'pronamic_company', // post_type
-			'normal', // context
-			'high' // priority
-	    );
+		$post_types = get_post_types( '', 'names' );
+
+		foreach ( $post_types as $post_type ) {
+			if ( post_type_supports( $post_type, 'pronamic_company' ) ) {
+				add_meta_box(
+					'pronamic_companies_meta_box', // id
+					__( 'Company Details', 'pronamic_companies' ), // title
+					array( __CLASS__, 'meta_box_company_details' ), // callback
+					$post_type, // post_type
+					'normal', // context
+					'high' // priority
+			    );
+			}
+		}
 	}
 
 	/**
@@ -504,6 +510,10 @@ class Pronamic_Companies_Plugin_Admin {
 			'_pronamic_company_mailing_postal_code' => FILTER_SANITIZE_STRING,
 			'_pronamic_company_mailing_city'        => FILTER_SANITIZE_STRING,
 			'_pronamic_company_mailing_country'     => FILTER_SANITIZE_STRING,
+			// Chamber of Commerce and Tax information
+			'_pronamic_company_kvk_establishment'   => FILTER_SANITIZE_STRING,
+			'_pronamic_company_kvk_number'          => FILTER_SANITIZE_STRING,
+			'_pronamic_company_tax_number'          => FILTER_SNAITIZE_STRING,
 			// Phone
 			'_pronamic_company_phone_number'        => FILTER_SANITIZE_STRING,
 			'_pronamic_company_fax_number'          => FILTER_SANITIZE_STRING,
@@ -636,7 +646,10 @@ class Pronamic_Companies_Plugin_Admin {
 				MAX(IF(meta.meta_key = '_pronamic_company_address', meta.meta_value, NULL)) AS company_address  , 
 				MAX(IF(meta.meta_key = '_pronamic_company_postal_code', meta.meta_value, NULL)) AS company_postal_code , 
 				MAX(IF(meta.meta_key = '_pronamic_company_city', meta.meta_value, NULL)) AS company_city , 
-				MAX(IF(meta.meta_key = '_pronamic_company_country', meta.meta_value, NULL)) AS company_country , 
+				MAX(IF(meta.meta_key = '_pronamic_company_country', meta.meta_value, NULL)) AS company_country ,
+				MAX(IF(meta.meta_key = '_pronamic_company_kvk_establishment', meta.meta_value, NULL)) AS kvk_establishment ,
+				MAX(IF(meta.meta_key = '_pronamic_company_kvk_number', meta.meta_value, NULL)) AS kvk_number ,
+				MAX(IF(meta.meta_key = '_pronamic_company_tax_number', meta.meta_value, NULL)) AS tax_number ,
 	
 				MAX(IF(meta.meta_key = '_pronamic_company_mailing_address', meta.meta_value, NULL)) AS company_mailing_address  , 
 				MAX(IF(meta.meta_key = '_pronamic_company_mailing_postal_code', meta.meta_value, NULL)) AS company_mailing_postal_code , 
