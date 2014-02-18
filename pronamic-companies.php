@@ -663,6 +663,8 @@ class Pronamic_Companies_Plugin_Admin {
 				MAX(IF(meta.meta_key = '_pronamic_company_website', meta.meta_value, NULL)) AS company_website , 
 	
 				MAX(IF(meta.meta_key = '_pronamic_subscription_id', meta.meta_value, NULL)) AS company_subscription_id , 
+                
+                MAX(IF(meta.meta_key = '_pronamic_company_contact', meta.meta_value, NULL)) AS company_contact,
 				
 				user.user_login , 
 				user.user_email 
