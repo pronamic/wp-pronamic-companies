@@ -25,9 +25,12 @@
 					
 					<th scope="col" colspan="4"><?php _e( 'Mailing Address', 'pronamic_companies' ); ?></th>
 
+					<th scope="col" colspan="2"><?php _e( 'Chamber of Commerce and Tax Information', 'pronamic_companies' ); ?>
+					
 					<th scope="col"><?php _e( 'Subscription', 'pronamic_companies' ); ?></th>
 
 					<th scope="col" colspan="2"><?php _e( 'User', 'pronamic_companies' ); ?></th>
+                    <th scope="col" colspan="2"><?php _e( 'Contact', 'pronamic_companies' ); ?></th>
 
 					<th scope="col"><?php _e( 'Categories', 'pronamic_companies' ); ?></th>
 				</tr>
@@ -44,11 +47,17 @@
 					<th scope="col"><?php _e( 'Postal Code', 'pronamic_companies' ); ?></th>
 					<th scope="col"><?php _e( 'City', 'pronamic_companies' ); ?></th>
 					<th scope="col"><?php _e( 'Country', 'pronamic_companies' ); ?></th>
+					
+					<th scope="col"><?php _e( 'Chamber of Commerce Number', 'pronamic_companies' ); ?></th>
+					<th scope="col"><?php _e( 'Tax Number', 'pronamic_companies' ); ?></th>
 
 					<th scope="col"></th>
 
 					<th scope="col"><?php _e( 'Username', 'pronamic_companies' ); ?></th>
 					<th scope="col"><?php _e( 'E-mail', 'pronamic_companies' ); ?></th>
+                    
+                    <th scope="col"><?php _e( 'Contact', 'pronamic_companies' ); ?></th>
+                    <th scope="col"><?php _e( 'E-mail', 'pronamic_companies' ); ?></th>
 
 					<th scope="col"></th>
 				</tr>
@@ -69,11 +78,19 @@
 						<td><?php echo $result->company_mailing_postal_code; ?></td>
 						<td><?php echo $result->company_mailing_city; ?></td>
 						<td><?php echo $result->company_mailing_country; ?></td>
+						
+						<td><?php echo __( 'Chamber of Commerce', 'pronamic_companies' ) . ' ' . $result->kvk_establishment . ': ' . $result->kvk_number; ?></td>
+						<td><?php echo $result->tax_number; ?></td>
 
 						<td><?php echo $result->company_subscription_id; ?></td>
+                        
+                        
 
 						<td><?php echo $result->user_login; ?></td>
 						<td><?php echo $result->user_email; ?></td>
+                        
+                        <td><?php echo $result->company_contact; ?></td>
+                        <td><?php echo $result->company_email; ?></td>
 
 						<td>
 							<?php 

@@ -1,5 +1,13 @@
 <?php
 
+function pronamic_company_get_contact( $post_id = null ) {
+    return pronamic_company_get_meta( '_pronamic_company_contact', $post_id );
+}
+
+function pronamic_company_the_contact( $post_id = null ) {
+    echo pronamic_company_get_contact( $post_id );
+}
+
 /**
  * Get the company address
  * 
@@ -71,6 +79,81 @@ function pronamic_company_has_city( $post_id = null ) {
  */
 function pronamic_company_the_city( $post_id = null ) {
 	echo pronamic_company_get_city( $post_id );
+}
+
+//////////////////////////////////////////////////
+
+/**
+ * Get the company chamber of commerce establishment
+ * 
+ * @return string
+ */
+function pronamic_company_get_kvk_establishment( $post_id = null ) {
+	return pronamic_company_get_meta( '_pronamic_company_kvk_establishment', $post_id );
+}
+
+/**
+ * Check if company has chamber of commerce establishment
+ */
+function pronamic_company_has_kvk_establishment( $post_id = null ) {
+	return pronamic_company_has_meta( '_pronamic_company_kvk_establishment', $post_id );
+}
+
+/**
+ * Output the company chamber of commerce establishment
+ */
+function pronamic_company_the_kvk_establishment( $post_id = null ) {
+	echo pronamic_company_get_kvk_establishment( $post_id );
+}
+
+//////////////////////////////////////////////////
+
+/**
+ * Get the company chamber of commerce number
+ * 
+ * @return string
+ */
+function pronamic_company_get_kvk_number( $post_id = null ) {
+	return pronamic_company_get_meta( '_pronamic_company_kvk_number', $post_id );
+}
+
+/**
+ * Check if company has chamber of commerce number
+ */
+function pronamic_company_has_kvk_number( $post_id = null ) {
+	return pronamic_company_has_meta( '_pronamic_company_kvk_number', $post_id );
+}
+
+/**
+ * Output the company chamber of commerce number
+ */
+function pronamic_company_the_kvk_number( $post_id = null ) {
+	echo pronamic_company_get_kvk_number( $post_id );
+}
+
+//////////////////////////////////////////////////
+
+/**
+ * Get the company tax number
+ * 
+ * @return string
+ */
+function pronamic_company_get_tax_number( $post_id = null ) {
+	return pronamic_company_get_meta( '_pronamic_company_tax_number', $post_id );
+}
+
+/**
+ * Check if company has tax number
+ */
+function pronamic_company_has_tax_number( $post_id = null ) {
+	return pronamic_company_has_meta( '_pronamic_company_tax_number', $post_id );
+}
+
+/**
+ * Output the company tax number
+ */
+function pronamic_company_the_tax_number( $post_id = null ) {
+	echo pronamic_company_get_tax_number( $post_id );
 }
 
 //////////////////////////////////////////////////

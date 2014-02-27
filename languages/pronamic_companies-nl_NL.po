@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic Companies\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-05 11:14+0100\n"
-"PO-Revision-Date: 2012-12-05 11:14+0100\n"
-"Last-Translator: Remco Tolsma <remco@pronamic.nl>\n"
+"POT-Creation-Date: 2013-12-03 11:16+0100\n"
+"PO-Revision-Date: 2013-12-03 11:18+0100\n"
+"Last-Translator: \n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,7 @@ msgstr ""
 "esc_attr__;_nx:4c,1,2;_nx_noop:4c,1,2;esc_html_x:2c,1;esc_html__;_ex:2c,1\n"
 "X-Poedit-Basepath: ../\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.5\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: pronamic-companies.php:73
@@ -158,65 +158,65 @@ msgstr "Instellingen"
 msgid "Company Details"
 msgstr "Bedrijfsgegevens"
 
-#: pronamic-companies.php:541
+#: pronamic-companies.php:546
 msgid "Company"
 msgstr "Bedrijf"
 
-#: pronamic-companies.php:548 pronamic-companies.php:700
-#: pronamic-companies.php:704 admin/export.php:38 admin/export.php:43
-#: admin/meta-box.php:21 admin/meta-box.php:41
+#: pronamic-companies.php:553 pronamic-companies.php:708
+#: pronamic-companies.php:712 admin/export.php:40 admin/export.php:45
+#: admin/meta-box.php:29 admin/meta-box.php:49
 msgid "Address"
 msgstr "Adres"
 
-#: pronamic-companies.php:550 pronamic-companies.php:711 admin/export.php:32
+#: pronamic-companies.php:555 pronamic-companies.php:719 admin/export.php:34
 #: includes/taxonomy.php:22
 msgid "Categories"
 msgstr "Categorieën"
 
-#: pronamic-companies.php:576
+#: pronamic-companies.php:581
 msgid "No Category"
 msgstr "Geen categorie"
 
-#: pronamic-companies.php:618
+#: pronamic-companies.php:623
 msgid "&mdash; Select a page &mdash;"
 msgstr "&mdash; Selecteer een pagina &mdash;"
 
-#: pronamic-companies.php:683
+#: pronamic-companies.php:691
 msgid "pronamic-companies-export"
 msgstr "pronamic-bedrijven-export"
 
-#: pronamic-companies.php:698 admin/export.php:21
+#: pronamic-companies.php:706 admin/export.php:21
 msgid "ID"
 msgstr "ID"
 
-#: pronamic-companies.php:699 admin/export.php:22
+#: pronamic-companies.php:707 admin/export.php:22
 msgid "Name"
 msgstr "Naam"
 
-#: pronamic-companies.php:701 pronamic-companies.php:705 admin/export.php:39
-#: admin/export.php:44 admin/meta-box.php:23 admin/meta-box.php:43
+#: pronamic-companies.php:709 pronamic-companies.php:713 admin/export.php:41
+#: admin/export.php:46 admin/meta-box.php:31 admin/meta-box.php:51
 msgid "Postal Code"
 msgstr "Postcode"
 
-#: pronamic-companies.php:702 pronamic-companies.php:706 admin/export.php:40
-#: admin/export.php:45 admin/meta-box.php:24 admin/meta-box.php:44
+#: pronamic-companies.php:710 pronamic-companies.php:714 admin/export.php:42
+#: admin/export.php:47 admin/meta-box.php:32 admin/meta-box.php:52
 msgid "City"
 msgstr "Plaats"
 
-#: pronamic-companies.php:703 pronamic-companies.php:707 admin/export.php:41
-#: admin/export.php:46 admin/meta-box.php:26 admin/meta-box.php:46
+#: pronamic-companies.php:711 pronamic-companies.php:715 admin/export.php:43
+#: admin/export.php:48 admin/meta-box.php:34 admin/meta-box.php:54
 msgid "Country"
 msgstr "Land"
 
-#: pronamic-companies.php:708
+#: pronamic-companies.php:716
 msgid "Subscription ID"
 msgstr "Abonnement ID"
 
-#: pronamic-companies.php:709
+#: pronamic-companies.php:717
 msgid "User Login"
 msgstr "Gebruiker login"
 
-#: pronamic-companies.php:710
+#: pronamic-companies.php:718
 msgid "User E-mail"
 msgstr "Gebruiker e-mailadres"
 
@@ -224,33 +224,117 @@ msgstr "Gebruiker e-mailadres"
 msgid "Overview"
 msgstr "Overzicht"
 
-#: admin/export.php:24 admin/meta-box.php:18
+#: admin/export.php:24 admin/meta-box.php:26
 msgid "Visiting Address"
 msgstr "Bezoekadres"
 
-#: admin/export.php:26 admin/meta-box.php:31
+#: admin/export.php:26 admin/meta-box.php:39
 msgid "Mailing Address"
 msgstr "Postadres"
 
 #: admin/export.php:28
+msgid "Chamber of Commerce and Tax Information"
+msgstr "KvK en BTW Informatie"
+
+#: admin/export.php:30
 msgid "Subscription"
 msgstr "Abonnement"
 
-#: admin/export.php:30
+#: admin/export.php:32
 msgid "User"
 msgstr "Gebruiker"
 
-#: admin/export.php:50
+#: admin/export.php:50 admin/meta-box.php:60 admin/meta-box.php:65
+msgid "Chamber of Commerce Number"
+msgstr "KvK-nummer"
+
+#: admin/export.php:51 admin/meta-box.php:70
+msgid "Tax Number"
+msgstr "BTW-nummer"
+
+#: admin/export.php:55
 msgid "Username"
 msgstr "Gebruikersnaam"
 
-#: admin/export.php:51
+#: admin/export.php:56
 msgid "E-mail"
 msgstr "E-mail"
 
-#: admin/export.php:106
+#: admin/export.php:78
+msgid "Chamber of Commerce"
+msgstr "KvK"
+
+#: admin/export.php:114
 msgid "Export to CSV"
 msgstr "Exporteren naar CSV"
+
+#: admin/meta-box.php:13
+msgid "Contact"
+msgstr "Contact"
+
+#: admin/meta-box.php:21
+msgid "Addresses"
+msgstr "Adressen"
+
+#: admin/meta-box.php:45
+msgid "Mailing address equals visiting address."
+msgstr "Postadres gelijk aan bezoekadres."
+
+#: admin/meta-box.php:63
+msgid "Chamber of Commerce Establishment"
+msgstr "KvK Vestiging"
+
+#: admin/meta-box.php:79
+msgid "Phone"
+msgstr "Telefoonnummers"
+
+#: admin/meta-box.php:84
+msgid "Phone Number"
+msgstr "Telefoonnummer"
+
+#: admin/meta-box.php:92
+msgid "Fax Number"
+msgstr "Faxnummer"
+
+#: admin/meta-box.php:101
+msgid "Online"
+msgstr "Online"
+
+#: admin/meta-box.php:107
+msgid "E-mail Address"
+msgstr "E-mailadres"
+
+#: admin/meta-box.php:115
+msgid "Website URL"
+msgstr "Website URL"
+
+#: admin/meta-box.php:123
+msgid "RSS URL"
+msgstr "RSS URL"
+
+#: admin/meta-box.php:131
+msgid "Video URL"
+msgstr "Video URL"
+
+#: admin/meta-box.php:140
+msgid "Social Networks"
+msgstr "Sociale netwerken"
+
+#: admin/meta-box.php:146
+msgid "Twitter Username"
+msgstr "Twitter gebruikersnaam"
+
+#: admin/meta-box.php:154
+msgid "Facebook"
+msgstr "Facebook"
+
+#: admin/meta-box.php:162
+msgid "LinkedIN"
+msgstr "LinkedIN"
+
+#: admin/meta-box.php:170
+msgid "Google+"
+msgstr "Google+"
 
 #: admin/plugins.php:2
 msgid "Plugins"
@@ -259,66 +343,6 @@ msgstr "Plugins"
 #: admin/plugins.php:71
 msgid "Search Plugin"
 msgstr "Zoek plugin"
-
-#: admin/meta-box.php:13
-msgid "Addresses"
-msgstr "Adressen"
-
-#: admin/meta-box.php:37
-msgid "Mailing address equals visiting address."
-msgstr "Postadres gelijk aan bezoekadres."
-
-#: admin/meta-box.php:52
-msgid "Phone"
-msgstr "Telefoonnummers"
-
-#: admin/meta-box.php:58
-msgid "Phone Number"
-msgstr "Telefoonnummer"
-
-#: admin/meta-box.php:66
-msgid "Fax Number"
-msgstr "Faxnummer"
-
-#: admin/meta-box.php:75
-msgid "Online"
-msgstr "Online"
-
-#: admin/meta-box.php:81
-msgid "E-mail Address"
-msgstr "E-mailadres"
-
-#: admin/meta-box.php:89
-msgid "Website URL"
-msgstr "Website URL"
-
-#: admin/meta-box.php:97
-msgid "RSS URL"
-msgstr "RSS URL"
-
-#: admin/meta-box.php:105
-msgid "Video URL"
-msgstr "Video URL"
-
-#: admin/meta-box.php:114
-msgid "Social Networks"
-msgstr "Sociale netwerken"
-
-#: admin/meta-box.php:120
-msgid "Twitter Username"
-msgstr "Twitter gebruikersnaam"
-
-#: admin/meta-box.php:128
-msgid "Facebook"
-msgstr "Facebook"
-
-#: admin/meta-box.php:136
-msgid "LinkedIN"
-msgstr "LinkedIN"
-
-#: admin/meta-box.php:144
-msgid "Google+"
-msgstr "Google+"
 
 #: includes/gravityforms.php:16
 msgid "Is Company Visiting Address"
@@ -704,9 +728,6 @@ msgstr "Types"
 #~ msgid "Shopp"
 #~ msgstr "Shopp"
 
-#~ msgid "WooCommerce"
-#~ msgstr "WooCommerce"
-
 #~ msgid "WP e-Commerce"
 #~ msgstr "WP e-Commerce"
 
@@ -812,9 +833,6 @@ msgstr "Types"
 
 #~ msgid "Slug"
 #~ msgstr "Slug"
-
-#~ msgid "Content"
-#~ msgstr "Inhoud"
 
 #~ msgid "Generate Pages"
 #~ msgstr "Genereer pagina's"

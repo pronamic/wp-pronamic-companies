@@ -54,13 +54,31 @@ wp_nonce_field( 'pronamic_companies_save_post', 'pronamic_companies_nonce' );
 				<input id="pronamic_company_mailing_country" name="_pronamic_company_mailing_country" placeholder="<?php esc_attr_e( 'Country', 'pronamic_companies' ); ?>" value="<?php echo esc_attr( get_post_meta( $post->ID, '_pronamic_company_mailing_country', true ) ); ?>" type="text" size="42" />
 			</td>
 		</tr>
+		
+		<tr>
+			<th scope="row">
+				<label for="pronamic_company_kvk_establishment"><?php _e( 'Chamber of Commerce Number', 'pronamic_companies' ); ?></label>
+			</th>
+			<td>
+				<input id="pronamic_company_kvk_establishment" name="_pronamic_company_kvk_establishment" placeholder="<?php esc_attr_e( 'Chamber of Commerce Establishment', 'pronamic_companies' ); ?>" value="<?php echo esc_attr( get_post_meta( $post->ID, '_pronamic_company_kvk_establishment', true ) ); ?>" type="text" size="42" class="regular-text" />
+				<br />
+				<input id="pronamic_company_kvk_number" name="_pronamic_company_kvk_number" placeholder="<?php esc_attr_e( 'Chamber of Commerce Number', 'pronamic_companies' ); ?>" value="<?php echo esc_attr( get_post_meta( $post->ID, '_pronamic_company_kvk_number', true ) ); ?>" type="text" size="12" class="regular-text" />
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">
+				<label for="pronamic_company_tax_number"><?php _e( 'Tax Number', 'pronamic_companies' ); ?></label>
+			</th>
+			<td>
+				<input id="pronamic_company_tax_number" name="_pronamic_company_tax_number" value="<?php echo esc_attr( get_post_meta( $post->ID, '_pronamic_company_tax_number', true ) ); ?>" type="tel" size="20" class="regular-text" />
+			</td>
+		</tr>
 
 		<tr>
 			<th scope="col" colspan="2">
 				<h4 class="title"><?php _e( 'Phone', 'pronamic_companies' ); ?></h3>
 			</th>
 		</tr>
-
 		<tr>
 			<th scope="row">
 				<label for="pronamic_company_phone_number"><?php _e( 'Phone Number', 'pronamic_companies' ); ?></label>

@@ -2,8 +2,8 @@
 Contributors: pronamic, remcotolsma, kjtolsma 
 Tags: pronamic, companies, company
 Requires at least: 3.0
-Tested up to: 3.6.1
-Stable tag: 0.1.3
+Tested up to: 3.8.1
+Stable tag: 1.0.0
 
 Pronamic Companies is a basic plugin to build a company directory.
 
@@ -88,6 +88,10 @@ Upload the Pronamic Companies folder to your wp-content/plugins folder.
 *	_pronamic_company_mailing_city
 *	_pronamic_company_mailing_country
 
+*	_pronamic_company_kvk_establishment
+*	_pronamic_company_kvk_number
+*	_pronamic_company_tax_number
+
 *	_pronamic_company_phone_number
 *	_pronamic_company_fax_number
 
@@ -104,20 +108,24 @@ Upload the Pronamic Companies folder to your wp-content/plugins folder.
 
 == Changelog ==
 
+= 1.0.0 =
+*	Added contact to the export function.
+*	WordPress Coding Standards optimizations.
+
 = 0.1.3 =
-*	Added an contact field
+*	Added an contact field.
 
 = 0.1.2 =
-*	Improved Gravity Forms support
-*	Added taxonomy 'pronamic_company_keyword'
-*	Added taxonomy 'pronamic_company_brand'
-*	Added taxonomy 'pronamic_company_type'
+*	Improved Gravity Forms support.
+*	Added taxonomy 'pronamic_company_keyword'.
+*	Added taxonomy 'pronamic_company_brand'.
+*	Added taxonomy 'pronamic_company_type'.
 
 = 0.1.1 =
-*	Adjusted the whole plugin to the WordPress Coding Standards
+*	Adjusted the whole plugin to the WordPress Coding Standards.
 
 = 0.1 =
-*	Initial release
+*	Initial release.
 
 
 == Links ==
