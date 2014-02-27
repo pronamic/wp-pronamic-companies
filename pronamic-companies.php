@@ -1,14 +1,14 @@
 <?php
 /*
 Plugin Name: Pronamic Companies
-Plugin URI: http://pronamic.eu/wordpress/companies/
-Description: This plugin add some basic company directory functionality to WordPress
+Plugin URI: http://www.happywp.com/plugins/pronamic-companies/
+Description: This plugin adds a basic company directory functionality to WordPress
 
-Version: 0.1.3
+Version: 1.0.0
 Requires at least: 3.0
 
 Author: Pronamic
-Author URI: http://pronamic.eu/
+Author URI: http://www.pronamic.eu/
 
 Text Domain: pronamic_companies
 Domain Path: /languages/
@@ -85,8 +85,8 @@ class Pronamic_Companies_Plugin {
 				'not_found'          => __( 'No companies found', 'pronamic_companies' ), 
 				'not_found_in_trash' => __( 'No companies found in Trash', 'pronamic_companies' ),  
 				'parent_item_colon'  => __( 'Parent Company:', 'pronamic_companies' ), 
-				'menu_name'          => __( 'Companies', 'pronamic_companies' )
-			) , 
+				'menu_name'          => __( 'Companies', 'pronamic_companies' ),
+			),
 			'public'             => true,
 			'publicly_queryable' => true,
 			'show_ui'            => true,
@@ -96,7 +96,7 @@ class Pronamic_Companies_Plugin {
 			'has_archive'        => true,
 			'rewrite'            => array( 'slug' => $slug ), 
 			'menu_icon'          => plugins_url( 'admin/icons/company.png', __FILE__ ), 
-			'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields', 'pronamic_company' ) 
+			'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields', 'pronamic_company' ),
 		) );
 	
 		pronamic_companies_create_taxonomies();
@@ -132,7 +132,7 @@ class Pronamic_Companies_Plugin {
 		p2p_register_connection_type( array(
 			'name' => 'posts_to_pronamic_companies',
 			'from' => 'post',
-			'to'   => 'pronamic_company'
+			'to'   => 'pronamic_company',
 		) );
 
 		// Let's do some voodoo
@@ -157,11 +157,11 @@ class Pronamic_Companies_Plugin {
 			// @see https://github.com/scribu/wp-posts-to-posts/blob/1.4.2/core/type-factory.php#L77
 			$p2p_type = p2p_type( 'posts_to_pronamic_companies' );
 						
-			if( $p2p_type ) {
+			if ( $p2p_type ) {
 				// @see https://github.com/scribu/wp-posts-to-posts/blob/1.4.2/core/directed-type.php#L184
 				$p2p_id = $p2p_type->connect( $object_id, $meta_value );
 	
-				if ( !is_wp_error( $p2p_id ) ) {
+				if ( ! is_wp_error( $p2p_id ) ) {
 					// @see http://core.trac.wordpress.org/browser/tags/3.4.2/wp-includes/meta.php#L50
 					// return somehting else as null will prefent adding post metadata
 					return false;
@@ -429,7 +429,7 @@ class Pronamic_Companies_Plugin_Admin {
 	public static function enqueue_scripts( $hook_suffix ) {
 		$screen = get_current_screen();
 
-		if ( $screen->id == 'pronamic_company' ) {
+		if ( 'pronamic_company' == $screen->id ) {
 			wp_enqueue_style( 'pronamic_companies', plugins_url( '/admin/css/admin.css', Pronamic_Companies_Plugin::$file ) );
 		}
 	}
@@ -526,7 +526,7 @@ class Pronamic_Companies_Plugin_Admin {
 			'_pronamic_company_twitter'             => FILTER_SANITIZE_STRING,
 			'_pronamic_company_facebook'            => FILTER_SANITIZE_STRING,
 			'_pronamic_company_linkedin'            => FILTER_SANITIZE_STRING,
-			'_pronamic_company_google_plus'         => FILTER_SANITIZE_STRING
+			'_pronamic_company_google_plus'         => FILTER_SANITIZE_STRING,
 		) );
 
 		foreach ( $data as $key => $value ) {
@@ -726,7 +726,7 @@ class Pronamic_Companies_Plugin_Admin {
 			__( 'User E-mail', 'pronamic_companies' ),
             __( 'Contact', 'pronamic_companies' ),
             __( 'E-mail', 'pronamic_companies' ),
-			__( 'Categories', 'pronamic_companies' )
+			__( 'Categories', 'pronamic_companies' ),
 		);
 
 		fputcsv( $resource, $header );
@@ -758,7 +758,7 @@ class Pronamic_Companies_Plugin_Admin {
 				$result->user_email,
                 $result->company_contact,
                 $result->company_email,
-				implode( "\r\n", $categories )
+				implode( "\r\n", $categories ),
 			);
 
 			fputcsv( $resource, $row );
