@@ -664,8 +664,8 @@ class Pronamic_Companies_Plugin_Admin {
 	
 				MAX(IF(meta.meta_key = '_pronamic_subscription_id', meta.meta_value, NULL)) AS company_subscription_id , 
                 
-                MAX(IF(meta.meta_key = '_pronamic_company_contact', meta.meta_value, NULL)) AS company_contact,
-				
+				MAX(IF(meta.meta_key = '_pronamic_company_contact', meta.meta_value, NULL)) AS company_contact,
+
 				user.user_login , 
 				user.user_email 
 			FROM
@@ -724,8 +724,8 @@ class Pronamic_Companies_Plugin_Admin {
 			__( 'Subscription ID', 'pronamic_companies' ),
 			__( 'User Login', 'pronamic_companies' ),
 			__( 'User E-mail', 'pronamic_companies' ),
-            __( 'Contact', 'pronamic_companies' ),
-            __( 'E-mail', 'pronamic_companies' ),
+			__( 'Contact', 'pronamic_companies' ),
+			__( 'E-mail', 'pronamic_companies' ),
 			__( 'Categories', 'pronamic_companies' ),
 		);
 
@@ -756,8 +756,8 @@ class Pronamic_Companies_Plugin_Admin {
 				$result->company_subscription_id,
 				$result->user_login,
 				$result->user_email,
-                $result->company_contact,
-                $result->company_email,
+				$result->company_contact,
+				$result->company_email,
 				implode( "\r\n", $categories ),
 			);
 
