@@ -151,7 +151,7 @@ wp_nonce_field( 'pronamic_companies_save_post', 'pronamic_companies_nonce' );
 		</tr>
 		<tr>
 			<th scope="row">
-				<label for="pronamic_company_facebook"><?php _e( 'Facebook', 'pronamic_companies' ); ?></label>
+				<label for="pronamic_company_facebook"><?php _e( 'Facebook URL', 'pronamic_companies' ); ?></label>
 			</th>
 			<td>
 				<input id="pronamic_company_facebook" name="_pronamic_company_facebook" value="<?php echo esc_attr( get_post_meta( $post->ID, '_pronamic_company_facebook', true ) ); ?>" type="text" size="25" class="regular-text" />
