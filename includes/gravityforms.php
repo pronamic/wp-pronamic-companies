@@ -2,7 +2,7 @@
 
 /**
  * Gravity Forms - Field advanced settings
- * 
+ *
  * @param int $position
  * @param int $form_id
  */
@@ -50,7 +50,7 @@ function pronamic_companies_gform_editor_js() {
 				var isCompanyVisitingAddress = typeof field.isCompanyVisitingAddress == "boolean" ? field.isCompanyVisitingAddress : false;
 				jQuery("#pronamic_companies_is_visiting_address").prop("checked", isCompanyVisitingAddress);
 
-				var isCompanyMailingAddress = typeof field.isCompanyMailingAddress == "boolean" ? field.isCompanyMailingAddress : false; 			
+				var isCompanyMailingAddress = typeof field.isCompanyMailingAddress == "boolean" ? field.isCompanyMailingAddress : false;
 				jQuery("#pronamic_companies_is_mailing_address").prop("checked", isCompanyMailingAddress);
 			}
 
@@ -65,7 +65,7 @@ add_action( 'gform_editor_js', 'pronamic_companies_gform_editor_js' );
 
 /**
  * Gravity Forms - Populate subscription
- * 
+ *
  * @param array $form
  */
 function pronamic_companies_gform_populate_current_user_companies( $form ) {
@@ -107,7 +107,7 @@ add_filter( 'gform_pre_render',       'pronamic_companies_gform_populate_current
 
 /**
  * Gravity Forms - Post data
- * 
+ *
  * @param array $post_data
  * @param array $form
  * @param array $lead
@@ -123,7 +123,7 @@ function pronamic_companies_gform_post_data( $post_data, $form, $lead ) {
 
 			if ( $is_company_address ) {
 				$id = '' . $field['id'] . '.';
-				
+
 				$map['_pronamic_company_address'] = $id . '1'; // Street value
 				// $map['_pronamic_company_address_2'] = $id . '2'; // Street 2 value
 				$map['_pronamic_company_city'] = $id . '3'; // City value
@@ -138,7 +138,7 @@ function pronamic_companies_gform_post_data( $post_data, $form, $lead ) {
 
 			if ( $is_company_address ) {
 				$id = '' . $field['id'] . '.';
-				
+
 				$map['_pronamic_company_mailing_address'] = $id . '1'; // Street value
 				// $map['_pronamic_company_mailing_address_2'] = $id . '2'; // Street 2 value
 				$map['_pronamic_company_mailing_city'] = $id . '3'; // City value
@@ -177,7 +177,7 @@ add_filter( 'gform_post_data', 'pronamic_companies_gform_post_data', 10, 3 );
 
 /**
  * Gravity Forms - Update post field default value
- * 
+ *
  * @see http://plugins.trac.wordpress.org/browser/gravity-forms-update-post/tags/0.5.3/gravityforms-update-post.php#L190
  * @param array $field
  * @return array
@@ -192,11 +192,11 @@ function pronamic_companies_gform_update_post_field_default_value( $field ) {
 
 		if ( !empty( $post_id ) ) {
 			$field_type = RGFormsModel::get_input_type( $field );
-		
+
 			if ( $field_type == 'address' ) {
 				if ( isset( $field['isCompanyVisitingAddress'] ) ) {
 					$is_company_address = filter_var( $field['isCompanyVisitingAddress'], FILTER_VALIDATE_BOOLEAN );
-		
+
 					if ( $is_company_address ) {
 						$field['defaultValue'] = array(
 							$field['id'] . '.1' => get_post_meta( $post_id, '_pronamic_company_address', true ), // Street value
@@ -211,7 +211,7 @@ function pronamic_companies_gform_update_post_field_default_value( $field ) {
 
 				if ( isset( $field['isCompanyMailingAddress'] ) ) {
 					$is_company_address = filter_var( $field['isCompanyMailingAddress'], FILTER_VALIDATE_BOOLEAN );
-		
+
 					if ( $is_company_address ) {
 						$field['defaultValue'] = array(
 							$field['id'] . '.1' => get_post_meta( $post_id, '_pronamic_company_mailing_address', true ), // Street value

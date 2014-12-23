@@ -10,7 +10,7 @@ function pronamic_company_the_contact( $post_id = null ) {
 
 /**
  * Get the company address
- * 
+ *
  * @return string
  */
 function pronamic_company_get_address( $post_id = null ) {
@@ -35,7 +35,7 @@ function pronamic_company_the_address( $post_id = null ) {
 
 /**
  * Get the company postal code
- * 
+ *
  * @return string
  */
 function pronamic_company_get_postal_code( $post_id = null ) {
@@ -60,7 +60,7 @@ function pronamic_company_the_postal_code( $post_id = null ) {
 
 /**
  * Get the company city
- * 
+ *
  * @return string
  */
 function pronamic_company_get_city( $post_id = null ) {
@@ -85,7 +85,7 @@ function pronamic_company_the_city( $post_id = null ) {
 
 /**
  * Get the company chamber of commerce establishment
- * 
+ *
  * @return string
  */
 function pronamic_company_get_kvk_establishment( $post_id = null ) {
@@ -110,7 +110,7 @@ function pronamic_company_the_kvk_establishment( $post_id = null ) {
 
 /**
  * Get the company chamber of commerce number
- * 
+ *
  * @return string
  */
 function pronamic_company_get_kvk_number( $post_id = null ) {
@@ -135,7 +135,7 @@ function pronamic_company_the_kvk_number( $post_id = null ) {
 
 /**
  * Get the company tax number
- * 
+ *
  * @return string
  */
 function pronamic_company_get_tax_number( $post_id = null ) {
@@ -160,7 +160,7 @@ function pronamic_company_the_tax_number( $post_id = null ) {
 
 /**
  * Get the company phone number
- * 
+ *
  * @return string
  */
 function pronamic_company_get_phone_number( $post_id = null ) {
@@ -185,7 +185,7 @@ function pronamic_company_the_phone_number( $post_id = null ) {
 
 /**
  * Get the company fax number
- * 
+ *
  * @return string
  */
 function pronamic_company_get_fax_number( $post_id = null ) {
@@ -210,7 +210,7 @@ function pronamic_company_the_fax_number( $post_id = null ) {
 
 /**
  * Get the company email
- * 
+ *
  * @return string
  */
 function pronamic_company_get_email( $post_id = null ) {
@@ -235,7 +235,7 @@ function pronamic_company_the_email( $post_id = null ) {
 
 /**
  * Get the company website
- * 
+ *
  * @return string
  */
 function pronamic_company_get_website( $post_id = null ) {
@@ -260,7 +260,7 @@ function pronamic_company_the_website( $post_id = null ) {
 
 /**
  * Get the company Twitter
- * 
+ *
  * @return string
  */
 function pronamic_company_get_twitter( $post_id = null ) {
@@ -285,7 +285,7 @@ function pronamic_company_the_twitter( $post_id = null ) {
 
 /**
  * Get the company Facebook
- * 
+ *
  * @return string
  */
 function pronamic_company_get_facebook( $post_id = null ) {
@@ -310,7 +310,7 @@ function pronamic_company_the_facebook( $post_id = null ) {
 
 /**
  * Get the company LinkedIN
- * 
+ *
  * @return string
  */
 function pronamic_company_get_linkedin( $post_id = null ) {
@@ -335,7 +335,7 @@ function pronamic_company_the_linkedin( $post_id = null ) {
 
 /**
  * Get the company Google+
- * 
+ *
  * @return string
  */
 function pronamic_company_get_google_plus( $post_id = null ) {
