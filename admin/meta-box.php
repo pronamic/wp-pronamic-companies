@@ -39,7 +39,7 @@ wp_nonce_field( 'pronamic_companies_save_post', 'pronamic_companies_nonce' );
 				<label for="pronamic_company_address"><?php _e( 'Mailing Address', 'pronamic_companies' ); ?></label>
 			</th>
 			<td>
-				<?php if( false ) : ?>
+				<?php if ( false ) : ?>
 					<label>
 						<input name="" type="checkbox" />
 						<?php _e( 'Mailing address equals visiting address.', 'pronamic_companies' ); ?>
