@@ -2,11 +2,11 @@
 	<?php _e( 'Plugins', 'pronamic_companies' ); ?>
 </h2>
 
-<?php 
+<?php
 
 $plugin_tips = array(
 	'gravityforms/gravityforms.php' => array(
-		'slug' => 'gravityforms' , 
+		'slug' => 'gravityforms' ,
 		'name' => 'Gravity Forms'
 	),
 	'gravity-forms-custom-post-types/gfcptaddon.php' => array(
@@ -55,14 +55,14 @@ $plugin_tips = array(
 				?>
 			</td>
 			<td>
-				<?php 
+				<?php
 
 				$search_url = add_query_arg(
 					array(
 						'tab'  => 'search',
 						'type' => 'term',
 						's'    => $data['slug']
-					), 
+					),
 					'plugin-install.php'
 				);
 
