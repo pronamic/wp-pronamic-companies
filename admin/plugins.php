@@ -7,32 +7,32 @@
 $plugin_tips = array(
 	'gravityforms/gravityforms.php' => array(
 		'slug' => 'gravityforms' ,
-		'name' => 'Gravity Forms'
+		'name' => 'Gravity Forms',
 	),
 	'gravity-forms-custom-post-types/gfcptaddon.php' => array(
 		'slug' => 'gravity-forms-custom-post-types',
-		'name' => 'Gravity Forms + Custom Post Types'
+		'name' => 'Gravity Forms + Custom Post Types',
 	),
 	'gravity-forms-update-post/gravityforms-update-post.php' => array(
 		'slug' => 'gravity-forms-update-post',
-		'name' => 'Gravity Forms - Update Post'
+		'name' => 'Gravity Forms - Update Post',
 	),
 	'gravityformsuserregistration/userregistration.php' => array(
 		'slug' => 'gravityformsuserregistration',
-		'name' => 'Gravity Forms User Registration Add-On'
+		'name' => 'Gravity Forms User Registration Add-On',
 	),
 	'posts-to-posts/posts-to-posts.php' => array(
 		'slug' => 'posts-to-posts',
-		'name' => 'Posts 2 Posts'
+		'name' => 'Posts 2 Posts',
 	),
 	'pronamic-google-maps/pronamic-google-maps.php' => array(
 		'slug' => 'pronamic-google-maps',
-		'name' => 'Pronamic Google Maps'
+		'name' => 'Pronamic Google Maps',
 	),
 	'pronamic-subscriptions/pronamic-subscriptions.php' => array(
 		'slug' => 'pronamic-subscriptions',
-		'name' => 'Pronamic Subscriptions'
-	)
+		'name' => 'Pronamic Subscriptions',
+	),
 );
 
 ?>
