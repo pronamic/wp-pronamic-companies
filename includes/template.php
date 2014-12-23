@@ -1,11 +1,11 @@
 <?php
 
 function pronamic_company_get_contact( $post_id = null ) {
-    return pronamic_company_get_meta( '_pronamic_company_contact', $post_id );
+	return pronamic_company_get_meta( '_pronamic_company_contact', $post_id );
 }
 
 function pronamic_company_the_contact( $post_id = null ) {
-    echo pronamic_company_get_contact( $post_id );
+	echo pronamic_company_get_contact( $post_id );
 }
 
 /**
