@@ -1,21 +1,18 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Pronamic
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# Copyright (C) 2014 Pronamic
+# This file is distributed under the GPL.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: Pronamic <info@pronamic.nl>\n"
-"POT-Creation-Date: 2013-08-15 08:35+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Project-Id-Version: Pronamic Companies 1.0.1\n"
+"Report-Msgid-Bugs-To: "
+"http://wordpress.org/support/plugin/pronamic-companies\n"
+"POT-Creation-Date: 2014-12-23 12:05:23+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: grunt-wp-i18n 0.4.9\n"
 
 #: admin/export.php:5 pronamic-companies.php:405
 msgid "Companies Export"
@@ -25,124 +22,150 @@ msgstr ""
 msgid "Overview"
 msgstr ""
 
-#: admin/export.php:21 pronamic-companies.php:698
+#: admin/export.php:21 pronamic-companies.php:721
 msgid "ID"
 msgstr ""
 
-#: admin/export.php:22 pronamic-companies.php:699
+#: admin/export.php:22 pronamic-companies.php:722
 msgid "Name"
 msgstr ""
 
-#: admin/export.php:24 admin/meta-box.php:18
+#: admin/export.php:24 admin/meta-box.php:26
 msgid "Visiting Address"
 msgstr ""
 
-#: admin/export.php:26 admin/meta-box.php:31
+#: admin/export.php:26 admin/meta-box.php:39
 msgid "Mailing Address"
 msgstr ""
 
 #: admin/export.php:28
-msgid "Subscription"
+msgid "Chamber of Commerce and Tax Information"
 msgstr ""
 
 #: admin/export.php:30
+msgid "Subscription"
+msgstr ""
+
+#: admin/export.php:32
 msgid "User"
 msgstr ""
 
-#: admin/export.php:32 includes/taxonomy.php:22 pronamic-companies.php:550
-#: pronamic-companies.php:711
+#: admin/export.php:33 admin/export.php:59 admin/meta-box.php:13
+#: pronamic-companies.php:734
+msgid "Contact"
+msgstr ""
+
+#: admin/export.php:35 includes/taxonomy.php:22 pronamic-companies.php:565
+#: pronamic-companies.php:736
 msgid "Categories"
 msgstr ""
 
-#: admin/export.php:38 admin/export.php:43 pronamic-companies.php:548
-#: pronamic-companies.php:700 pronamic-companies.php:704
+#: admin/export.php:41 admin/export.php:46 admin/meta-box.php:29
+#: admin/meta-box.php:49 pronamic-companies.php:563 pronamic-companies.php:723
+#: pronamic-companies.php:727
 msgid "Address"
 msgstr ""
 
-#: admin/export.php:39 admin/export.php:44 pronamic-companies.php:701
-#: pronamic-companies.php:705
+#: admin/export.php:42 admin/export.php:47 admin/meta-box.php:31
+#: admin/meta-box.php:51 pronamic-companies.php:724 pronamic-companies.php:728
 msgid "Postal Code"
 msgstr ""
 
-#: admin/export.php:40 admin/export.php:45 pronamic-companies.php:702
-#: pronamic-companies.php:706
+#: admin/export.php:43 admin/export.php:48 admin/meta-box.php:32
+#: admin/meta-box.php:52 pronamic-companies.php:725 pronamic-companies.php:729
 msgid "City"
 msgstr ""
 
-#: admin/export.php:41 admin/export.php:46 pronamic-companies.php:703
-#: pronamic-companies.php:707
+#: admin/export.php:44 admin/export.php:49 admin/meta-box.php:34
+#: admin/meta-box.php:54 pronamic-companies.php:726 pronamic-companies.php:730
 msgid "Country"
 msgstr ""
 
-#: admin/export.php:50
+#: admin/export.php:51 admin/meta-box.php:60 admin/meta-box.php:65
+msgid "Chamber of Commerce Number"
+msgstr ""
+
+#: admin/export.php:52 admin/meta-box.php:70
+msgid "Tax Number"
+msgstr ""
+
+#: admin/export.php:56
 msgid "Username"
 msgstr ""
 
-#: admin/export.php:51
+#: admin/export.php:57 admin/export.php:60 pronamic-companies.php:735
 msgid "E-mail"
 msgstr ""
 
-#: admin/export.php:106
+#: admin/export.php:84
+msgid "Chamber of Commerce %s: %s"
+msgstr ""
+
+#: admin/export.php:125
 msgid "Export to CSV"
 msgstr ""
 
-#: admin/meta-box.php:13
+#: admin/meta-box.php:21
 msgid "Addresses"
 msgstr ""
 
-#: admin/meta-box.php:37
+#: admin/meta-box.php:45
 msgid "Mailing address equals visiting address."
 msgstr ""
 
-#: admin/meta-box.php:52
+#: admin/meta-box.php:63
+msgid "Chamber of Commerce Establishment"
+msgstr ""
+
+#: admin/meta-box.php:79
 msgid "Phone"
 msgstr ""
 
-#: admin/meta-box.php:58
+#: admin/meta-box.php:84
 msgid "Phone Number"
 msgstr ""
 
-#: admin/meta-box.php:66
+#: admin/meta-box.php:92
 msgid "Fax Number"
 msgstr ""
 
-#: admin/meta-box.php:75
+#: admin/meta-box.php:101
 msgid "Online"
 msgstr ""
 
-#: admin/meta-box.php:81
+#: admin/meta-box.php:107
 msgid "E-mail Address"
 msgstr ""
 
-#: admin/meta-box.php:89
+#: admin/meta-box.php:115
 msgid "Website URL"
 msgstr ""
 
-#: admin/meta-box.php:97
+#: admin/meta-box.php:123
 msgid "RSS URL"
 msgstr ""
 
-#: admin/meta-box.php:105
+#: admin/meta-box.php:131
 msgid "Video URL"
 msgstr ""
 
-#: admin/meta-box.php:114
+#: admin/meta-box.php:140
 msgid "Social Networks"
 msgstr ""
 
-#: admin/meta-box.php:120
+#: admin/meta-box.php:146
 msgid "Twitter Username"
 msgstr ""
 
-#: admin/meta-box.php:128
-msgid "Facebook"
+#: admin/meta-box.php:154
+msgid "Facebook URL"
 msgstr ""
 
-#: admin/meta-box.php:136
+#: admin/meta-box.php:162
 msgid "LinkedIN"
 msgstr ""
 
-#: admin/meta-box.php:144
+#: admin/meta-box.php:170
 msgid "Google+"
 msgstr ""
 
@@ -152,6 +175,22 @@ msgstr ""
 
 #: admin/plugins.php:71
 msgid "Search Plugin"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Pronamic"
+msgstr ""
+
+#: admin/pronamic.php:3
+msgid "Facebook"
+msgstr ""
+
+#: admin/pronamic.php:9
+msgid "Twitter"
+msgstr ""
+
+#: admin/pronamic.php:12
+msgid "Follow @pronamic"
 msgstr ""
 
 #: admin/settings.php:12 pronamic-companies.php:414
@@ -168,21 +207,6 @@ msgstr ""
 
 #: includes/gravityforms.php:33
 msgid "Populate with Current User Companies"
-msgstr ""
-
-#: includes/taxonomy.php:6
-msgctxt "slug"
-msgid "company-category"
-msgstr ""
-
-#: includes/taxonomy.php:12
-msgctxt "category general name"
-msgid "Company Category"
-msgstr ""
-
-#: includes/taxonomy.php:13
-msgctxt "category singular name"
-msgid "Company Category"
 msgstr ""
 
 #: includes/taxonomy.php:14
@@ -215,21 +239,6 @@ msgstr ""
 
 #: includes/taxonomy.php:21
 msgid "New Company Category Name"
-msgstr ""
-
-#: includes/taxonomy.php:32
-msgctxt "slug"
-msgid "company-character"
-msgstr ""
-
-#: includes/taxonomy.php:38
-msgctxt "category general name"
-msgid "Company Character"
-msgstr ""
-
-#: includes/taxonomy.php:39
-msgctxt "category singular name"
-msgid "Company Character"
 msgstr ""
 
 #: includes/taxonomy.php:40
@@ -268,21 +277,6 @@ msgstr ""
 msgid "Characters"
 msgstr ""
 
-#: includes/taxonomy.php:58
-msgctxt "slug"
-msgid "company-region"
-msgstr ""
-
-#: includes/taxonomy.php:64
-msgctxt "category general name"
-msgid "Company Region"
-msgstr ""
-
-#: includes/taxonomy.php:65
-msgctxt "category singular name"
-msgid "Company Region"
-msgstr ""
-
 #: includes/taxonomy.php:66
 msgid "Search Company Regions"
 msgstr ""
@@ -317,21 +311,6 @@ msgstr ""
 
 #: includes/taxonomy.php:74
 msgid "Regions"
-msgstr ""
-
-#: includes/taxonomy.php:84
-msgctxt "slug"
-msgid "company-keyword"
-msgstr ""
-
-#: includes/taxonomy.php:90
-msgctxt "category general name"
-msgid "Company Keyword"
-msgstr ""
-
-#: includes/taxonomy.php:91
-msgctxt "category singular name"
-msgid "Company Keyword"
 msgstr ""
 
 #: includes/taxonomy.php:92
@@ -370,21 +349,6 @@ msgstr ""
 msgid "Keywords"
 msgstr ""
 
-#: includes/taxonomy.php:110
-msgctxt "slug"
-msgid "company-brand"
-msgstr ""
-
-#: includes/taxonomy.php:116
-msgctxt "category general name"
-msgid "Company Brand"
-msgstr ""
-
-#: includes/taxonomy.php:117
-msgctxt "category singular name"
-msgid "Company Brand"
-msgstr ""
-
 #: includes/taxonomy.php:118
 msgid "Search Company Brands"
 msgstr ""
@@ -421,21 +385,6 @@ msgstr ""
 msgid "Brands"
 msgstr ""
 
-#: includes/taxonomy.php:136
-msgctxt "slug"
-msgid "company-type"
-msgstr ""
-
-#: includes/taxonomy.php:142
-msgctxt "category general name"
-msgid "Company Type"
-msgstr ""
-
-#: includes/taxonomy.php:143
-msgctxt "category singular name"
-msgid "Company Type"
-msgstr ""
-
 #: includes/taxonomy.php:144
 msgid "Search Company Types"
 msgstr ""
@@ -470,26 +419,6 @@ msgstr ""
 
 #: includes/taxonomy.php:152
 msgid "Types"
-msgstr ""
-
-#: pronamic-companies.php:73
-msgctxt "slug"
-msgid "companies"
-msgstr ""
-
-#: pronamic-companies.php:77
-msgctxt "post type general name"
-msgid "Companies"
-msgstr ""
-
-#: pronamic-companies.php:78
-msgctxt "post type singular name"
-msgid "Company"
-msgstr ""
-
-#: pronamic-companies.php:79
-msgctxt "company"
-msgid "Add New"
 msgstr ""
 
 #: pronamic-companies.php:80
@@ -600,34 +529,160 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: pronamic-companies.php:445
+#: pronamic-companies.php:449
 msgid "Company Details"
 msgstr ""
 
-#: pronamic-companies.php:541
+#: pronamic-companies.php:556
 msgid "Company"
 msgstr ""
 
-#: pronamic-companies.php:576
+#: pronamic-companies.php:591
 msgid "No Category"
 msgstr ""
 
-#: pronamic-companies.php:618
+#: pronamic-companies.php:633
 msgid "&mdash; Select a page &mdash;"
 msgstr ""
 
-#: pronamic-companies.php:683
-msgid "pronamic-companies-export"
+#: pronamic-companies.php:705
+msgid "pronamic-companies-export-%s.csv"
 msgstr ""
 
-#: pronamic-companies.php:708
+#: pronamic-companies.php:731
 msgid "Subscription ID"
 msgstr ""
 
-#: pronamic-companies.php:709
+#: pronamic-companies.php:732
 msgid "User Login"
 msgstr ""
 
-#: pronamic-companies.php:710
+#: pronamic-companies.php:733
 msgid "User E-mail"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Pronamic Companies"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.pronamic.eu/plugins/pronamic-companies/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "This plugin adds a basic company directory functionality to WordPress."
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.pronamic.eu/"
+msgstr ""
+
+#: includes/taxonomy.php:6
+msgctxt "slug"
+msgid "company-category"
+msgstr ""
+
+#: includes/taxonomy.php:32
+msgctxt "slug"
+msgid "company-character"
+msgstr ""
+
+#: includes/taxonomy.php:58
+msgctxt "slug"
+msgid "company-region"
+msgstr ""
+
+#: includes/taxonomy.php:84
+msgctxt "slug"
+msgid "company-keyword"
+msgstr ""
+
+#: includes/taxonomy.php:110
+msgctxt "slug"
+msgid "company-brand"
+msgstr ""
+
+#: includes/taxonomy.php:136
+msgctxt "slug"
+msgid "company-type"
+msgstr ""
+
+#: pronamic-companies.php:73
+msgctxt "slug"
+msgid "companies"
+msgstr ""
+
+#: includes/taxonomy.php:12
+msgctxt "category general name"
+msgid "Company Category"
+msgstr ""
+
+#: includes/taxonomy.php:38
+msgctxt "category general name"
+msgid "Company Character"
+msgstr ""
+
+#: includes/taxonomy.php:64
+msgctxt "category general name"
+msgid "Company Region"
+msgstr ""
+
+#: includes/taxonomy.php:90
+msgctxt "category general name"
+msgid "Company Keyword"
+msgstr ""
+
+#: includes/taxonomy.php:116
+msgctxt "category general name"
+msgid "Company Brand"
+msgstr ""
+
+#: includes/taxonomy.php:142
+msgctxt "category general name"
+msgid "Company Type"
+msgstr ""
+
+#: includes/taxonomy.php:13
+msgctxt "category singular name"
+msgid "Company Category"
+msgstr ""
+
+#: includes/taxonomy.php:39
+msgctxt "category singular name"
+msgid "Company Character"
+msgstr ""
+
+#: includes/taxonomy.php:65
+msgctxt "category singular name"
+msgid "Company Region"
+msgstr ""
+
+#: includes/taxonomy.php:91
+msgctxt "category singular name"
+msgid "Company Keyword"
+msgstr ""
+
+#: includes/taxonomy.php:117
+msgctxt "category singular name"
+msgid "Company Brand"
+msgstr ""
+
+#: includes/taxonomy.php:143
+msgctxt "category singular name"
+msgid "Company Type"
+msgstr ""
+
+#: pronamic-companies.php:77
+msgctxt "post type general name"
+msgid "Companies"
+msgstr ""
+
+#: pronamic-companies.php:78
+msgctxt "post type singular name"
+msgid "Company"
+msgstr ""
+
+#: pronamic-companies.php:79
+msgctxt "company"
+msgid "Add New"
 msgstr ""

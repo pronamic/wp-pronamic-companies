@@ -2,8 +2,8 @@
 Contributors: pronamic, remcotolsma, kjtolsma 
 Tags: pronamic, companies, company
 Requires at least: 3.0
-Tested up to: 3.8.1
-Stable tag: 1.0.0
+Tested up to: 4.1
+Stable tag: 1.0.1
 
 Pronamic Companies is a basic plugin to build a company directory.
 
@@ -107,6 +107,12 @@ Upload the Pronamic Companies folder to your wp-content/plugins folder.
 
 
 == Changelog ==
+
+= 1.0.1 =
+*	Tweak - Changed admin input label 'Facebook' to 'Facebook URL'.
+*	Tweak - Adjusted WordPress admin company post type menu to 'building' dashicon.
+*	Tweak - WordPress Coding Standards optimizations.
+*	Test - Tested up to WordPress version 4.1.
 
 = 1.0.0 =
 *	Added contact to the export function.

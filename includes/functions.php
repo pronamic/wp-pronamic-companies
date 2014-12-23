@@ -9,5 +9,5 @@ function pronamic_company_get_meta( $meta_key, $post_id = null, $single = true )
 function pronamic_company_has_meta( $meta_key, $post_id = null, $single = true ) {
 	$value = pronamic_company_get_meta( $meta_key, $post_id, $single );
 
-	return !empty( $value );
+	return ! empty( $value );
 }

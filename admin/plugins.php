@@ -2,37 +2,37 @@
 	<?php _e( 'Plugins', 'pronamic_companies' ); ?>
 </h2>
 
-<?php 
+<?php
 
 $plugin_tips = array(
 	'gravityforms/gravityforms.php' => array(
-		'slug' => 'gravityforms' , 
-		'name' => 'Gravity Forms'
+		'slug' => 'gravityforms',
+		'name' => 'Gravity Forms',
 	),
 	'gravity-forms-custom-post-types/gfcptaddon.php' => array(
 		'slug' => 'gravity-forms-custom-post-types',
-		'name' => 'Gravity Forms + Custom Post Types'
+		'name' => 'Gravity Forms + Custom Post Types',
 	),
 	'gravity-forms-update-post/gravityforms-update-post.php' => array(
 		'slug' => 'gravity-forms-update-post',
-		'name' => 'Gravity Forms - Update Post'
+		'name' => 'Gravity Forms - Update Post',
 	),
 	'gravityformsuserregistration/userregistration.php' => array(
 		'slug' => 'gravityformsuserregistration',
-		'name' => 'Gravity Forms User Registration Add-On'
+		'name' => 'Gravity Forms User Registration Add-On',
 	),
 	'posts-to-posts/posts-to-posts.php' => array(
 		'slug' => 'posts-to-posts',
-		'name' => 'Posts 2 Posts'
+		'name' => 'Posts 2 Posts',
 	),
 	'pronamic-google-maps/pronamic-google-maps.php' => array(
 		'slug' => 'pronamic-google-maps',
-		'name' => 'Pronamic Google Maps'
+		'name' => 'Pronamic Google Maps',
 	),
 	'pronamic-subscriptions/pronamic-subscriptions.php' => array(
 		'slug' => 'pronamic-subscriptions',
-		'name' => 'Pronamic Subscriptions'
-	)
+		'name' => 'Pronamic Subscriptions',
+	),
 );
 
 ?>
@@ -41,7 +41,7 @@ $plugin_tips = array(
 	<?php foreach ( $plugin_tips as $file => $data ) : ?>
 		<tr>
 			<td>
-				<?php echo $data['name']; ?>
+				<?php echo esc_html( $data['name'] ); ?>
 			</td>
 			<td>
 				<?php
@@ -55,14 +55,14 @@ $plugin_tips = array(
 				?>
 			</td>
 			<td>
-				<?php 
+				<?php
 
 				$search_url = add_query_arg(
 					array(
 						'tab'  => 'search',
 						'type' => 'term',
-						's'    => $data['slug']
-					), 
+						's'    => $data['slug'],
+					),
 					'plugin-install.php'
 				);
 

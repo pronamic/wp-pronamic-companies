@@ -39,9 +39,9 @@ wp_nonce_field( 'pronamic_companies_save_post', 'pronamic_companies_nonce' );
 				<label for="pronamic_company_address"><?php _e( 'Mailing Address', 'pronamic_companies' ); ?></label>
 			</th>
 			<td>
-				<?php if( false ) : ?>
+				<?php if ( false ) : ?>
 					<label>
-						<input name="" type="checkbox" /> 
+						<input name="" type="checkbox" />
 						<?php _e( 'Mailing address equals visiting address.', 'pronamic_companies' ); ?>
 					</label>
 					<br />
@@ -54,7 +54,7 @@ wp_nonce_field( 'pronamic_companies_save_post', 'pronamic_companies_nonce' );
 				<input id="pronamic_company_mailing_country" name="_pronamic_company_mailing_country" placeholder="<?php esc_attr_e( 'Country', 'pronamic_companies' ); ?>" value="<?php echo esc_attr( get_post_meta( $post->ID, '_pronamic_company_mailing_country', true ) ); ?>" type="text" size="42" />
 			</td>
 		</tr>
-		
+
 		<tr>
 			<th scope="row">
 				<label for="pronamic_company_kvk_establishment"><?php _e( 'Chamber of Commerce Number', 'pronamic_companies' ); ?></label>
@@ -151,7 +151,7 @@ wp_nonce_field( 'pronamic_companies_save_post', 'pronamic_companies_nonce' );
 		</tr>
 		<tr>
 			<th scope="row">
-				<label for="pronamic_company_facebook"><?php _e( 'Facebook', 'pronamic_companies' ); ?></label>
+				<label for="pronamic_company_facebook"><?php _e( 'Facebook URL', 'pronamic_companies' ); ?></label>
 			</th>
 			<td>
 				<input id="pronamic_company_facebook" name="_pronamic_company_facebook" value="<?php echo esc_attr( get_post_meta( $post->ID, '_pronamic_company_facebook', true ) ); ?>" type="text" size="25" class="regular-text" />
