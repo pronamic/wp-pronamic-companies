@@ -42,7 +42,7 @@ class Pronamic_Companies_Plugin {
 		self::$file    = $file;
 		self::$dirname = dirname( $file );
 
-		register_activation_hook(   $file, array( __CLASS__, 'activate' ) );
+		register_activation_hook( $file, array( __CLASS__, 'activate' ) );
 		register_deactivation_hook( $file, array( __CLASS__, 'deactivate' ) );
 
 		add_action( 'init',      array( __CLASS__, 'init' ) );
@@ -153,7 +153,7 @@ class Pronamic_Companies_Plugin {
 	 * @param string $meta_value
 	 */
 	public static function add_post_metadata_p2p_connect( $mid, $object_id, $meta_key, $meta_value ) {
-		if ( $meta_key == '_pronamic_company_id' ) {
+		if ( '_pronamic_company_id' == $meta_key ) {
 			// @see https://github.com/scribu/wp-posts-to-posts/blob/1.4.2/core/type-factory.php#L77
 			$p2p_type = p2p_type( 'posts_to_pronamic_companies' );
 
@@ -177,12 +177,12 @@ class Pronamic_Companies_Plugin {
 	 */
 	public static function save_post_company_google_maps( $post_id, $post ) {
 		// Doing autosave
-		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE) {
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 			return;
 		}
 
 		// Check post type
-		if ( ! ( $post->post_type == 'pronamic_company' ) ) {
+		if ( ! ( 'pronamic_company' == $post->post_type ) ) {
 			return;
 		}
 
@@ -451,7 +451,7 @@ class Pronamic_Companies_Plugin_Admin {
 					$post_type, // post_type
 					'normal', // context
 					'high' // priority
-			    );
+				);
 			}
 		}
 	}
@@ -485,17 +485,21 @@ class Pronamic_Companies_Plugin_Admin {
 	 * Save metaboxes
 	 */
 	public static function save_post_company_details( $post_id, $post ) {
-		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 			return;
+		}
 
-		if ( !isset( $_POST['pronamic_companies_nonce'] ) )
+		if ( ! isset( $_POST['pronamic_companies_nonce'] ) ) {
 			return;
+		}
 
-		if ( !wp_verify_nonce( $_POST['pronamic_companies_nonce'], 'pronamic_companies_save_post' ) )
+		if ( ! wp_verify_nonce( $_POST['pronamic_companies_nonce'], 'pronamic_companies_save_post' ) ) {
 			return;
+		}
 
-		if ( !current_user_can( 'edit_post', $post->ID ) )
+		if ( ! current_user_can( 'edit_post', $post->ID ) ) {
 			return;
+		}
 
 		// Save data
 		$data = filter_input_array( INPUT_POST, array(
@@ -542,17 +546,17 @@ class Pronamic_Companies_Plugin_Admin {
 	public static function company_columns( $columns ) {
 		$new_columns = array();
 
-		if( isset( $columns['cb'] ) ) {
+		if ( isset( $columns['cb'] ) ) {
 			$new_columns['cb'] = $columns['cb'];
 		}
 
 		// $new_columns['thumbnail'] = __('Thumbnail', 'pronamic_companies');
 
-		if( isset( $columns['title'] ) ) {
+		if ( isset( $columns['title'] ) ) {
 			$new_columns['title'] = __( 'Company', 'pronamic_companies' );
 		}
 
-		if( isset( $columns['author'] ) ) {
+		if ( isset( $columns['author'] ) ) {
 			$new_columns['author'] = $columns['author'];
 		}
 
@@ -560,11 +564,11 @@ class Pronamic_Companies_Plugin_Admin {
 
 		$new_columns['pronamic_company_categories'] = __( 'Categories', 'pronamic_companies' );
 
-		if( isset( $columns['comments'] ) ) {
+		if ( isset( $columns['comments'] ) ) {
 			$new_columns['comments'] = $columns['comments'];
 		}
 
-		if( isset( $columns['date'] ) ) {
+		if ( isset( $columns['date'] ) ) {
 			$new_columns['date'] = $columns['date'];
 		}
 
@@ -572,19 +576,19 @@ class Pronamic_Companies_Plugin_Admin {
 	}
 
 	public static function custom_column( $column, $post_id ) {
-		switch( $column ) {
-			case 'pronamic_company_address':
-				echo get_post_meta( $post_id, '_pronamic_company_address', true ), '<br />';
-				echo get_post_meta( $post_id, '_pronamic_company_postal_code', true ), ' ', get_post_meta( $post_id, '_pronamic_company_city', true );
+		switch ( $column ) {
+			case 'pronamic_company_address' :
+				echo esc_html( get_post_meta( $post_id, '_pronamic_company_address', true ) ), '<br />';
+				echo esc_html( get_post_meta( $post_id, '_pronamic_company_postal_code', true ) . ' ' . get_post_meta( $post_id, '_pronamic_company_city', true ) );
 
 				break;
-			case 'pronamic_company_categories':
+			case 'pronamic_company_categories' :
 				$terms = get_the_term_list( $post_id, 'pronamic_company_category' , '' , ', ' , '' );
 
-				if( is_string( $terms ) ) {
-					echo $terms;
+				if ( is_string( $terms ) ) {
+					echo esc_html( $terms );
 				} else {
-					echo __( 'No Category', 'pronamic_companies' );
+					echo esc_html__( 'No Category', 'pronamic_companies' );
 				}
 
 				break;
@@ -692,12 +696,15 @@ class Pronamic_Companies_Plugin_Admin {
 	 * Export to CSV
 	 */
 	public static function maybe_export() {
-		if ( empty( $_POST ) || !wp_verify_nonce( filter_input( INPUT_POST, 'pronamic_companies_nonce', FILTER_SANITIZE_STRING ), 'pronamic_companies_export' ) )
+		if ( empty( $_POST ) || ! wp_verify_nonce( filter_input( INPUT_POST, 'pronamic_companies_nonce', FILTER_SANITIZE_STRING ), 'pronamic_companies_export' ) ) {
 			return;
+		}
 
 		// Set headers for download
-		$filename  = __( 'pronamic-companies-export', 'pronamic_companies' );
-		$filename .= '-' . date('Y-m-d_H-i') . '.csv';
+		$filename = sprintf(
+			__( 'pronamic-companies-export-%s.csv', 'pronamic_companies' ),
+			date( 'Y-m-d_H-i' )
+		);
 
 		header( 'Content-Type: text/csv;' );
 		header( 'Content-Disposition: attachment; filename=' . $filename );

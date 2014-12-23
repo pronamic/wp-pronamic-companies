@@ -6,7 +6,7 @@
 
 $plugin_tips = array(
 	'gravityforms/gravityforms.php' => array(
-		'slug' => 'gravityforms' ,
+		'slug' => 'gravityforms',
 		'name' => 'Gravity Forms',
 	),
 	'gravity-forms-custom-post-types/gfcptaddon.php' => array(
@@ -41,7 +41,7 @@ $plugin_tips = array(
 	<?php foreach ( $plugin_tips as $file => $data ) : ?>
 		<tr>
 			<td>
-				<?php echo $data['name']; ?>
+				<?php echo esc_html( $data['name'] ); ?>
 			</td>
 			<td>
 				<?php
@@ -61,7 +61,7 @@ $plugin_tips = array(
 					array(
 						'tab'  => 'search',
 						'type' => 'term',
-						's'    => $data['slug']
+						's'    => $data['slug'],
 					),
 					'plugin-install.php'
 				);

@@ -13,14 +13,14 @@ function pronamic_companies_gform_field_advanced_settings( $position, $form_id )
 			<input type="checkbox" id="pronamic_companies_is_visiting_address" onclick="SetFieldProperty('isCompanyVisitingAddress', this.checked); ToggleInputName();" />
 
 			<label for="pronamic_companies_is_visiting_address" class="inline">
-				<?php _e('Is Company Visiting Address', 'pronamic_companies'); ?>
+				<?php _e( 'Is Company Visiting Address', 'pronamic_companies' ); ?>
 			</label>
 		</li>
 		<li class="address_setting field_setting" style="display: list-item;">
 			<input type="checkbox" id="pronamic_companies_is_mailing_address" onclick="SetFieldProperty('isCompanyMailingAddress', this.checked); ToggleInputName();" />
 
 			<label for="pronamic_companies_is_mailing_address" class="inline">
-				<?php _e('Is Company Mailing Address', 'pronamic_companies'); ?>
+				<?php _e( 'Is Company Mailing Address', 'pronamic_companies' ); ?>
 			</label>
 		</li>
 
@@ -77,11 +77,11 @@ function pronamic_companies_gform_populate_current_user_companies( $form ) {
 				global $user_ID;
 
 				// Make sure we only get subscriptions once
-				if ( !isset( $companies ) ) {
+				if ( ! isset( $companies ) ) {
 					$companies = get_posts( array(
 						'post_type' => 'pronamic_company',
 						'nopaging'  => true,
-						'author'    => $user_ID
+						'author'    => $user_ID,
 					) );
 				}
 
@@ -92,7 +92,7 @@ function pronamic_companies_gform_populate_current_user_companies( $form ) {
 					$field['choices'][] = array(
 						'text'       => $company->post_title,
 						'value'      => '' . $company->ID,
-						'isSelected' => false
+						'isSelected' => false,
 					);
 				}
 			}
@@ -158,15 +158,15 @@ function pronamic_companies_gform_post_data( $post_data, $form, $lead ) {
 	}
 
 	// Mapping
-	if( ! isset( $post_data['post_custom_fields'] ) ) {
+	if ( ! isset( $post_data['post_custom_fields'] ) ) {
 		$post_data['post_custom_fields'] = array();
 	}
 
 	$fields =& $post_data['post_custom_fields'];
 
-	foreach( $map as $meta_key => $field_id ) {
-		if( isset( $lead[$field_id] ) ) {
-			$fields[$meta_key] = $lead[$field_id];
+	foreach ( $map as $meta_key => $field_id ) {
+		if ( isset( $lead[ $field_id ] ) ) {
+			$fields[ $meta_key ] = $lead[ $field_id ];
 		}
 	}
 
@@ -190,10 +190,10 @@ function pronamic_companies_gform_update_post_field_default_value( $field ) {
 
 		$post_id = filter_input( INPUT_GET, $name, FILTER_SANITIZE_STRING );
 
-		if ( !empty( $post_id ) ) {
+		if ( ! empty( $post_id ) ) {
 			$field_type = RGFormsModel::get_input_type( $field );
 
-			if ( $field_type == 'address' ) {
+			if ( 'address' == $field_type ) {
 				if ( isset( $field['isCompanyVisitingAddress'] ) ) {
 					$is_company_address = filter_var( $field['isCompanyVisitingAddress'], FILTER_VALIDATE_BOOLEAN );
 

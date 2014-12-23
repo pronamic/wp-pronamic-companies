@@ -5,7 +5,7 @@ function pronamic_company_get_contact( $post_id = null ) {
 }
 
 function pronamic_company_the_contact( $post_id = null ) {
-	echo pronamic_company_get_contact( $post_id );
+	echo esc_html( pronamic_company_get_contact( $post_id ) );
 }
 
 /**
@@ -28,7 +28,7 @@ function pronamic_company_has_address( $post_id = null ) {
  * Output the company address
  */
 function pronamic_company_the_address( $post_id = null ) {
-	echo pronamic_company_get_address( $post_id );
+	echo esc_html( pronamic_company_get_address( $post_id ) );
 }
 
 //////////////////////////////////////////////////
@@ -53,7 +53,7 @@ function pronamic_company_has_postal_code( $post_id = null ) {
  * Output the company postal code
  */
 function pronamic_company_the_postal_code( $post_id = null ) {
-	echo pronamic_company_get_postal_code( $post_id );
+	echo esc_html( pronamic_company_get_postal_code( $post_id ) );
 }
 
 //////////////////////////////////////////////////
@@ -78,7 +78,7 @@ function pronamic_company_has_city( $post_id = null ) {
  * Output the company city
  */
 function pronamic_company_the_city( $post_id = null ) {
-	echo pronamic_company_get_city( $post_id );
+	echo esc_html( pronamic_company_get_city( $post_id ) );
 }
 
 //////////////////////////////////////////////////
@@ -103,7 +103,7 @@ function pronamic_company_has_kvk_establishment( $post_id = null ) {
  * Output the company chamber of commerce establishment
  */
 function pronamic_company_the_kvk_establishment( $post_id = null ) {
-	echo pronamic_company_get_kvk_establishment( $post_id );
+	echo esc_html( pronamic_company_get_kvk_establishment( $post_id ) );
 }
 
 //////////////////////////////////////////////////
@@ -128,7 +128,7 @@ function pronamic_company_has_kvk_number( $post_id = null ) {
  * Output the company chamber of commerce number
  */
 function pronamic_company_the_kvk_number( $post_id = null ) {
-	echo pronamic_company_get_kvk_number( $post_id );
+	echo esc_html( pronamic_company_get_kvk_number( $post_id ) );
 }
 
 //////////////////////////////////////////////////
@@ -153,7 +153,7 @@ function pronamic_company_has_tax_number( $post_id = null ) {
  * Output the company tax number
  */
 function pronamic_company_the_tax_number( $post_id = null ) {
-	echo pronamic_company_get_tax_number( $post_id );
+	echo esc_html( pronamic_company_get_tax_number( $post_id ) );
 }
 
 //////////////////////////////////////////////////
@@ -178,7 +178,7 @@ function pronamic_company_has_phone_number( $post_id = null ) {
  * Output the company phone number
  */
 function pronamic_company_the_phone_number( $post_id = null ) {
-	echo pronamic_company_get_phone_number( $post_id );
+	echo esc_html( pronamic_company_get_phone_number( $post_id ) );
 }
 
 //////////////////////////////////////////////////
@@ -203,7 +203,7 @@ function pronamic_company_has_fax_number( $post_id = null ) {
  * Output the company phone number
  */
 function pronamic_company_the_fax_number( $post_id = null ) {
-	echo pronamic_company_get_fax_number( $post_id );
+	echo esc_html( pronamic_company_get_fax_number( $post_id ) );
 }
 
 //////////////////////////////////////////////////
@@ -228,7 +228,7 @@ function pronamic_company_has_email( $post_id = null ) {
  * Output the company email
  */
 function pronamic_company_the_email( $post_id = null ) {
-	echo pronamic_company_get_email( $post_id );
+	echo esc_html( pronamic_company_get_email( $post_id ) );
 }
 
 //////////////////////////////////////////////////
@@ -253,7 +253,7 @@ function pronamic_company_has_website( $post_id = null ) {
  * Output the company website
  */
 function pronamic_company_the_website( $post_id = null ) {
-	echo pronamic_company_get_website( $post_id );
+	echo esc_html( pronamic_company_get_website( $post_id ) );
 }
 
 //////////////////////////////////////////////////
@@ -278,7 +278,7 @@ function pronamic_company_has_twitter( $post_id = null ) {
  * Output the company Twitter
  */
 function pronamic_company_the_twitter( $post_id = null ) {
-	echo pronamic_company_get_twitter( $post_id );
+	echo esc_html( pronamic_company_get_twitter( $post_id ) );
 }
 
 //////////////////////////////////////////////////
@@ -303,7 +303,7 @@ function pronamic_company_has_facebook( $post_id = null ) {
  * Output the company Facebook
  */
 function pronamic_company_the_facebook( $post_id = null ) {
-	echo pronamic_company_get_facebook( $post_id );
+	echo esc_html( pronamic_company_get_facebook( $post_id ) );
 }
 
 //////////////////////////////////////////////////
@@ -328,7 +328,7 @@ function pronamic_company_has_linkedin( $post_id = null ) {
  * Output the company Facebook
  */
 function pronamic_company_the_linkedin( $post_id = null ) {
-	echo pronamic_company_get_linkedin( $post_id );
+	echo esc_html( pronamic_company_get_linkedin( $post_id ) );
 }
 
 //////////////////////////////////////////////////
@@ -353,5 +353,5 @@ function pronamic_company_has_google_plus( $post_id = null ) {
  * Output the company Google+
  */
 function pronamic_company_the_google_plus( $post_id = null ) {
-	echo pronamic_company_get_google_plus( $post_id );
+	echo esc_html( pronamic_company_get_google_plus( $post_id ) );
 }
