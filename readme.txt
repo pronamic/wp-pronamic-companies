@@ -109,6 +109,8 @@ Upload the Pronamic Companies folder to your wp-content/plugins folder.
 == Changelog ==
 
 = 1.0.1 =
+*	Tweak - Changed admin input label 'Facebook' to 'Facebook URL'.
+*	Tweak - Adjusted WordPress admin company post type menu to 'building' dashicon.
 *	Test - Tested up to WordPress version 4.1.
 
 = 1.0.0 =
