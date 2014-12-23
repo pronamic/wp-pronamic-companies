@@ -95,7 +95,7 @@ class Pronamic_Companies_Plugin {
 			'capability_type'    => 'post',
 			'has_archive'        => true,
 			'rewrite'            => array( 'slug' => $slug ), 
-			'menu_icon'          => plugins_url( 'admin/icons/company.png', __FILE__ ), 
+			'menu_icon'          => 'dashicons-building',
 			'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields', 'pronamic_company' ),
 		) );
 	
