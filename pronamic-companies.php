@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Pronamic Companies
-Plugin URI: http://www.happywp.com/plugins/pronamic-companies/
+Plugin URI: http://www.pronamic.eu/plugins/pronamic-companies/
 Description: This plugin adds a basic company directory functionality to WordPress
 
 Version: 1.0.0
