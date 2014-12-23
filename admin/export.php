@@ -122,7 +122,7 @@
 		<?php wp_nonce_field( 'pronamic_companies_export', 'pronamic_companies_nonce' ); ?>
 
 		<p>
-			<?php submit_button( __( 'Export to CSV', 'pronmic_companies' ), 'secondary', 'pronamic_companies_export' ); ?>
+			<?php submit_button( __( 'Export to CSV', 'pronamic_companies' ), 'secondary', 'pronamic_companies_export' ); ?>
 		</p>
 	</form>
 

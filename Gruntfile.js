@@ -85,6 +85,7 @@ module.exports = function( grunt ) {
 				src:  [
 					'**/*.php',
 					'!bower_components/**',
+					'!examples/**',
 					'!deploy/**',
 					'!node_modules/**'
 				],
@@ -99,7 +100,7 @@ module.exports = function( grunt ) {
 					cwd: '',
 					domainPath: 'languages',
 					type: 'wp-plugin',
-					exclude: [ 'bower_components/.*', 'deploy/.*', 'node_modules' ],
+					exclude: [ 'bower_components/.*', 'deploy/.*', 'examples/.*', 'node_modules/.*' ],
 				}
 			}
 		},
