@@ -1,3 +1,8 @@
+<?php
+
+global $pronamic_companies_plugin;
+
+?>
 <div class="wrap">
 	<?php screen_icon(); ?>
 
@@ -7,7 +12,7 @@
 
 	<?php
 
-	$results = Pronamic_Companies_Plugin_Admin::get_export();
+	$results = $pronamic_companies_plugin->admin->get_export();
 
 	if ( ! empty( $results ) ) : ?>
 
@@ -127,8 +132,6 @@
 	</form>
 
 	<?php
-
-	global $pronamic_companies_plugin;
 
 	include $pronamic_companies_plugin->dir_path . 'admin/pronamic.php';
 

@@ -274,7 +274,7 @@ class Pronamic_Companies_Plugin_Settings {
 	/**
 	 * Settings section
 	 */
-	public static function settings_section() {
+	public function settings_section() {
 
 	}
 
@@ -283,7 +283,7 @@ class Pronamic_Companies_Plugin_Settings {
 	 *
 	 * @param array $args
 	 */
-	public static function input_text( $args ) {
+	public function input_text( $args ) {
 		printf(
 			'<input name="%s" id="%s" type="text" value="%s" class="%s" />',
 			esc_attr( $args['label_for'] ),
@@ -298,7 +298,7 @@ class Pronamic_Companies_Plugin_Settings {
 	 *
 	 * @param array $args
 	 */
-	public static function input_page( $args ) {
+	public function input_page( $args ) {
 		$name = $args['label_for'];
 
 		wp_dropdown_pages( array(
@@ -313,7 +313,7 @@ class Pronamic_Companies_Plugin_Settings {
 	 *
 	 * @param array $args
 	 */
-	public static function select_orderby( $args ) {
+	public function select_orderby( $args ) {
 		$name = $args['label_for'];
 
 		$current = get_option( $name );
@@ -347,7 +347,7 @@ class Pronamic_Companies_Plugin_Settings {
 	 *
 	 * @param array $args
 	 */
-	public static function select_order( $args ) {
+	public function select_order( $args ) {
 		$name = $args['label_for'];
 
 		$current = get_option( $name );
@@ -370,7 +370,7 @@ class Pronamic_Companies_Plugin_Settings {
 		printf( '</select>' );
 	}
 
-	public static function input_taxonomies( $args ) {
+	public function input_taxonomies( $args ) {
 		$name = $args['label_for'];
 
 		$current = get_option( $name );

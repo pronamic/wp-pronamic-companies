@@ -251,7 +251,7 @@ class Pronamic_Companies_Plugin_Admin {
 	/**
 	 * Get export
 	 */
-	public static function get_export() {
+	public function get_export() {
 		global $wpdb;
 
 		$results = $wpdb->get_results( "
