@@ -644,33 +644,33 @@ class Pronamic_Companies_Plugin_Admin {
 
 		$results = $wpdb->get_results("
 			SELECT
-				post.ID ,
-				post.post_title ,
+				post.ID,
+				post.post_title,
 
-				MAX(IF(meta.meta_key = '_pronamic_company_address', meta.meta_value, NULL)) AS company_address  ,
-				MAX(IF(meta.meta_key = '_pronamic_company_postal_code', meta.meta_value, NULL)) AS company_postal_code ,
-				MAX(IF(meta.meta_key = '_pronamic_company_city', meta.meta_value, NULL)) AS company_city ,
-				MAX(IF(meta.meta_key = '_pronamic_company_country', meta.meta_value, NULL)) AS company_country ,
-				MAX(IF(meta.meta_key = '_pronamic_company_kvk_establishment', meta.meta_value, NULL)) AS kvk_establishment ,
-				MAX(IF(meta.meta_key = '_pronamic_company_kvk_number', meta.meta_value, NULL)) AS kvk_number ,
-				MAX(IF(meta.meta_key = '_pronamic_company_tax_number', meta.meta_value, NULL)) AS tax_number ,
+				MAX( IF( meta.meta_key = '_pronamic_company_address', meta.meta_value, NULL ) ) AS company_address,
+				MAX( IF( meta.meta_key = '_pronamic_company_postal_code', meta.meta_value, NULL ) ) AS company_postal_code,
+				MAX( IF( meta.meta_key = '_pronamic_company_city', meta.meta_value, NULL ) ) AS company_city,
+				MAX( IF( meta.meta_key = '_pronamic_company_country', meta.meta_value, NULL ) ) AS company_country,
+				MAX( IF( meta.meta_key = '_pronamic_company_kvk_establishment', meta.meta_value, NULL ) ) AS kvk_establishment,
+				MAX( IF( meta.meta_key = '_pronamic_company_kvk_number', meta.meta_value, NULL ) ) AS kvk_number,
+				MAX( IF( meta.meta_key = '_pronamic_company_tax_number', meta.meta_value, NULL ) ) AS tax_number,
 
-				MAX(IF(meta.meta_key = '_pronamic_company_mailing_address', meta.meta_value, NULL)) AS company_mailing_address  ,
-				MAX(IF(meta.meta_key = '_pronamic_company_mailing_postal_code', meta.meta_value, NULL)) AS company_mailing_postal_code ,
-				MAX(IF(meta.meta_key = '_pronamic_company_mailing_city', meta.meta_value, NULL)) AS company_mailing_city ,
-				MAX(IF(meta.meta_key = '_pronamic_company_mailing_country', meta.meta_value, NULL)) AS company_mailing_country ,
+				MAX( IF( meta.meta_key = '_pronamic_company_mailing_address', meta.meta_value, NULL ) ) AS company_mailing_address,
+				MAX( IF( meta.meta_key = '_pronamic_company_mailing_postal_code', meta.meta_value, NULL ) ) AS company_mailing_postal_code,
+				MAX( IF( meta.meta_key = '_pronamic_company_mailing_city', meta.meta_value, NULL ) ) AS company_mailing_city,
+				MAX( IF( meta.meta_key = '_pronamic_company_mailing_country', meta.meta_value, NULL ) ) AS company_mailing_country,
 
-				MAX(IF(meta.meta_key = '_pronamic_company_phone_number', meta.meta_value, NULL)) AS company_phone_number ,
-				MAX(IF(meta.meta_key = '_pronamic_company_fax_number', meta.meta_value, NULL)) AS company_fax_number ,
+				MAX( IF( meta.meta_key = '_pronamic_company_phone_number', meta.meta_value, NULL ) ) AS company_phone_number,
+				MAX( IF( meta.meta_key = '_pronamic_company_fax_number', meta.meta_value, NULL ) ) AS company_fax_number,
 
-				MAX(IF(meta.meta_key = '_pronamic_company_email', meta.meta_value, NULL)) AS company_email ,
-				MAX(IF(meta.meta_key = '_pronamic_company_website', meta.meta_value, NULL)) AS company_website ,
+				MAX( IF( meta.meta_key = '_pronamic_company_email', meta.meta_value, NULL ) ) AS company_email,
+				MAX( IF( meta.meta_key = '_pronamic_company_website', meta.meta_value, NULL ) ) AS company_website,
 
-				MAX(IF(meta.meta_key = '_pronamic_subscription_id', meta.meta_value, NULL)) AS company_subscription_id ,
+				MAX( IF( meta.meta_key = '_pronamic_subscription_id', meta.meta_value, NULL ) ) AS company_subscription_id,
 
-				MAX(IF(meta.meta_key = '_pronamic_company_contact', meta.meta_value, NULL)) AS company_contact,
+				MAX( IF( meta.meta_key = '_pronamic_company_contact', meta.meta_value, NULL ) ) AS company_contact,
 
-				user.user_login ,
+				user.user_login,
 				user.user_email
 			FROM
 				$wpdb->posts AS post
