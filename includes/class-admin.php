@@ -38,7 +38,10 @@ class Pronamic_Companies_Plugin_Admin {
 		// Filters
 		add_filter( 'manage_edit-pronamic_company_columns' ,  array( $this, 'company_columns' ) );
 
-		// Export
+		// Maybe update
+		$this->maybe_update();
+
+		// Maybe export
 		$this->maybe_export();
 	}
 
@@ -302,7 +305,24 @@ class Pronamic_Companies_Plugin_Admin {
 	}
 
 	/**
-	 * Export to CSV
+	 * Maybe update
+	 */
+	public function maybe_update() {
+		if ( get_option( 'pronamic_companies_version' ) != $this->plugin->version ) {
+			require_once $this->plugin->dir_path . 'admin/includes/upgrade.php';
+
+			$current = get_option( 'pronamic_companies_version' );
+
+			if ( empty( $current ) ) {
+				pronamic_companies_upgrade_110();
+			}
+
+			update_option( 'pronamic_companies_version', $this->plugin->version );
+		}
+	}
+
+	/**
+	 * Maybe export to CSV
 	 */
 	public function maybe_export() {
 		if ( empty( $_POST ) || ! wp_verify_nonce( filter_input( INPUT_POST, 'pronamic_companies_nonce', FILTER_SANITIZE_STRING ), 'pronamic_companies_export' ) ) {
