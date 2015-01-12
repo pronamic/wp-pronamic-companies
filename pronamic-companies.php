@@ -642,7 +642,7 @@ class Pronamic_Companies_Plugin_Admin {
 	public static function get_export() {
 		global $wpdb;
 
-		$results = $wpdb->get_results("
+		$results = $wpdb->get_results( "
 			SELECT
 				post.ID,
 				post.post_title,
@@ -687,7 +687,7 @@ class Pronamic_Companies_Plugin_Admin {
 			GROUP BY
 				post.ID
 			;
-		");
+		" );
 
 		return $results;
 	}
@@ -706,7 +706,8 @@ class Pronamic_Companies_Plugin_Admin {
 			date( 'Y-m-d_H-i' )
 		);
 
-		header( 'Content-Type: text/csv;' );
+		header( 'Content-Encoding: ' . get_bloginfo( 'charset' ) );
+		header( 'Content-Type: text/csv; charset=' . get_bloginfo( 'charset' ) );
 		header( 'Content-Disposition: attachment; filename=' . $filename );
 
 		// Results
