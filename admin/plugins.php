@@ -1,6 +1,4 @@
-<h2>
-	<?php _e( 'Plugins', 'pronamic_companies' ); ?>
-</h2>
+<h3><?php _e( 'Plugins', 'pronamic_companies' ); ?></h3>
 
 <?php
 
@@ -47,9 +45,7 @@ $plugin_tips = array(
 				<?php
 
 				if ( is_plugin_active( $file ) ) {
-					echo '&#9745;';
-				} else {
-					echo '&#9744;';
+					echo '<span class="dashicons dashicons-yes"></span>';
 				}
 
 				?>
