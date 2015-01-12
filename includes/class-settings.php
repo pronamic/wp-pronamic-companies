@@ -33,14 +33,20 @@ class Pronamic_Companies_Plugin_Settings {
 			'pronamic_companies_general' // page
 		);
 
+		// Posts per page
+		register_setting( 'pronamic_companies_general', 'pronamic_companies_posts_per_page' );
+
 		add_settings_field(
 			'pronamic_companies_posts_per_page', // id
 			__( 'Company pages show at most', 'pronamic_companies' ), // title
-			array( $this, 'input_text' ),  // callback
+			array( $this, 'input_posts_per_page' ),  // callback
 			'pronamic_companies_general', // page
 			'pronamic_companies_read', // section
 			array( 'label_for' => 'pronamic_companies_posts_per_page' ) // args
 		);
+
+		// Order by
+		register_setting( 'pronamic_companies_general', 'pronamic_companies_orderby' );
 
 		add_settings_field(
 			'pronamic_companies_orderby', // id
@@ -50,6 +56,9 @@ class Pronamic_Companies_Plugin_Settings {
 			'pronamic_companies_read', // section
 			array( 'label_for' => 'pronamic_companies_orderby' ) // args
 		);
+
+		// Order
+		register_setting( 'pronamic_companies_general', 'pronamic_companies_order' );
 
 		add_settings_field(
 			'pronamic_companies_order', // id
@@ -68,6 +77,8 @@ class Pronamic_Companies_Plugin_Settings {
 			'pronamic_companies_general' // page
 		);
 
+		register_setting( 'pronamic_companies_general', 'pronamic_companies_taxonomies' );
+
 		add_settings_field(
 			'pronamic_companies_taxonomies', // id
 			__( 'Taxonomies', 'pronamic_companies' ), // title
@@ -85,6 +96,9 @@ class Pronamic_Companies_Plugin_Settings {
 			'pronamic_companies_pages' // page
 		);
 
+		// Company Register Page
+		register_setting( 'pronamic_companies_pages', 'pronamic_companies_register_page_id' );
+
 		add_settings_field(
 			'pronamic_companies_register_page_id', // id
 			__( 'Company Register Page', 'pronamic_companies' ), // title
@@ -93,6 +107,9 @@ class Pronamic_Companies_Plugin_Settings {
 			'pronamic_companies_pages', // section
 			array( 'label_for' => 'pronamic_companies_register_page_id' ) // args
 		);
+
+		// Company Upgrade Page
+		register_setting( 'pronamic_companies_pages', 'pronamic_companies_upgrade_page_id' );
 
 		add_settings_field(
 			'pronamic_companies_upgrade_page_id', // id
@@ -103,6 +120,9 @@ class Pronamic_Companies_Plugin_Settings {
 			array( 'label_for' => 'pronamic_companies_upgrade_page_id' ) // args
 		);
 
+		// Company Downgrade Page
+		register_setting( 'pronamic_companies_pages', 'pronamic_companies_downgrade_page_id' );
+
 		add_settings_field(
 			'pronamic_companies_downgrade_page_id', // id
 			__( 'Company Downgrade Page', 'pronamic_companies' ), // title
@@ -112,6 +132,9 @@ class Pronamic_Companies_Plugin_Settings {
 			array( 'label_for' => 'pronamic_companies_downgrade_page_id' ) // args
 		);
 
+		// Company Edit Page
+		register_setting( 'pronamic_companies_pages', 'pronamic_companies_edit_page_id' );
+
 		add_settings_field(
 			'pronamic_companies_edit_page_id', // id
 			__( 'Company Edit Page', 'pronamic_companies' ), // title
@@ -120,6 +143,9 @@ class Pronamic_Companies_Plugin_Settings {
 			'pronamic_companies_pages', // section
 			array( 'label_for' => 'pronamic_companies_edit_page_id' ) // args
 		);
+
+		// Company New Post Page
+		register_setting( 'pronamic_companies_pages', 'pronamic_companies_new_post_page_id' );
 
 		add_settings_field(
 			'pronamic_companies_new_post_page_id', // id
@@ -254,19 +280,6 @@ class Pronamic_Companies_Plugin_Settings {
 				array( 'label_for' => 'pronamic_company_type_base' ) // args
 			);
 		}
-
-		// Register settings
-		register_setting( 'pronamic_companies_general', 'pronamic_companies_posts_per_page' );
-		register_setting( 'pronamic_companies_general', 'pronamic_companies_orderby' );
-		register_setting( 'pronamic_companies_general', 'pronamic_companies_order' );
-
-		register_setting( 'pronamic_companies_general', 'pronamic_companies_taxonomies' );
-
-		register_setting( 'pronamic_companies_pages', 'pronamic_companies_register_page_id' );
-		register_setting( 'pronamic_companies_pages', 'pronamic_companies_upgrade_page_id' );
-		register_setting( 'pronamic_companies_pages', 'pronamic_companies_downgrade_page_id' );
-		register_setting( 'pronamic_companies_pages', 'pronamic_companies_edit_page_id' );
-		register_setting( 'pronamic_companies_pages', 'pronamic_companies_new_post_page_id' );
 	}
 
 	//////////////////////////////////////////////////
@@ -290,6 +303,21 @@ class Pronamic_Companies_Plugin_Settings {
 			esc_attr( $args['label_for'] ),
 			esc_attr( get_option( $args['label_for'] ) ),
 			'regular-text code'
+		);
+	}
+
+	/**
+	 * Input posts per page
+	 *
+	 * @param array $args
+	 */
+	public function input_posts_per_page( $args ) {
+		printf(
+			'<input name="%s" type="number" step="1" min="1" id="%s" value="%s" class="small-text"> %s',
+			esc_attr( $args['label_for'] ),
+			esc_attr( $args['label_for'] ),
+			esc_attr( get_option( $args['label_for'] ) ),
+			__( 'companies', 'pronamic_companies' )
 		);
 	}
 
