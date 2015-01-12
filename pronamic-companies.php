@@ -264,6 +264,10 @@ class Pronamic_Companies_Plugin_Admin {
 		// Export
 		self::maybe_export();
 
+		// Taxonomies
+		$taxonomies = get_option( 'pronamic_companies_taxonomies' );
+		$taxonomies = is_array( $taxonomies ) ? $taxonomies : array();
+
 		// Settings - General
 		add_settings_section(
 			'pronamic_companies_read', // id
@@ -369,23 +373,31 @@ class Pronamic_Companies_Plugin_Admin {
 			array( 'label_for' => 'pronamic_companies_new_post_page_id' ) // args
 		);
 
-		add_settings_field(
-			'pronamic_companies_keywords_page_id', // id
-			__( 'Company Keywords Page', 'pronamic_companies' ), // title
-			array( __CLASS__, 'input_page' ),  // callback
-			'pronamic_companies_pages', // page
-			'pronamic_companies_pages', // section
-			array( 'label_for' => 'pronamic_companies_keywords_page_id' ) // args
-		);
+		if ( in_array( 'pronamic_company_keyword', $taxonomies ) ) {
+			register_setting( 'pronamic_companies_pages', 'pronamic_companies_keywords_page_id' );
 
-		add_settings_field(
-			'pronamic_companies_brands_page_id', // id
-			__( 'Company Brands Page', 'pronamic_companies' ), // title
-			array( __CLASS__, 'input_page' ),  // callback
-			'pronamic_companies_pages', // page
-			'pronamic_companies_pages', // section
-			array( 'label_for' => 'pronamic_companies_brands_page_id' ) // args
-		);
+			add_settings_field(
+				'pronamic_companies_keywords_page_id', // id
+				__( 'Company Keywords Page', 'pronamic_companies' ), // title
+				array( __CLASS__, 'input_page' ),  // callback
+				'pronamic_companies_pages', // page
+				'pronamic_companies_pages', // section
+				array( 'label_for' => 'pronamic_companies_keywords_page_id' ) // args
+			);
+		}
+
+		if ( in_array( 'pronamic_company_brand', $taxonomies ) ) {
+			register_setting( 'pronamic_companies_pages', 'pronamic_companies_brands_page_id' );
+
+			add_settings_field(
+				'pronamic_companies_brands_page_id', // id
+				__( 'Company Brands Page', 'pronamic_companies' ), // title
+				array( __CLASS__, 'input_page' ),  // callback
+				'pronamic_companies_pages', // page
+				'pronamic_companies_pages', // section
+				array( 'label_for' => 'pronamic_companies_brands_page_id' ) // args
+			);
+		}
 
 		// Permalinks
 		// Un we can't add the permalink options to permalink settings page
@@ -407,10 +419,6 @@ class Pronamic_Companies_Plugin_Admin {
 			'pronamic_companies_permalinks', // section
 			array( 'label_for' => 'pronamic_company_base' ) // args
 		);
-
-		// Taxonomies
-		$taxonomies = get_option( 'pronamic_companies_taxonomies' );
-		$taxonomies = is_array( $taxonomies ) ? $taxonomies : array();
 
 		if ( in_array( 'pronamic_company_category', $taxonomies ) ) {
 			register_setting( 'pronamic_companies_permalinks', 'pronamic_company_category_base' );
@@ -502,8 +510,6 @@ class Pronamic_Companies_Plugin_Admin {
 		register_setting( 'pronamic_companies_pages', 'pronamic_companies_downgrade_page_id' );
 		register_setting( 'pronamic_companies_pages', 'pronamic_companies_edit_page_id' );
 		register_setting( 'pronamic_companies_pages', 'pronamic_companies_new_post_page_id' );
-		register_setting( 'pronamic_companies_pages', 'pronamic_companies_keywords_page_id' );
-		register_setting( 'pronamic_companies_pages', 'pronamic_companies_brands_page_id' );
 	}
 
 	//////////////////////////////////////////////////
