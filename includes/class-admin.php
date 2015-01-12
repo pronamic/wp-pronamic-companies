@@ -77,7 +77,7 @@ class Pronamic_Companies_Plugin_Admin {
 	 *
 	 * @param string $hook
 	 */
-	public function enqueue_scripts( $hook_suffix ) {
+	public function enqueue_scripts() {
 		$screen = get_current_screen();
 
 		if ( 'pronamic_company' == $screen->id ) {
@@ -341,8 +341,6 @@ class Pronamic_Companies_Plugin_Admin {
 
 		// Results
 		$results = $this->get_export();
-
-		$data = array();
 
 		$resource = fopen( 'php://output', 'w' );
 
