@@ -22,4 +22,6 @@ foreach ( glob( plugin_dir_path( __FILE__ ) . 'includes/class-*.php' ) as $file 
 	include_once $file;
 }
 
-Pronamic_Companies_Plugin::bootstrap( __FILE__ );
+global $pronamic_companies_plugin;
+
+$pronamic_companies_plugin = new Pronamic_Companies_Plugin( __FILE__ );

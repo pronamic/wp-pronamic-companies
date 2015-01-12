@@ -1,5 +1,7 @@
 <?php
 
+global $pronamic_companies_plugin;
+
 // Flush rewrite rules, same setup as WordPress permalinks options page:
 // https://github.com/WordPress/WordPress/blob/3.4.2/wp-admin/options-permalink.php#L143
 flush_rewrite_rules();
@@ -47,7 +49,7 @@ $current_tab = empty( $current_tab ) ? key( $tabs ) : $current_tab;
 	<?php if ( 'pronamic_companies_plugins' == $current_tab ) : ?>
 
 		<div style="margin-bottom: 20px;">
-			<?php Pronamic_Companies_Plugin_Admin::include_file( 'plugins.php' ); ?>
+			<?php include $pronamic_companies_plugin->dir_path . 'admin/plugins.php'; ?>
 		</div>
 
 	<?php else : ?>
@@ -63,6 +65,6 @@ $current_tab = empty( $current_tab ) ? key( $tabs ) : $current_tab;
 	<?php endif; ?>
 
 	<div style="margin-bottom: 20px;">
-		<?php Pronamic_Companies_Plugin_Admin::include_file( 'pronamic.php' ); ?>
+		<?php include $pronamic_companies_plugin->dir_path . 'admin/pronamic.php'; ?>
 	</div>
 </div>

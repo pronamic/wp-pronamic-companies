@@ -126,5 +126,11 @@
 		</p>
 	</form>
 
-	<?php Pronamic_Companies_Plugin_Admin::include_file( 'pronamic.php' ); ?>
+	<?php
+
+	global $pronamic_companies_plugin;
+
+	include $pronamic_companies_plugin->dir_path . 'admin/pronamic.php';
+
+	?>
 </div>

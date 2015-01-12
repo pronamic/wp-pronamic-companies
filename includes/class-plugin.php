@@ -6,33 +6,36 @@ class Pronamic_Companies_Plugin {
 	 *
 	 * @var string
 	 */
-	public static $file;
+	public $file;
 
 	/**
 	 * The plugin dirname
 	 *
 	 * @var string
 	 */
-	public static $dirname;
+	public $dir_path;
 
 	//////////////////////////////////////////////////
 
 	/**
-	 * Bootstrap
+	 * Construct and initialize plugin
 	 */
-	public static function bootstrap( $file ) {
-		self::$file    = $file;
-		self::$dirname = dirname( $file );
+	public function __construct( $file ) {
+		$this->file    = $file;
+		$this->dir_path = plugin_dir_path( $file );
 
-		register_activation_hook( $file, array( __CLASS__, 'activate' ) );
-		register_deactivation_hook( $file, array( __CLASS__, 'deactivate' ) );
+		register_activation_hook( $file, array( $this, 'activate' ) );
+		register_deactivation_hook( $file, array( $this, 'deactivate' ) );
 
-		add_action( 'init',      array( __CLASS__, 'init' ) );
-		add_action( 'p2p_init',  array( __CLASS__, 'p2p_init' ) );
+		add_action( 'init',      array( $this, 'init' ) );
+		add_action( 'p2p_init',  array( $this, 'p2p_init' ) );
 
-		add_action( 'pre_get_posts', array( __CLASS__, 'pre_get_posts' ) );
+		add_action( 'pre_get_posts', array( $this, 'pre_get_posts' ) );
 
-		Pronamic_Companies_Plugin_Admin::bootstrap();
+		// Admin
+		if ( is_admin() ) {
+			$this->admin = new Pronamic_Companies_Plugin_Admin( $this );
+		}
 	}
 
 	//////////////////////////////////////////////////
@@ -40,17 +43,17 @@ class Pronamic_Companies_Plugin {
 	/**
 	 * Initialize
 	 */
-	public static function init() {
+	public function init() {
 		// Text domain
-		$rel_path = dirname( plugin_basename( self::$file ) ) . '/languages/';
+		$rel_path = dirname( plugin_basename( $this->file ) ) . '/languages/';
 
 		load_plugin_textdomain( 'pronamic_companies', false, $rel_path );
 
 		// Require
-		require_once self::$dirname . '/includes/functions.php';
-		require_once self::$dirname . '/includes/taxonomy.php';
-		require_once self::$dirname . '/includes/gravityforms.php';
-		require_once self::$dirname . '/includes/template.php';
+		require_once $this->dir_path . 'includes/functions.php';
+		require_once $this->dir_path . 'includes/taxonomy.php';
+		require_once $this->dir_path . 'includes/gravityforms.php';
+		require_once $this->dir_path . 'includes/template.php';
 
 		// Post types
 		$slug = get_option( 'pronamic_company_base' );
@@ -86,7 +89,7 @@ class Pronamic_Companies_Plugin {
 		pronamic_companies_create_taxonomies();
 
 		// Actions
-		add_action( 'save_post', array( __CLASS__, 'save_post_company_google_maps' ), 50, 2 );
+		add_action( 'save_post', array( $this, 'save_post_company_google_maps' ), 50, 2 );
 	}
 
 	//////////////////////////////////////////////////
@@ -94,7 +97,7 @@ class Pronamic_Companies_Plugin {
 	/**
 	 * Activate
 	 */
-	public static function activate() {
+	public function activate() {
 		// Flush rewrite rules on activation
 		// @see http://wpengineer.com/2044/custom-post-type-and-permalink/
 		add_action( 'init', 'flush_rewrite_rules', 20 );
@@ -103,7 +106,7 @@ class Pronamic_Companies_Plugin {
 	/**
 	 * Activate
 	 */
-	public static function deactivate() {
+	public function deactivate() {
 		// Flush rewrite rules on activation
 		// @see http://wpengineer.com/2044/custom-post-type-and-permalink/
 		add_action( 'init', 'flush_rewrite_rules', 20 );
@@ -112,11 +115,11 @@ class Pronamic_Companies_Plugin {
 	/**
 	 * Posts 2 Posts initialize
 	 */
-	public static function p2p_init() {
+	public function p2p_init() {
 		p2p_register_connection_type( array(
-		'name' => 'posts_to_pronamic_companies',
-		'from' => 'post',
-		'to'   => 'pronamic_company',
+			'name' => 'posts_to_pronamic_companies',
+			'from' => 'post',
+			'to'   => 'pronamic_company',
 		) );
 
 		// Let's do some voodoo
@@ -125,7 +128,7 @@ class Pronamic_Companies_Plugin {
 		// prefent it from adding, we'll use the Post 2 Posts plugin to connect
 		//
 		// @see http://core.trac.wordpress.org/browser/tags/3.4.2/wp-includes/meta.php#L50
-		add_action( 'add_post_metadata', array( __CLASS__, 'add_post_metadata_p2p_connect' ), 10, 4 );
+		add_action( 'add_post_metadata', array( $this, 'add_post_metadata_p2p_connect' ), 10, 4 );
 	}
 
 	/**
@@ -136,7 +139,7 @@ class Pronamic_Companies_Plugin {
 	 * @param string $meta_key
 	 * @param string $meta_value
 	 */
-	public static function add_post_metadata_p2p_connect( $mid, $object_id, $meta_key, $meta_value ) {
+	public function add_post_metadata_p2p_connect( $mid, $object_id, $meta_key, $meta_value ) {
 		if ( '_pronamic_company_id' == $meta_key ) {
 			// @see https://github.com/scribu/wp-posts-to-posts/blob/1.4.2/core/type-factory.php#L77
 			$p2p_type = p2p_type( 'posts_to_pronamic_companies' );
@@ -159,7 +162,7 @@ class Pronamic_Companies_Plugin {
 	 *
 	 * @param string $post_id
 	 */
-	public static function save_post_company_google_maps( $post_id, $post ) {
+	public function save_post_company_google_maps( $post_id, $post ) {
 		// Doing autosave
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 			return;
@@ -189,7 +192,7 @@ class Pronamic_Companies_Plugin {
 	 *
 	 * @param WP_Query $query
 	 */
-	public static function pre_get_posts( $query ) {
+	public function pre_get_posts( $query ) {
 		if ( $query->is_post_type_archive( 'pronamic_company' ) ) {
 			// Posts per page
 			$posts_per_page = get_option( 'pronamic_companies_posts_per_page' );
