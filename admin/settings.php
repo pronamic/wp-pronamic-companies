@@ -20,7 +20,7 @@ $current_tab = empty( $current_tab ) ? key( $tabs ) : $current_tab;
 <div class="wrap">
 	<?php if ( empty( $tabs ) ) : ?>
 
-		<h2><?php echo get_admin_page_title(); ?></h2>
+		<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 
 	<?php else : ?>
 
@@ -30,8 +30,9 @@ $current_tab = empty( $current_tab ) ? key( $tabs ) : $current_tab;
 			foreach ( $tabs as $tab => $title ) {
 				$classes = array( 'nav-tab' );
 
-				if ( $current_tab == $tab )
+				if ( $current_tab == $tab ) {
 					$classes[] = 'nav-tab-active';
+				}
 
 				$url = add_query_arg( 'tab', $tab );
 				printf(

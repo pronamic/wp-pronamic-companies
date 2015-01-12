@@ -285,12 +285,12 @@ class Pronamic_Companies_Plugin_Settings {
 	 */
 	public static function input_text( $args ) {
 		printf(
-		'<input name="%s" id="%s" type="text" value="%s" class="%s" />',
-		esc_attr( $args['label_for'] ),
-		esc_attr( $args['label_for'] ),
-		esc_attr( get_option( $args['label_for'] ) ),
-		'regular-text code'
-				);
+			'<input name="%s" id="%s" type="text" value="%s" class="%s" />',
+			esc_attr( $args['label_for'] ),
+			esc_attr( $args['label_for'] ),
+			esc_attr( get_option( $args['label_for'] ) ),
+			'regular-text code'
+		);
 	}
 
 	/**
