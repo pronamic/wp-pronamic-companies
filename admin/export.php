@@ -4,11 +4,7 @@ global $pronamic_companies_plugin;
 
 ?>
 <div class="wrap">
-	<?php screen_icon(); ?>
-
-	<h2>
-		<?php _e( 'Companies Export', 'pronamic_companies' ); ?>
-	</h2>
+	<h2><?php _e( 'Companies Export', 'pronamic_companies' ); ?></h2>
 
 	<?php
 
