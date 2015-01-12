@@ -195,12 +195,33 @@ class Pronamic_Companies_Plugin {
 	}
 
 	/**
+	 * Is company archive
+	 */
+	public function is_company_archive( $query ) {
+		return (
+			$query->is_post_type_archive( 'pronamic_company' )
+				||
+			$query->is_tax( 'pronamic_company_category' )
+				||
+			$query->is_tax( 'pronamic_company_character' )
+				||
+			$query->is_tax( 'pronamic_company_region' )
+				||
+			$query->is_tax( 'pronamic_company_keyword' )
+				||
+			$query->is_tax( 'pronamic_company_brand' )
+				||
+			$query->is_tax( 'pronamic_company_type' )
+		);
+	}
+
+	/**
 	 * Pre get posts
 	 *
 	 * @param WP_Query $query
 	 */
 	public function pre_get_posts( $query ) {
-		if ( $query->is_post_type_archive( 'pronamic_company' ) ) {
+		if ( $this->is_company_archive( $query ) ) {
 			// Posts per page
 			$posts_per_page = get_option( 'pronamic_companies_posts_per_page' );
 
