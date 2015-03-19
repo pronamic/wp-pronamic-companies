@@ -86,15 +86,17 @@ function pronamic_companies_gform_populate_current_user_companies( $form ) {
 				}
 
 				// Build new choices array
-				$field['choices'] = array();
+				$choices = array();
 
 				foreach ( $companies as $company ) {
-					$field['choices'][] = array(
+					$choices[] = array(
 						'text'       => $company->post_title,
 						'value'      => '' . $company->ID,
 						'isSelected' => false,
 					);
 				}
+
+				$field['choices'] = $choices;
 			}
 		}
 	}
