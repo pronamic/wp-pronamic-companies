@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Pronamic Companies\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/pronamic-"
 "companies\n"
-"POT-Creation-Date: 2015-01-12 13:15:58+00:00\n"
-"PO-Revision-Date: 2015-01-12 14:16+0100\n"
+"POT-Creation-Date: 2015-06-10 14:16:34+00:00\n"
+"PO-Revision-Date: 2015-06-10 16:16+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -12,103 +12,102 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.7.1\n"
+"X-Generator: Poedit 1.7.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: admin/export.php:7 includes/class-admin.php:56
 msgid "Companies Export"
 msgstr "Bedrijven exporteren"
 
-#: admin/export.php:16
+#: admin/export.php:15
 msgid "Overview"
 msgstr "Overzicht"
 
-#: admin/export.php:22 includes/class-admin.php:351
+#: admin/export.php:20 includes/class-admin.php:324
 #: includes/class-settings.php:352
 msgid "ID"
 msgstr "ID"
 
-#: admin/export.php:23 includes/class-admin.php:352
+#: admin/export.php:21 includes/class-admin.php:325
 #: includes/class-settings.php:355
 msgid "Name"
 msgstr "Naam"
 
-#: admin/export.php:25 admin/meta-box.php:26
+#: admin/export.php:23 admin/meta-box.php:26
 msgid "Visiting Address"
 msgstr "Bezoekadres"
 
-#: admin/export.php:27 admin/meta-box.php:39
+#: admin/export.php:25 admin/meta-box.php:39
 msgid "Mailing Address"
 msgstr "Postadres"
 
-#: admin/export.php:29
+#: admin/export.php:27
 msgid "Chamber of Commerce and Tax Information"
 msgstr "KvK en BTW Informatie"
 
-#: admin/export.php:31
+#: admin/export.php:29
 msgid "Subscription"
 msgstr "Abonnement"
 
-#: admin/export.php:33
+#: admin/export.php:31
 msgid "User"
 msgstr "Gebruiker"
 
-#: admin/export.php:34 admin/export.php:60 admin/meta-box.php:13
-#: includes/class-admin.php:364
+#: admin/export.php:32 admin/export.php:58 admin/meta-box.php:13
+#: includes/class-admin.php:337
 msgid "Contact"
 msgstr "Contact"
 
-#: admin/export.php:36 includes/class-admin.php:216
-#: includes/class-admin.php:366 includes/class-settings.php:408
-#: includes/taxonomy.php:26
+#: admin/export.php:34 includes/class-admin.php:339
+#: includes/class-settings.php:408 includes/taxonomy.php:26
 msgid "Categories"
 msgstr "Categorieën"
 
-#: admin/export.php:42 admin/export.php:47 admin/meta-box.php:29
-#: admin/meta-box.php:49 includes/class-admin.php:214
-#: includes/class-admin.php:353 includes/class-admin.php:357
+#: admin/export.php:40 admin/export.php:45 admin/meta-box.php:29
+#: admin/meta-box.php:42 includes/class-admin.php:198
+#: includes/class-admin.php:326 includes/class-admin.php:330
 msgid "Address"
 msgstr "Adres"
 
-#: admin/export.php:43 admin/export.php:48 admin/meta-box.php:31
-#: admin/meta-box.php:51 includes/class-admin.php:354
-#: includes/class-admin.php:358
+#: admin/export.php:41 admin/export.php:46 admin/meta-box.php:31
+#: admin/meta-box.php:44 includes/class-admin.php:327
+#: includes/class-admin.php:331
 msgid "Postal Code"
 msgstr "Postcode"
 
-#: admin/export.php:44 admin/export.php:49 admin/meta-box.php:32
-#: admin/meta-box.php:52 includes/class-admin.php:355
-#: includes/class-admin.php:359
+#: admin/export.php:42 admin/export.php:47 admin/meta-box.php:32
+#: admin/meta-box.php:45 includes/class-admin.php:328
+#: includes/class-admin.php:332
 msgid "City"
 msgstr "Plaats"
 
-#: admin/export.php:45 admin/export.php:50 admin/meta-box.php:34
-#: admin/meta-box.php:54 includes/class-admin.php:356
-#: includes/class-admin.php:360
+#: admin/export.php:43 admin/export.php:48 admin/meta-box.php:34
+#: admin/meta-box.php:47 includes/class-admin.php:329
+#: includes/class-admin.php:333
 msgid "Country"
 msgstr "Land"
 
-#: admin/export.php:52 admin/meta-box.php:60 admin/meta-box.php:65
+#: admin/export.php:50 admin/meta-box.php:53 admin/meta-box.php:58
 msgid "Chamber of Commerce Number"
 msgstr "KvK-nummer"
 
-#: admin/export.php:53 admin/meta-box.php:70
+#: admin/export.php:51 admin/meta-box.php:63
 msgid "Tax Number"
 msgstr "BTW-nummer"
 
-#: admin/export.php:57
+#: admin/export.php:55
 msgid "Username"
 msgstr "Gebruikersnaam"
 
-#: admin/export.php:58 admin/export.php:61 includes/class-admin.php:365
+#: admin/export.php:56 admin/export.php:59 includes/class-admin.php:338
 msgid "E-mail"
 msgstr "E-mail"
 
-#: admin/export.php:85
+#: admin/export.php:83
 msgid "Chamber of Commerce %s: %s"
 msgstr "KvK %s: %s"
 
-#: admin/export.php:126
+#: admin/export.php:124
 msgid "Export to CSV"
 msgstr "Exporteren naar CSV"
 
@@ -116,63 +115,59 @@ msgstr "Exporteren naar CSV"
 msgid "Addresses"
 msgstr "Adressen"
 
-#: admin/meta-box.php:45
-msgid "Mailing address equals visiting address."
-msgstr "Postadres gelijk aan bezoekadres."
-
-#: admin/meta-box.php:63
+#: admin/meta-box.php:56
 msgid "Chamber of Commerce Establishment"
 msgstr "KvK Vestiging"
 
-#: admin/meta-box.php:79
+#: admin/meta-box.php:72
 msgid "Phone"
 msgstr "Telefoonnummers"
 
-#: admin/meta-box.php:84
+#: admin/meta-box.php:77
 msgid "Phone Number"
 msgstr "Telefoonnummer"
 
-#: admin/meta-box.php:92
+#: admin/meta-box.php:85
 msgid "Fax Number"
 msgstr "Faxnummer"
 
-#: admin/meta-box.php:101
+#: admin/meta-box.php:94
 msgid "Online"
 msgstr "Online"
 
-#: admin/meta-box.php:107
+#: admin/meta-box.php:100
 msgid "E-mail Address"
 msgstr "E-mailadres"
 
-#: admin/meta-box.php:115
+#: admin/meta-box.php:108
 msgid "Website URL"
 msgstr "Website URL"
 
-#: admin/meta-box.php:123
+#: admin/meta-box.php:116
 msgid "RSS URL"
 msgstr "RSS URL"
 
-#: admin/meta-box.php:131
+#: admin/meta-box.php:124
 msgid "Video URL"
 msgstr "Video URL"
 
-#: admin/meta-box.php:140
+#: admin/meta-box.php:133
 msgid "Social Networks"
 msgstr "Sociale netwerken"
 
-#: admin/meta-box.php:146
+#: admin/meta-box.php:139
 msgid "Twitter Username"
 msgstr "Twitter gebruikersnaam"
 
-#: admin/meta-box.php:154
+#: admin/meta-box.php:147
 msgid "Facebook URL"
 msgstr "Facebook URL"
 
-#: admin/meta-box.php:162
+#: admin/meta-box.php:155
 msgid "LinkedIN"
 msgstr "LinkedIN"
 
-#: admin/meta-box.php:170
+#: admin/meta-box.php:163
 msgid "Google+"
 msgstr "Google+"
 
@@ -228,27 +223,19 @@ msgstr "Instellingen"
 msgid "Company Details"
 msgstr "Bedrijfsgegevens"
 
-#: includes/class-admin.php:207
-msgid "Company"
-msgstr "Bedrijf"
-
-#: includes/class-admin.php:242
-msgid "No Category"
-msgstr "Geen categorie"
-
-#: includes/class-admin.php:334
+#: includes/class-admin.php:309
 msgid "pronamic-companies-export-%s.csv"
 msgstr "pronamic-bedrijven-export-%s.csv"
 
-#: includes/class-admin.php:361
+#: includes/class-admin.php:334
 msgid "Subscription ID"
 msgstr "Abonnement ID"
 
-#: includes/class-admin.php:362
+#: includes/class-admin.php:335
 msgid "User Login"
 msgstr "Gebruiker login"
 
-#: includes/class-admin.php:363
+#: includes/class-admin.php:336
 msgid "User E-mail"
 msgstr "Gebruiker e-mailadres"
 
@@ -413,23 +400,23 @@ msgstr "Aflopend"
 msgid "Ascending"
 msgstr "Oplopend"
 
-#: includes/class-settings.php:409 includes/taxonomy.php:54
+#: includes/class-settings.php:409 includes/taxonomy.php:55
 msgid "Characters"
 msgstr "Karakters"
 
-#: includes/class-settings.php:410 includes/taxonomy.php:82
+#: includes/class-settings.php:410 includes/taxonomy.php:83
 msgid "Regions"
 msgstr "Regio's"
 
-#: includes/class-settings.php:411 includes/taxonomy.php:110
+#: includes/class-settings.php:411 includes/taxonomy.php:111
 msgid "Keywords"
 msgstr "Trefwoorden"
 
-#: includes/class-settings.php:412 includes/taxonomy.php:138
+#: includes/class-settings.php:412 includes/taxonomy.php:139
 msgid "Brands"
 msgstr "Merken"
 
-#: includes/class-settings.php:413 includes/taxonomy.php:166
+#: includes/class-settings.php:413 includes/taxonomy.php:167
 msgid "Types"
 msgstr "Types"
 
@@ -477,163 +464,163 @@ msgstr "Nieuwe bedrijf categorie toevoegen"
 msgid "New Company Category Name"
 msgstr "Nieuwe bedrijf categorie naam"
 
-#: includes/taxonomy.php:46
+#: includes/taxonomy.php:47
 msgid "Search Company Characters"
 msgstr "Doorzoek bedrijf karakters"
 
-#: includes/taxonomy.php:47
+#: includes/taxonomy.php:48
 msgid "All Company Characters"
 msgstr "Alle bedrijf karakters"
 
-#: includes/taxonomy.php:48
+#: includes/taxonomy.php:49
 msgid "Parent Company Character"
 msgstr "Bovenliggende bedrijf karakter"
 
-#: includes/taxonomy.php:49
+#: includes/taxonomy.php:50
 msgid "Parent Company Character:"
 msgstr "Bovenliggende bedrijf karakter:"
 
-#: includes/taxonomy.php:50
+#: includes/taxonomy.php:51
 msgid "Edit Company Character"
 msgstr "Wijzig bedrijf karakter"
 
-#: includes/taxonomy.php:51
+#: includes/taxonomy.php:52
 msgid "Update Company Character"
 msgstr "Update bedrijf karakter"
 
-#: includes/taxonomy.php:52
+#: includes/taxonomy.php:53
 msgid "Add New Company Character"
 msgstr "Nieuwe bedrijf karakter toevoegen"
 
-#: includes/taxonomy.php:53
+#: includes/taxonomy.php:54
 msgid "New Company Character Name"
 msgstr "Nieuwe bedrijf karakter naam"
 
-#: includes/taxonomy.php:74
+#: includes/taxonomy.php:75
 msgid "Search Company Regions"
 msgstr "Zoek bedrijf regio's"
 
-#: includes/taxonomy.php:75
+#: includes/taxonomy.php:76
 msgid "All Company Regions"
 msgstr "Alle bedrijf regios"
 
-#: includes/taxonomy.php:76
+#: includes/taxonomy.php:77
 msgid "Parent Company Region"
 msgstr "Bovenliggende bedrijf regio"
 
-#: includes/taxonomy.php:77
+#: includes/taxonomy.php:78
 msgid "Parent Company Region:"
 msgstr "Bovenliggende bedrijf regio:"
 
-#: includes/taxonomy.php:78
+#: includes/taxonomy.php:79
 msgid "Edit Company Region"
 msgstr "Wijzig bedrijf regio"
 
-#: includes/taxonomy.php:79
+#: includes/taxonomy.php:80
 msgid "Update Company Region"
 msgstr "Update bedrijf regio"
 
-#: includes/taxonomy.php:80
+#: includes/taxonomy.php:81
 msgid "Add New Company Region"
 msgstr "Nieuwe bedrijf regio toevoegen"
 
-#: includes/taxonomy.php:81
+#: includes/taxonomy.php:82
 msgid "New Company Region Name"
 msgstr "Nieuwe bedrijf regio naam"
 
-#: includes/taxonomy.php:102
+#: includes/taxonomy.php:103
 msgid "Search Company Keywords"
 msgstr "Zoek bedrijf trefwoorden"
 
-#: includes/taxonomy.php:103
+#: includes/taxonomy.php:104
 msgid "All Company Keywords"
 msgstr "Alle bedrijf trefwoorden"
 
-#: includes/taxonomy.php:104
+#: includes/taxonomy.php:105
 msgid "Parent Company Keyword"
 msgstr "Bovenliggende bedrijf trefwoord"
 
-#: includes/taxonomy.php:105
+#: includes/taxonomy.php:106
 msgid "Parent Company Keyword:"
 msgstr "Bovenliggende bedrijf trefwoord:"
 
-#: includes/taxonomy.php:106
+#: includes/taxonomy.php:107
 msgid "Edit Company Keyword"
 msgstr "Wijzig bedrijf trefwoord"
 
-#: includes/taxonomy.php:107
+#: includes/taxonomy.php:108
 msgid "Update Company Keyword"
 msgstr "Update bedrijf trefwoord"
 
-#: includes/taxonomy.php:108
+#: includes/taxonomy.php:109
 msgid "Add New Company Keyword"
 msgstr "Nieuwe bedrijf trefwoord toevoegen"
 
-#: includes/taxonomy.php:109
+#: includes/taxonomy.php:110
 msgid "New Company Keyword Name"
 msgstr "Nieuwe bedrijf trefwoord naam"
 
-#: includes/taxonomy.php:130
+#: includes/taxonomy.php:131
 msgid "Search Company Brands"
 msgstr "Zoek bedrijf merken"
 
-#: includes/taxonomy.php:131
+#: includes/taxonomy.php:132
 msgid "All Company Brands"
 msgstr "Alle bedrijf merken"
 
-#: includes/taxonomy.php:132
+#: includes/taxonomy.php:133
 msgid "Parent Company Brand"
 msgstr "Bovenliggende bedrijf merk"
 
-#: includes/taxonomy.php:133
+#: includes/taxonomy.php:134
 msgid "Parent Company Brand:"
 msgstr "Bovenliggende bedrijf merk:"
 
-#: includes/taxonomy.php:134
+#: includes/taxonomy.php:135
 msgid "Edit Company Brand"
 msgstr "Wijzig bedrijf merk"
 
-#: includes/taxonomy.php:135
+#: includes/taxonomy.php:136
 msgid "Update Company Brand"
 msgstr "Update bedrijf merk"
 
-#: includes/taxonomy.php:136
+#: includes/taxonomy.php:137
 msgid "Add New Company Brand"
 msgstr "Nieuw bedrijf merk toevoegen"
 
-#: includes/taxonomy.php:137
+#: includes/taxonomy.php:138
 msgid "New Company Brand Name"
 msgstr "Nieuwe bedrijf merk naam"
 
-#: includes/taxonomy.php:158
+#: includes/taxonomy.php:159
 msgid "Search Company Types"
 msgstr "Zoek bedrijf types"
 
-#: includes/taxonomy.php:159
+#: includes/taxonomy.php:160
 msgid "All Company Types"
 msgstr "Alle bedrijf types"
 
-#: includes/taxonomy.php:160
+#: includes/taxonomy.php:161
 msgid "Parent Company Type"
 msgstr "Bovenliggende bedrijf type:"
 
-#: includes/taxonomy.php:161
+#: includes/taxonomy.php:162
 msgid "Parent Company Type:"
 msgstr "Bovenliggende bedrijf type:"
 
-#: includes/taxonomy.php:162
+#: includes/taxonomy.php:163
 msgid "Edit Company Type"
 msgstr "Wijzig bedrijf type"
 
-#: includes/taxonomy.php:163
+#: includes/taxonomy.php:164
 msgid "Update Company Type"
 msgstr "Update bedrijf type"
 
-#: includes/taxonomy.php:164
+#: includes/taxonomy.php:165
 msgid "Add New Company Type"
 msgstr "Nieuw bedrijf type toevoegen"
 
-#: includes/taxonomy.php:165
+#: includes/taxonomy.php:166
 msgid "New Company Type Name"
 msgstr "Nieuwe bedrijf type naam"
 
@@ -664,27 +651,27 @@ msgctxt "slug"
 msgid "company-category"
 msgstr "bedrijfscategorie"
 
-#: includes/taxonomy.php:38
+#: includes/taxonomy.php:39
 msgctxt "slug"
 msgid "company-character"
 msgstr "bedrijfskarakter"
 
-#: includes/taxonomy.php:66
+#: includes/taxonomy.php:67
 msgctxt "slug"
 msgid "company-region"
 msgstr "bedrijfsregio"
 
-#: includes/taxonomy.php:94
+#: includes/taxonomy.php:95
 msgctxt "slug"
 msgid "company-keyword"
 msgstr "bedrijfstrefwoord"
 
-#: includes/taxonomy.php:122
+#: includes/taxonomy.php:123
 msgctxt "slug"
 msgid "company-brand"
 msgstr "bedrijfsmerk"
 
-#: includes/taxonomy.php:150
+#: includes/taxonomy.php:151
 msgctxt "slug"
 msgid "company-type"
 msgstr "bedrijfstype"
@@ -709,27 +696,27 @@ msgctxt "category general name"
 msgid "Company Category"
 msgstr "Bedrijf categorie"
 
-#: includes/taxonomy.php:44
+#: includes/taxonomy.php:45
 msgctxt "category general name"
 msgid "Company Character"
 msgstr "Bedrijf karakter"
 
-#: includes/taxonomy.php:72
+#: includes/taxonomy.php:73
 msgctxt "category general name"
 msgid "Company Region"
 msgstr "Bedrijf regio"
 
-#: includes/taxonomy.php:100
+#: includes/taxonomy.php:101
 msgctxt "category general name"
 msgid "Company Keyword"
 msgstr "Bedrijf trefwoord"
 
-#: includes/taxonomy.php:128
+#: includes/taxonomy.php:129
 msgctxt "category general name"
 msgid "Company Brand"
 msgstr "Bedrijf merk"
 
-#: includes/taxonomy.php:156
+#: includes/taxonomy.php:157
 msgctxt "category general name"
 msgid "Company Type"
 msgstr "Bedrijf type"
@@ -739,30 +726,39 @@ msgctxt "category singular name"
 msgid "Company Category"
 msgstr "Bdrijf categorie"
 
-#: includes/taxonomy.php:45
+#: includes/taxonomy.php:46
 msgctxt "category singular name"
 msgid "Company Character"
 msgstr "Bedrijf karakter"
 
-#: includes/taxonomy.php:73
+#: includes/taxonomy.php:74
 msgctxt "category singular name"
 msgid "Company Region"
 msgstr "Bedrijf regio"
 
-#: includes/taxonomy.php:101
+#: includes/taxonomy.php:102
 msgctxt "category singular name"
 msgid "Company Keyword"
 msgstr "Bdrijf trefwoord"
 
-#: includes/taxonomy.php:129
+#: includes/taxonomy.php:130
 msgctxt "category singular name"
 msgid "Company Brand"
 msgstr "Bedrijf merk"
 
-#: includes/taxonomy.php:157
+#: includes/taxonomy.php:158
 msgctxt "category singular name"
 msgid "Company Type"
 msgstr "Bedrijf type"
+
+#~ msgid "Mailing address equals visiting address."
+#~ msgstr "Postadres gelijk aan bezoekadres."
+
+#~ msgid "Company"
+#~ msgstr "Bedrijf"
+
+#~ msgid "No Category"
+#~ msgstr "Geen categorie"
 
 #~ msgid "Company information"
 #~ msgstr "Bedrijf informatie"
