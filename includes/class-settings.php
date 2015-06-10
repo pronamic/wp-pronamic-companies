@@ -317,7 +317,7 @@ class Pronamic_Companies_Plugin_Settings {
 			esc_attr( $args['label_for'] ),
 			esc_attr( $args['label_for'] ),
 			esc_attr( get_option( $args['label_for'] ) ),
-			__( 'companies', 'pronamic_companies' )
+			esc_html__( 'companies', 'pronamic_companies' )
 		);
 	}
 
@@ -431,8 +431,10 @@ class Pronamic_Companies_Plugin_Settings {
 
 		printf(
 			'<fieldset>%s %s</fieldset>',
-			sprintf( '<legend class="screen-reader-text"><span>%s</span></legend>', __( 'Taxonomies', 'pronamic_companies' ) ),
+			sprintf( '<legend class="screen-reader-text"><span>%s</span></legend>', esc_html__( 'Taxonomies', 'pronamic_companies' ) ),
+			// @codingStandardsIgnoreStart
 			implode( '<br />', $inputs )
+			// @codingStandardsIgnoreEnd
 		);
 	}
 }

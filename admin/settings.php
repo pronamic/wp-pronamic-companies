@@ -30,7 +30,7 @@ $current_tab = empty( $current_tab ) ? key( $tabs ) : $current_tab;
 			foreach ( $tabs as $tab => $title ) {
 				$classes = array( 'nav-tab' );
 
-				if ( $current_tab == $tab ) {
+				if ( $current_tab === $tab ) {
 					$classes[] = 'nav-tab-active';
 				}
 
@@ -39,7 +39,7 @@ $current_tab = empty( $current_tab ) ? key( $tabs ) : $current_tab;
 					'<a class="nav-tab %s" href="%s">%s</a>',
 					esc_attr( implode( ' ', $classes ) ),
 					esc_attr( $url ),
-					$title
+					esc_html( $title )
 				);
 			}
 			?>
@@ -47,7 +47,7 @@ $current_tab = empty( $current_tab ) ? key( $tabs ) : $current_tab;
 
 	<?php endif; ?>
 
-	<?php if ( 'pronamic_companies_plugins' == $current_tab ) : ?>
+	<?php if ( 'pronamic_companies_plugins' === $current_tab ) : ?>
 
 		<div style="margin-bottom: 20px;">
 			<?php include $pronamic_companies_plugin->dir_path . 'admin/plugins.php'; ?>

@@ -6,7 +6,7 @@ class Pronamic_Companies_Plugin {
 	 *
 	 * @var string
 	 */
-	public $version = '1.1.0';
+	public $version = '1.1.1';
 
 	/**
 	 * The plugin file
@@ -147,7 +147,7 @@ class Pronamic_Companies_Plugin {
 	 * @param string $meta_value
 	 */
 	public function add_post_metadata_p2p_connect( $mid, $object_id, $meta_key, $meta_value ) {
-		if ( '_pronamic_company_id' == $meta_key ) {
+		if ( '_pronamic_company_id' === $meta_key ) {
 			// @see https://github.com/scribu/wp-posts-to-posts/blob/1.4.2/core/type-factory.php#L77
 			$p2p_type = p2p_type( 'posts_to_pronamic_companies' );
 
@@ -176,7 +176,7 @@ class Pronamic_Companies_Plugin {
 		}
 
 		// Check post type
-		if ( ! ( 'pronamic_company' == $post->post_type ) ) {
+		if ( 'pronamic_company' !== get_post_type( $post ) ) {
 			return;
 		}
 

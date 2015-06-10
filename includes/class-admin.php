@@ -80,7 +80,7 @@ class Pronamic_Companies_Plugin_Admin {
 	public function enqueue_scripts() {
 		$screen = get_current_screen();
 
-		if ( 'pronamic_company' == $screen->id ) {
+		if ( 'pronamic_company' === $screen->id ) {
 			wp_enqueue_style( 'pronamic_companies', plugins_url( '/admin/css/admin.css', $this->plugin->file ) );
 		}
 	}
@@ -283,7 +283,7 @@ class Pronamic_Companies_Plugin_Admin {
 	 * Maybe update
 	 */
 	public function maybe_update() {
-		if ( get_option( 'pronamic_companies_version' ) != $this->plugin->version ) {
+		if ( get_option( 'pronamic_companies_version' ) !== $this->plugin->version ) {
 			require_once $this->plugin->dir_path . 'admin/includes/upgrade.php';
 
 			$current = get_option( 'pronamic_companies_version' );

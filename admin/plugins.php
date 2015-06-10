@@ -1,4 +1,4 @@
-<h3><?php _e( 'Plugins', 'pronamic_companies' ); ?></h3>
+<h3><?php esc_html_e( 'Plugins', 'pronamic_companies' ); ?></h3>
 
 <?php
 
@@ -36,19 +36,19 @@ $plugin_tips = array(
 ?>
 
 <table class="form-table">
+
 	<?php foreach ( $plugin_tips as $file => $data ) : ?>
+
 		<tr>
 			<td>
 				<?php echo esc_html( $data['name'] ); ?>
 			</td>
 			<td>
-				<?php
+				<?php if ( is_plugin_active( $file ) ) : ?>
+					
+					<span class="dashicons dashicons-yes"></span>
 
-				if ( is_plugin_active( $file ) ) {
-					echo '<span class="dashicons dashicons-yes"></span>';
-				}
-
-				?>
+				<?php endif; ?>
 			</td>
 			<td>
 				<?php
@@ -64,9 +64,11 @@ $plugin_tips = array(
 
 				?>
 				<a href="<?php echo esc_attr( $search_url ); ?>">
-					<?php _e( 'Search Plugin', 'pronamic_companies' ); ?>
+					<?php esc_html_e( 'Search Plugin', 'pronamic_companies' ); ?>
 				</a>
 			</td>
 		</tr>
+
 	<?php endforeach; ?>
+
 </table>
