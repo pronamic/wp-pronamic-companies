@@ -195,35 +195,20 @@ class Pronamic_Companies_Plugin_Admin {
 	 * @param array $columns
 	 */
 	public function company_columns( $columns ) {
-		$new_columns = array();
+		$columns['pronamic_company_address'] = __( 'Address', 'pronamic_companies' );
 
-		if ( isset( $columns['cb'] ) ) {
-			$new_columns['cb'] = $columns['cb'];
+		$columns_new = array();
+
+		foreach ( $columns as $name => $label ) {
+			$columns_new[ $name ] = $label;
+
+			if ( 'title' === $name ) {
+				$columns_new['pronamic_company_address']           = $columns['pronamic_company_address'];
+				$columns_new['taxonomy-pronamic_company_category'] = $columns['pronamic_company_category'];
+			}
 		}
 
-		// $new_columns['thumbnail'] = __('Thumbnail', 'pronamic_companies');
-
-		if ( isset( $columns['title'] ) ) {
-			$new_columns['title'] = __( 'Company', 'pronamic_companies' );
-		}
-
-		if ( isset( $columns['author'] ) ) {
-			$new_columns['author'] = $columns['author'];
-		}
-
-		$new_columns['pronamic_company_address'] = __( 'Address', 'pronamic_companies' );
-
-		$new_columns['pronamic_company_categories'] = __( 'Categories', 'pronamic_companies' );
-
-		if ( isset( $columns['comments'] ) ) {
-			$new_columns['comments'] = $columns['comments'];
-		}
-
-		if ( isset( $columns['date'] ) ) {
-			$new_columns['date'] = $columns['date'];
-		}
-
-		return $new_columns;
+		return $columns_new;
 	}
 
 	public function custom_column( $column, $post_id ) {
@@ -231,16 +216,6 @@ class Pronamic_Companies_Plugin_Admin {
 			case 'pronamic_company_address' :
 				echo esc_html( get_post_meta( $post_id, '_pronamic_company_address', true ) ), '<br />';
 				echo esc_html( get_post_meta( $post_id, '_pronamic_company_postal_code', true ) . ' ' . get_post_meta( $post_id, '_pronamic_company_city', true ) );
-
-				break;
-			case 'pronamic_company_categories' :
-				$terms = get_the_term_list( $post_id, 'pronamic_company_category' , '' , ', ' , '' );
-
-				if ( is_string( $terms ) ) {
-					echo esc_html( $terms );
-				} else {
-					echo esc_html__( 'No Category', 'pronamic_companies' );
-				}
 
 				break;
 		}

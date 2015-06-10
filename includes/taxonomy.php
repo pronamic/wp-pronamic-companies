@@ -11,8 +11,8 @@ function pronamic_companies_create_taxonomies() {
 
 		register_taxonomy( 'pronamic_company_category', 'pronamic_company',
 			array(
-				'hierarchical' => true,
-				'labels' => array(
+				'hierarchical'      => true,
+				'labels'            => array(
 					'name'              => _x( 'Company Category', 'category general name', 'pronamic_companies' ),
 					'singular_name'     => _x( 'Company Category', 'category singular name', 'pronamic_companies' ),
 					'search_items'      => __( 'Search Company Categories', 'pronamic_companies' ),
@@ -25,9 +25,10 @@ function pronamic_companies_create_taxonomies() {
 					'new_item_name'     => __( 'New Company Category Name', 'pronamic_companies' ),
 					'menu_name'         => __( 'Categories', 'pronamic_companies' ),
 				),
-				'show_ui'      => true,
-				'query_var'    => true,
-				'rewrite'      => array( 'slug' => $slug ),
+				'show_ui'           => true,
+				'show_admin_column' => true,
+				'query_var'         => true,
+				'rewrite'           => array( 'slug' => $slug ),
 			)
 		);
 	}
