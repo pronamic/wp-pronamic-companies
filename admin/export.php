@@ -1,63 +1,62 @@
-<div class="wrap">
-	<?php screen_icon(); ?>
+<?php
 
-	<h2>
-		<?php _e( 'Companies Export', 'pronamic_companies' ); ?>
-	</h2>
+global $pronamic_companies_plugin;
+
+?>
+<div class="wrap">
+	<h2><?php esc_html_e( 'Companies Export', 'pronamic_companies' ); ?></h2>
 
 	<?php
 
-	$results = Pronamic_Companies_Plugin_Admin::get_export();
+	$results = $pronamic_companies_plugin->admin->get_export();
 
 	if ( ! empty( $results ) ) : ?>
 
-		<h3>
-			<?php _e( 'Overview', 'pronamic_companies' ); ?>
-		</h3>
+		<h3><?php esc_html_e( 'Overview', 'pronamic_companies' ); ?></h3>
 
 		<table cellspacing="0" class="widefat fixed">
 			<thead>
 				<tr>
-					<th scope="col"><?php _e( 'ID', 'pronamic_companies' ); ?></th>
-					<th scope="col"><?php _e( 'Name', 'pronamic_companies' ); ?></th>
+					<th scope="col"><?php esc_html_e( 'ID', 'pronamic_companies' ); ?></th>
+					<th scope="col"><?php esc_html_e( 'Name', 'pronamic_companies' ); ?></th>
 
-					<th scope="col" colspan="4"><?php _e( 'Visiting Address', 'pronamic_companies' ); ?></th>
+					<th scope="col" colspan="4"><?php esc_html_e( 'Visiting Address', 'pronamic_companies' ); ?></th>
 
-					<th scope="col" colspan="4"><?php _e( 'Mailing Address', 'pronamic_companies' ); ?></th>
+					<th scope="col" colspan="4"><?php esc_html_e( 'Mailing Address', 'pronamic_companies' ); ?></th>
 
-					<th scope="col" colspan="2"><?php _e( 'Chamber of Commerce and Tax Information', 'pronamic_companies' ); ?>
+					<th scope="col" colspan="2"><?php esc_html_e( 'Chamber of Commerce and Tax Information', 'pronamic_companies' ); ?>
 
-					<th scope="col"><?php _e( 'Subscription', 'pronamic_companies' ); ?></th>
+					<th scope="col"><?php esc_html_e( 'Subscription', 'pronamic_companies' ); ?></th>
 
-					<th scope="col" colspan="2"><?php _e( 'User', 'pronamic_companies' ); ?></th>
-                    <th scope="col" colspan="2"><?php _e( 'Contact', 'pronamic_companies' ); ?></th>
+					<th scope="col" colspan="2"><?php esc_html_e( 'User', 'pronamic_companies' ); ?></th>
+                    <th scope="col" colspan="2"><?php esc_html_e( 'Contact', 'pronamic_companies' ); ?></th>
 
-					<th scope="col"><?php _e( 'Categories', 'pronamic_companies' ); ?></th>
+					<th scope="col"><?php esc_html_e( 'Categories', 'pronamic_companies' ); ?></th>
 				</tr>
 				<tr>
 					<th scope="col"></th>
 					<th scope="col"></th>
 
-					<th scope="col"><?php _e( 'Address', 'pronamic_companies' ); ?></th>
-					<th scope="col"><?php _e( 'Postal Code', 'pronamic_companies' ); ?></th>
-					<th scope="col"><?php _e( 'City', 'pronamic_companies' ); ?></th>
-					<th scope="col"><?php _e( 'Country', 'pronamic_companies' ); ?></th>
+					<th scope="col"><?php esc_html_e( 'Address', 'pronamic_companies' ); ?></th>
+					<th scope="col"><?php esc_html_e( 'Postal Code', 'pronamic_companies' ); ?></th>
+					<th scope="col"><?php esc_html_e( 'City', 'pronamic_companies' ); ?></th>
+					<th scope="col"><?php esc_html_e( 'Country', 'pronamic_companies' ); ?></th>
 
-					<th scope="col"><?php _e( 'Address', 'pronamic_companies' ); ?></th>
-					<th scope="col"><?php _e( 'Postal Code', 'pronamic_companies' ); ?></th>
-					<th scope="col"><?php _e( 'City', 'pronamic_companies' ); ?></th>
-					<th scope="col"><?php _e( 'Country', 'pronamic_companies' ); ?></th>
+					<th scope="col"><?php esc_html_e( 'Address', 'pronamic_companies' ); ?></th>
+					<th scope="col"><?php esc_html_e( 'Postal Code', 'pronamic_companies' ); ?></th>
+					<th scope="col"><?php esc_html_e( 'City', 'pronamic_companies' ); ?></th>
+					<th scope="col"><?php esc_html_e( 'Country', 'pronamic_companies' ); ?></th>
 
-					<th scope="col"><?php _e( 'Chamber of Commerce Number', 'pronamic_companies' ); ?></th>
-					<th scope="col"><?php _e( 'Tax Number', 'pronamic_companies' ); ?></th>
+					<th scope="col"><?php esc_html_e( 'Chamber of Commerce Number', 'pronamic_companies' ); ?></th>
+					<th scope="col"><?php esc_html_e( 'Tax Number', 'pronamic_companies' ); ?></th>
 
 					<th scope="col"></th>
 
-					<th scope="col"><?php _e( 'Username', 'pronamic_companies' ); ?></th>
-					<th scope="col"><?php _e( 'E-mail', 'pronamic_companies' ); ?></th>
+					<th scope="col"><?php esc_html_e( 'Username', 'pronamic_companies' ); ?></th>
+					<th scope="col"><?php esc_html_e( 'E-mail', 'pronamic_companies' ); ?></th>
 
-					<th scope="col"><?php _e( 'Contact', 'pronamic_companies' ); ?></th>
-					<th scope="col"><?php _e( 'E-mail', 'pronamic_companies' ); ?></th>
+					<th scope="col"><?php esc_html_e( 'Contact', 'pronamic_companies' ); ?></th>
+					<th scope="col"><?php esc_html_e( 'E-mail', 'pronamic_companies' ); ?></th>
 
 					<th scope="col"></th>
 				</tr>
@@ -126,5 +125,9 @@
 		</p>
 	</form>
 
-	<?php Pronamic_Companies_Plugin_Admin::include_file( 'pronamic.php' ); ?>
+	<?php
+
+	include $pronamic_companies_plugin->dir_path . 'admin/pronamic.php';
+
+	?>
 </div>

@@ -2,8 +2,8 @@
 Contributors: pronamic, remcotolsma, kjtolsma 
 Tags: pronamic, companies, company
 Requires at least: 3.0
-Tested up to: 4.1
-Stable tag: 1.0.1
+Tested up to: 4.2.2
+Stable tag: 1.1.1
 
 Pronamic Companies is a basic plugin to build a company directory.
 
@@ -107,6 +107,17 @@ Upload the Pronamic Companies folder to your wp-content/plugins folder.
 
 
 == Changelog ==
+
+= 1.1.1 =
+*	Tweak - Fix indirect modification of array values (breaks since Gravity Forms 1.9, fix is backwards compatible).
+*	Tweak - Simplified the admin columns.
+
+= 1.1.0 =
+*	Tweak - Simplified the settings page with tabs.
+*	Feature - Added setting for companies 'posts_per_page' query argument.
+*	Feature - Added setting for companies 'orderby' query argument.
+*	Feature - Added setting for companies 'order' query argument.
+*	Feature - Allow users to enable/disable built-in taxonomies.
 
 = 1.0.1 =
 *	Tweak - Changed admin input label 'Facebook' to 'Facebook URL'.

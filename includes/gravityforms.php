@@ -7,30 +7,30 @@
  * @param int $form_id
  */
 function pronamic_companies_gform_field_advanced_settings( $position, $form_id ) {
-	if ( $position == 100 ) : ?>
+	if ( 100 === $position ) : ?>
 
 		<li class="address_setting field_setting" style="display: list-item;">
 			<input type="checkbox" id="pronamic_companies_is_visiting_address" onclick="SetFieldProperty('isCompanyVisitingAddress', this.checked); ToggleInputName();" />
 
 			<label for="pronamic_companies_is_visiting_address" class="inline">
-				<?php _e( 'Is Company Visiting Address', 'pronamic_companies' ); ?>
+				<?php esc_html_e( 'Is Company Visiting Address', 'pronamic_companies' ); ?>
 			</label>
 		</li>
 		<li class="address_setting field_setting" style="display: list-item;">
 			<input type="checkbox" id="pronamic_companies_is_mailing_address" onclick="SetFieldProperty('isCompanyMailingAddress', this.checked); ToggleInputName();" />
 
 			<label for="pronamic_companies_is_mailing_address" class="inline">
-				<?php _e( 'Is Company Mailing Address', 'pronamic_companies' ); ?>
+				<?php esc_html_e( 'Is Company Mailing Address', 'pronamic_companies' ); ?>
 			</label>
 		</li>
 
-	<?php elseif ( $position == 500 ) : ?>
+	<?php elseif ( 500 === $position ) : ?>
 
 		<li class="prepopulate_field_setting field_setting" style="display: list-item;">
 			<input type="checkbox" id="pronamic_populate_current_user_companies" onclick="SetFieldProperty('populateCurrentUserCompanies', this.checked); ToggleInputName();" />
 
 			<label for="pronamic_populate_current_user_companies" class="inline">
-				<?php _e( 'Populate with Current User Companies', 'pronamic_companies' ); ?>
+				<?php esc_html_e( 'Populate with Current User Companies', 'pronamic_companies' ); ?>
 			</label>
 		</li>
 
@@ -86,15 +86,17 @@ function pronamic_companies_gform_populate_current_user_companies( $form ) {
 				}
 
 				// Build new choices array
-				$field['choices'] = array();
+				$choices = array();
 
 				foreach ( $companies as $company ) {
-					$field['choices'][] = array(
+					$choices[] = array(
 						'text'       => $company->post_title,
 						'value'      => '' . $company->ID,
 						'isSelected' => false,
 					);
 				}
+
+				$field['choices'] = $choices;
 			}
 		}
 	}
@@ -193,7 +195,7 @@ function pronamic_companies_gform_update_post_field_default_value( $field ) {
 		if ( ! empty( $post_id ) ) {
 			$field_type = RGFormsModel::get_input_type( $field );
 
-			if ( 'address' == $field_type ) {
+			if ( 'address' === $field_type ) {
 				if ( isset( $field['isCompanyVisitingAddress'] ) ) {
 					$is_company_address = filter_var( $field['isCompanyVisitingAddress'], FILTER_VALIDATE_BOOLEAN );
 
@@ -204,7 +206,7 @@ function pronamic_companies_gform_update_post_field_default_value( $field ) {
 							$field['id'] . '.3' => get_post_meta( $post_id, '_pronamic_company_city', true ), // City value
 							// $field['id'] . '.4' => get_post_meta( $post_id, '', true ), // State value
 							$field['id'] . '.5' => get_post_meta( $post_id, '_pronamic_company_postal_code', true ), // Zip code
-							$field['id'] . '.6' => get_post_meta( $post_id, '_pronamic_company_country', true ) // Country value
+							$field['id'] . '.6' => get_post_meta( $post_id, '_pronamic_company_country', true ), // Country value
 						);
 					}
 				}
@@ -219,7 +221,7 @@ function pronamic_companies_gform_update_post_field_default_value( $field ) {
 							$field['id'] . '.3' => get_post_meta( $post_id, '_pronamic_company_mailing_city', true ), // City value
 							// $field['id'] . '.4' => get_post_meta( $post_id, '', true ), // State value
 							$field['id'] . '.5' => get_post_meta( $post_id, '_pronamic_company_mailing_postal_code', true ), // Zip code
-							$field['id'] . '.6' => get_post_meta( $post_id, '_pronamic_company_mailing_country', true ) // Country value
+							$field['id'] . '.6' => get_post_meta( $post_id, '_pronamic_company_mailing_country', true ), // Country value
 						);
 					}
 				}
