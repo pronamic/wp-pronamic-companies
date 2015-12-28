@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/pronamic-"
 "companies\n"
 "POT-Creation-Date: 2015-06-10 14:16:34+00:00\n"
-"PO-Revision-Date: 2015-06-10 16:16+0100\n"
+"PO-Revision-Date: 2015-12-28 16:12+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -724,7 +724,7 @@ msgstr "Bedrijf type"
 #: includes/taxonomy.php:17
 msgctxt "category singular name"
 msgid "Company Category"
-msgstr "Bdrijf categorie"
+msgstr "Bedrijf categorie"
 
 #: includes/taxonomy.php:46
 msgctxt "category singular name"
@@ -739,7 +739,7 @@ msgstr "Bedrijf regio"
 #: includes/taxonomy.php:102
 msgctxt "category singular name"
 msgid "Company Keyword"
-msgstr "Bdrijf trefwoord"
+msgstr "Bedrijf trefwoord"
 
 #: includes/taxonomy.php:130
 msgctxt "category singular name"
