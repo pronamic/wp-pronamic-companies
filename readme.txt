@@ -3,7 +3,7 @@ Contributors: pronamic, remcotolsma, kjtolsma
 Tags: pronamic, companies, company
 Requires at least: 3.0
 Tested up to: 4.2.2
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 
 Pronamic Companies is a basic plugin to build a company directory.
 
@@ -107,6 +107,10 @@ Upload the Pronamic Companies folder to your wp-content/plugins folder.
 
 
 == Changelog ==
+
+= 1.1.2 =
+*	Tweak - Fixed setting default values in Gravity Forms address fields.
+*	Tweak - Fixed typos.
 
 = 1.1.1 =
 *	Tweak - Fix indirect modification of array values (breaks since Gravity Forms 1.9, fix is backwards compatible).

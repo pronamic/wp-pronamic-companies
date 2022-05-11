@@ -2,7 +2,7 @@
 # This file is distributed under the GPL.
 msgid ""
 msgstr ""
-"Project-Id-Version: Pronamic Companies 1.1.1\n"
+"Project-Id-Version: Pronamic Companies 1.1.2\n"
 "Report-Msgid-Bugs-To: "
 "http://wordpress.org/support/plugin/pronamic-companies\n"
 "POT-Creation-Date: 2015-06-10 14:16:34+00:00\n"

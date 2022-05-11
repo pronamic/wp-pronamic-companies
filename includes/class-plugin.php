@@ -6,7 +6,7 @@ class Pronamic_Companies_Plugin {
 	 *
 	 * @var string
 	 */
-	public $version = '1.1.1';
+	public $version = '1.1.2';
 
 	/**
 	 * The plugin file
