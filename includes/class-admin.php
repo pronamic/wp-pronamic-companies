@@ -168,7 +168,7 @@ class Pronamic_Companies_Plugin_Admin {
 			// Chamber of Commerce and Tax information
 			'_pronamic_company_kvk_establishment'   => FILTER_SANITIZE_STRING,
 			'_pronamic_company_kvk_number'          => FILTER_SANITIZE_STRING,
-			'_pronamic_company_tax_number'          => FILTER_SNAITIZE_STRING,
+			'_pronamic_company_tax_number'          => FILTER_SANITIZE_STRING,
 			// Phone
 			'_pronamic_company_phone_number'        => FILTER_SANITIZE_STRING,
 			'_pronamic_company_fax_number'          => FILTER_SANITIZE_STRING,

@@ -200,14 +200,16 @@ function pronamic_companies_gform_update_post_field_default_value( $field ) {
 					$is_company_address = filter_var( $field['isCompanyVisitingAddress'], FILTER_VALIDATE_BOOLEAN );
 
 					if ( $is_company_address ) {
-						$field['defaultValue'] = array(
-							$field['id'] . '.1' => get_post_meta( $post_id, '_pronamic_company_address', true ), // Street value
-							// $field['id'] . '.2' => get_post_meta( $post_id, '', true ), // Street 2 value
-							$field['id'] . '.3' => get_post_meta( $post_id, '_pronamic_company_city', true ), // City value
-							// $field['id'] . '.4' => get_post_meta( $post_id, '', true ), // State value
-							$field['id'] . '.5' => get_post_meta( $post_id, '_pronamic_company_postal_code', true ), // Zip code
-							$field['id'] . '.6' => get_post_meta( $post_id, '_pronamic_company_country', true ), // Country value
-						);
+						$inputs = $field['inputs'];
+
+						$inputs[0]['defaultValue'] = get_post_meta( $post_id, '_pronamic_company_address', true ); // Street value
+						// $inputs[1]['defaultValue'] = get_post_meta( $post_id, '', true ); // Street 2 value
+						$inputs[2]['defaultValue'] = get_post_meta( $post_id, '_pronamic_company_city', true ); // City value
+						// $inputs[3]['defaultValue'] = get_post_meta( $post_id, '', true ); // State value
+						$inputs[4]['defaultValue'] = get_post_meta( $post_id, '_pronamic_company_postal_code', true ); // Zip code
+						$inputs[5]['defaultValue'] = get_post_meta( $post_id, '_pronamic_company_country', true ); // Country value
+
+						$field['inputs'] = $inputs;
 					}
 				}
 
@@ -215,14 +217,16 @@ function pronamic_companies_gform_update_post_field_default_value( $field ) {
 					$is_company_address = filter_var( $field['isCompanyMailingAddress'], FILTER_VALIDATE_BOOLEAN );
 
 					if ( $is_company_address ) {
-						$field['defaultValue'] = array(
-							$field['id'] . '.1' => get_post_meta( $post_id, '_pronamic_company_mailing_address', true ), // Street value
-							// $field['id'] . '.2' => get_post_meta( $post_id, '', true ), // Street 2 value
-							$field['id'] . '.3' => get_post_meta( $post_id, '_pronamic_company_mailing_city', true ), // City value
-							// $field['id'] . '.4' => get_post_meta( $post_id, '', true ), // State value
-							$field['id'] . '.5' => get_post_meta( $post_id, '_pronamic_company_mailing_postal_code', true ), // Zip code
-							$field['id'] . '.6' => get_post_meta( $post_id, '_pronamic_company_mailing_country', true ), // Country value
-						);
+						$inputs = $field['inputs'];
+
+						$inputs[0] = get_post_meta( $post_id, '_pronamic_company_mailing_address', true ); // Street value
+						// $inputs[1] = get_post_meta( $post_id, '', true ); // Street 2 value
+						$inputs[2] = get_post_meta( $post_id, '_pronamic_company_mailing_city', true ); // City value
+						// $inputs[3] = get_post_meta( $post_id, '', true ); // State value
+						$inputs[4] = get_post_meta( $post_id, '_pronamic_company_mailing_postal_code', true ); // Zip code
+						$inputs[5] = get_post_meta( $post_id, '_pronamic_company_mailing_country', true ); // Country value
+
+						$field['inputs'] = $inputs;
 					}
 				}
 			}
